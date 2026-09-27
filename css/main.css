@@ -22,10 +22,50 @@
  * Tout fichier .scss créé mais jamais importé ici (directement ou via un autre partiel
  * déjà importé) ne sera PAS compilé et n'aura aucun effet sur le site.
  */
+@import '/node_modules/normalize.css/normalize.css';
+@import '/node_modules/modern-normalize/modern-normalize.css';
+/* 
+    STYLES GÉNÉRAUX
+*/
+*,
+::before,
+::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+h1 {
+  font-size: 5em;
+}
+
+p {
+  font-family: "Courier New", Courier, monospace;
+}
+
+/* 
+  HEADER
+*/
 header {
   background-color: red;
 }
+header nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+header nav span.nav-item {
+  background-color: black;
+  color: red;
+}
+header nav span.nav-item:hover {
+  background-color: white;
+  color: blue;
+}
 
+/* 
+  FOOTER
+*/
 footer {
   background-color: red;
 }

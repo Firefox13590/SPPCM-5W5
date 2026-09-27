@@ -1,0 +1,57 @@
+@charset "UTF-8";
+
+/* séparer les styles en catégories */
+/* 
+    STYLES GÉNÉRAUX
+*/
+/* styles universels qui touchent tous les éléments simples */
+*,
+::before,
+::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+h1 {
+  font-size: 5em;
+}
+
+p {
+  font-family: "Courier New", Courier, monospace;
+}
+
+/* 
+    HEADER
+*/
+header {
+  background-color: red;
+
+  /* faire du nexting avec le sélecteur '&' */
+  & nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    & span.nav-item {
+      background-color: black;
+      color: red;
+
+      &:hover {
+        background-color: white;
+        color: blue;
+      }
+    }
+  }
+}
+
+/* 
+    MAIN
+*/
+
+/* 
+    FOOTER
+*/
+footer {
+  background-color: red;
+}

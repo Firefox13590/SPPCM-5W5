@@ -2,13 +2,17 @@
   "description": "Thème enfant du thème underscores",
   "author": "Simon Côté",
   "scripts": {
-  "watch": "sass --watch sass/main.scss:css/main.css",
-  "build": "sass sass/main.scss:css/main.css --style=compressed"
-},
+    "watch": "sass --watch sass/main.scss:css/main.css",
+    "build": "sass sass/main.scss:css/main.css --style=compressed"
+  },
   "devDependencies": {
     "sass": "^1.83.0"
   },
   "overrides": {
     "chokidar": "^3.6.0"
+  },
+  "dependencies": {
+    "modern-normalize": "^3.0.1",
+    "normalize.css": "^8.0.1"
   }
 }

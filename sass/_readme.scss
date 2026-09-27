@@ -1,0 +1,55 @@
+@use './settings/colors' as *;
+
+
+/* 
+    STYLES GÉNÉRAUX
+*/
+*,
+::before,
+::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+h1 {
+  font-size: 5em;
+}
+
+p {
+  font-family: "Courier New", Courier, monospace;
+}
+
+
+
+/* 
+  HEADER
+*/
+header {
+  background-color: $color_primary;
+
+  & nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    & span.nav-item {
+      background-color: black;
+      color: $color_primary;
+
+      &:hover {
+        background-color: white;
+        color: blue;
+      }
+    }
+  }
+}
+
+
+
+/* 
+  FOOTER
+*/
+footer {
+  background-color: $color_primary;
+}
