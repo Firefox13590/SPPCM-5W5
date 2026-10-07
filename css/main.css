@@ -1,73 +1,41 @@
-@charset "UTF-8";
-/**
- * main.scss — Point d'entrée principal de la compilation Sass.
- *
- * C'est ici que les partiels .scss doivent être importés — jamais directement dans un
- * template PHP ou ailleurs. Ce fichier ne doit contenir aucun style lui-même,
- * uniquement des imports.
- *
- * Utiliser @use (pas @import, qui est déprécié) :
- *   @use 'chemin/vers/nom-du-fichier';
- *   → le fichier réel doit s'appeler _nom-du-fichier.scss (underscore au début, sans
- *     l'extension ni le underscore dans l'import)
- *
- * Organisez votre dossier sass/ selon une structure qui répond aux besoins de votre
- * projet. L'objectif est d'avoir une organisation claire et cohérente plutôt que 
- * d'accumuler tous les fichiers .scss dans un seul dossier.
- *
- * L'ordre des imports ci-dessous a de l'importance : Sass (comme le CSS) applique les
- * styles dans l'ordre où ils sont déclarés. En cas de conflit de spécificité égale,
- * le dernier import gagne. Respecter l'ordre base → layout → components → pages.
- *
- * Tout fichier .scss créé mais jamais importé ici (directement ou via un autre partiel
- * déjà importé) ne sera PAS compilé et n'aura aucun effet sur le site.
- */
-@import '/node_modules/normalize.css/normalize.css';
-@import '/node_modules/modern-normalize/modern-normalize.css';
-/* 
-    STYLES GÉNÉRAUX
-*/
-*,
-::before,
-::after {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+/*--------------------------------------------------------------------
+# Polices et Couleurs
+--------------------------------------------------------------------*/
+/* Polices */
+@import url("https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;600;700&family=Syne:wght@400;500;600;700;800&display=swap");
+:root {
+  /* H2 */
+  --policeH2: "Syne", sans-serif;
+  --policeH2TaillePC: 64px;
+  --policeH2TailleTablette: 48px;
+  --policeH2TailleMobile: 32px;
+  --policeH2Weight: 720;
+  /* H3 */
+  --policeH3: "Syne", sans-serif;
+  --policeH3Taille: 24px;
+  --policeH3Weight: 700;
+  /* P */
+  --policeP: "Lexend", sans-serif;
+  --policePTailleMobile: 16px;
+  --policePTaille: 24px;
+  --policePWeight: 500;
 }
 
-h1 {
-  font-size: 5em;
+/* Couleurs globales */
+:root {
+  --couleurPrincipale: #e63c23;
+  --couleurSecondaireBeige: #ffe8ce;
+  --couleurSecondaireBlanc: #fffcf8;
+  --couleurTertiaire: #1f1f1f;
 }
-
-p {
-  font-family: "Courier New", Courier, monospace;
+/* Marges */
+:root {
+  /* jsp si il y a un meilleur moyen de faire ça */
+  --marge8px: 8px;
+  --marge16px: 16px;
+  --marge24px: 24px;
+  --marge32px: 32px;
+  --marge40px: 40px;
+  --marge48px: 48px;
+  --marge56px: 56px;
 }
-
-/* 
-  HEADER
-*/
-header {
-  background-color: red;
-}
-header nav {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-}
-header nav span.nav-item {
-  background-color: black;
-  color: red;
-}
-header nav span.nav-item:hover {
-  background-color: white;
-  color: blue;
-}
-
-/* 
-  FOOTER
-*/
-footer {
-  background-color: red;
-}
-
-/*# sourceMappingURL=main.css.map */
