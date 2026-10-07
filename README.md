@@ -18,8 +18,10 @@ Projet web en équipe
 - JAMAIS TRAVAILLER SUR LA BRANCHE `main` ou `dev` sauf pour @Firefox13590.
 - Créer une branche avec l'identifiant du user-story avant de travailler. Ex: US130.
   - "US" en majuscule.
-- une fois les modification terminées, TOUJOURS faire un pull request vers `dev`.
+- Une fois les modification terminées, TOUJOURS faire un pull request vers `dev`.
   - Seul @Firefox13590 a le droit d'accepter ou non les pull requests.
+- TOUJOURS pull de la branche `dev` avant de commencer à travailler.
+  - `git pull origin dev`
 
 ### Structure des fichiers
 
