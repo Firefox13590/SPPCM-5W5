@@ -35,7 +35,7 @@ Projet web en équipe
 
 #### Nomenclature
 
-- Le nom des variables doivent être en camelCase.
+- Le nom des variables (JavaScript, CSS, SCSS, PHP) doivent être en camelCase.
   - Le nom des constantes qui ne sont pas des éléments HTML doivent être en SCREAMING_SNAKE_CASE.
 - Le nom des classes et fonctions doivent être en PascalCase.
 - Le nom des classes et identifiants CSS doivent être en kebab-case.
@@ -58,3 +58,5 @@ Projet web en équipe
 | header nav span.nav-item | span.nav-item | nav | header |
 | RANGEES_MAX_PAR_PLATEFORME | RANGEES_MAX | PAR_PLATEFORME | |
 | RANGEES_MAX_PAR_PLATEFORME | RANGEES_MAX | PLATEFORME | |
+| $colorPrimary | color | Primary | |
+| $colorPrimary | couleur | primaire | |
