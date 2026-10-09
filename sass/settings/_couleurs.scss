@@ -1,0 +1,39 @@
+/*--------------------------------------------------------------------
+Couleurs
+--------------------------------------------------------------------*/
+/* Couleurs globales */
+  $couleurPrincipale: #e63c23;
+  $couleurSecondaireBeige: #ffe8ce;
+  $couleurSecondaireBlanc: #fffcf8;
+  $couleurTertiaire: #1f1f1f;
+
+  $couleurSectionActivePrincipale: #F05640;
+  $couleurSectionActiveSecondaire: #454545;
+  $couleurSectionDisabledPrimaire: #949494;
+  $couleurSectionDisabledSecondaire: #CD6A5C;
+  $couleurSectionHoverBlanc:#F3F3F3;
+  $couleurSectionFocusBlanc:#F3F3F3;
+  $couleurSectionActiveBlanc:#F8F8F8;
+  $couleurSectionDisabledBlanc:#D4D4D4;
+
+  /* Couleurs containers */
+  $couleurContainerPrincipalDefault: $couleurTertiaire;
+  $couleurContainerPrincipalHover:$couleurPrincipale;
+  $couleurContainerPrincipalActive:$couleurSectionActivePrincipale;
+  $couleurContainerPrincipalFocus:$couleurPrincipale;
+  $couleurContainerPrincipalDisabled:$couleurSectionDisabledPrimaire;
+
+  $couleurContainerSecondaireDefault: $couleurPrincipale;
+  $couleurContainerSecondaireHover:$couleurPrincipale;
+  $couleurContainerSecondaireActive:$couleurSectionActiveSecondaire;
+  $couleurContainerSecondaireFocus:$couleurPrincipale;
+  $couleurContainerSecondaireDisabled:$couleurSectionDisabledSecondaire;
+
+  $couleurContainerTertiaireDefault:$couleurSecondaireBlanc;
+  $couleurContainerTertiaireHover:$couleurSectionHoverBlanc;
+  $couleurContainerTertiaireActive:$couleurSectionActiveBlanc;
+  $couleurContainerTertiaireFocus:$couleurSectionFocusBlanc;
+  $couleurContainerTertiaireDisabled:$couleurSectionDisabledBlanc;
+
+  $couleurDropShadowPrincipale:$couleurPrincipale;
+  $couleurDropShadowTertiaire:$couleurTertiaire;
