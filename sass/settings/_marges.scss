@@ -1,15 +1,44 @@
 /*--------------------------------------------------------------------
 # Marges
 --------------------------------------------------------------------*/
-  $marge8px: 8px;
-  $marge16px: 16px;
-  $marge24px: 24px;
-  $marge32px: 32px;
-  $marge40px: 40px;
-  $marge48px: 48px;
-  $marge56px: 56px;
-  $marge64px: 64px;
-  $marge72px: 72px;
-  $marge80px: 80px;
-  $marge88px: 88px;
-  $marge96px: 96px;
+
+
+// A modifier selon les besoins du projet
+$margePageGauche: 1em;
+$margePageDroite: 1em;
+$margePageHaut: 1em;
+$margePageBas: 1em;
+
+$margeSectionHaut: 1em;
+$margeSectionBas: 1em;
+$margeSectionGauche: 1em;
+$margeSectionDroite: 1em;
+
+$margeTexteHaut: 1em;
+$margeTexteBas: 1em;
+$margeTexteGauche: 1em;
+$margeTexteDroite: 1em;
+
+$margeInfolettreHaut: 1em;
+$margeInfolettreBas: 1em;
+$margeInfolettreGauche: 1em;
+$margeInfolettreDroite: 1em;
+
+$margeArticleHaut: 1em;
+$margeArticleBas: 1em;
+$margeArticleGauche: 1em;
+$margeArticleDroite: 1em;
+
+$margeImageHaut: 1em;
+$margeImageBas: 1em;
+$margeImageGauche: 1em;
+$margeImageDroite: 1em;
+
+$margeFooterHaut: 1em;
+
+$margeHeaderBas: 1em;
+
+$margeNavigationHaut: 1em;
+$margeNavigationBas: 1em;
+$margeNavigationGauche: 1em;
+$margeNavigationDroite: 1em;
