@@ -1,0 +1,23 @@
+main {
+  & section.container-actu {
+    display: flex;
+    flex-wrap: wrap;
+    // justify-content: space-around;
+    gap: 100px;
+
+    & article.actu-item {
+      // flex: 1 1 200px;
+      flex-basis: 500px;
+
+      & figure {
+        padding-bottom: 100px;
+        background-color: grey;
+
+        & img {
+          width: 100%;
+          // height: 100%;
+        }
+      }
+    }
+  }
+}
