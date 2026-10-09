@@ -32,6 +32,7 @@ Projet web en équipe
 
 - Structure standard pour un script JavaScript fonctionnel (même logique pour le code PHP): **[readme.js](/js/readme.js)**
 - Structure standard pour une feuille de styles CSS (même logique pour SASS): **[readme.css](/css/readme.css)**, **[readme.scss](/sass/_readme.scss)**
+  - TOUJOURS penser aux styles suivant la méthode de travail *mobile first*.
 
 #### Nomenclature
 
