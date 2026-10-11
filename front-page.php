@@ -1,4 +1,4 @@
-FRONT PAGE enfant
+FRONT PAGE enfant <br>
 
 
 <?php
@@ -19,25 +19,32 @@ get_header();
 ?>
 
 <main>
-  MAIN CONTENT THEME ENFANT
-  <?php
-  if (have_posts()) :
-    echo ("have posts <br>");
-    echo ("<section class='container-actu'>");
+  MAIN CONTENT THEME ENFANT <br>
+  <section class="container-actu">
+    <h1>Actualités</h1>
+    <?php
+    if (have_posts()) :
+      echo ("have posts <br>");
+      // echo ("<section class='container-actu'>");
 
-    while (have_posts()): the_post(); ?>
+      while (have_posts()): the_post(); ?>
 
-      <article class="actu-item">
-        <figure><img src="<?= the_post_thumbnail(); ?>" alt=""></figure>
-        <h2><?= the_title(); ?></h2>
-      </article>
+        <article class="actu-item">
+          <figure>
+            <img src="<?= the_post_thumbnail(); ?>">
+            <figcaption>
+              <h2><?= the_title(); ?></h2>
+              <h4><?= get_the_date(); ?></h4>
+            </figcaption>
+          </figure>
+        </article>
 
-    <?php endwhile; ?>
-  <?php
-    echo ("</section>");
-    the_posts_pagination();
-  endif;
-  ?>
+      <?php endwhile; ?>
+    <?php
+      echo ("</section>");
+      the_posts_pagination();
+    endif;
+    ?>
 </main>
 
 <?php

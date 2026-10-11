@@ -29,8 +29,7 @@
 @use "settings/_colors";
 
 // styles
-// @use "_general";
-// @use "_header";
-// @use "_footer";
-@use "_readme";
-@use "_main";
+@use "_general";
+@use "_header";
+@use "content/front-page.scss";
+@use "_footer";
