@@ -26,13 +26,17 @@ Projet web en équipe
 ### Structure des fichiers
 
 - Mettre chaque fichier dans le dossier déjà éxistant.
+  - Un fichier de styles devra être créé pour chaque type de page ou contenu WordPress dans le dossier [**content**](/sass/content/).
+    - front-page, single (pour les posts), header, footer, 404, page, etc.
+    - Ne pas oublier d'ajouter le mot-clé `@use` dans [**main.scss**](/sass/main.scss).
 - Créer les dossiers manquants pour les ressources non catégorisées si nécessaire.
 
 ### Structure du code
 
-- Structure standard pour un script JavaScript fonctionnel (même logique pour le code PHP): **[readme.js](/js/readme.js)**
-- Structure standard pour une feuille de styles CSS (même logique pour SASS): **[readme.css](/css/readme.css)**, **[readme.scss](/sass/_readme.scss)**
-  - TOUJOURS penser aux styles suivant la méthode de travail *mobile first*.
+- Structure standard pour un script JavaScript fonctionnel (même logique pour le code PHP): [**readme.js**](/js/readme.js).
+- Structure standard pour une feuille de styles CSS (même logique pour SASS): [**readme.css**](/css/readme.css), [**readme.scss**](/sass/_readme.scss).
+  - Travailler uniquement avec les fichiers SCSS pour les styles; les fichiers css seront le résultat de la transpilation SCSS -> CSS.
+  - TOUJOURS penser aux styles suivant la méthode de travail _**mobile first**_.
 
 #### Nomenclature
 
@@ -52,7 +56,7 @@ Projet web en équipe
   - La séparation de la formulation d'une variable peut être interprétée de différentes manière tant que l'idée générale reste la même.
 
 | Exemple | quoi | en lien avec quoi 1 | en lien avec quoi 2 |
-| --- | --- | --- | --- |
+| -------------------------- | ------------- | ------------------- | ------------------- |
 | inputsFormInfolettre | inputs | Form | Infolettre |
 | inputsFormInfolettre | inputs | FormInfolettre | |
 | inputsFormInfolettre | inputsForm | Infolettre | |
