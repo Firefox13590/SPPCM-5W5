@@ -1,4 +1,4 @@
-FRONT PAGE enfant <br>
+FRONT PAGE ENFANT <br>
 
 
 <?php
@@ -18,16 +18,15 @@ FRONT PAGE enfant <br>
 get_header();
 ?>
 
-<main>
-  MAIN CONTENT THEME ENFANT <br>
-  <section class="container-actu">
+<main id="front-page">
+  <section id="acces-rapide-actu">
     <h1>Actualités</h1>
+
     <?php
     if (have_posts()) :
-      echo ("have posts <br>");
-      // echo ("<section class='container-actu'>");
-
-      while (have_posts()): the_post(); ?>
+      while (have_posts()):
+        the_post();
+    ?>
 
         <article class="actu-item">
           <figure>
@@ -39,12 +38,36 @@ get_header();
           </figure>
         </article>
 
-      <?php endwhile; ?>
     <?php
-      echo ("</section>");
-      the_posts_pagination();
+      endwhile;
     endif;
     ?>
+
+  </section>
+
+  <section id="acces-rapide-info">
+    <h1>Infolettres</h1>
+    <?php
+    $argsPage = array(
+      'post_type' => 'page',
+      'post_parent' => 5569,
+    );
+    $queryPage = new WP_Query($argsPage);
+    if ($queryPage->have_posts()):
+      while ($queryPage->have_posts()):
+        $queryPage->the_post();
+    ?>
+
+        <article class="info-item">
+          <h2><?= the_title(); ?></h2>
+          <h4><?= get_the_date(); ?></h4>
+        </article>
+
+    <?php
+      endwhile;
+    endif;
+    ?>
+  </section>
 </main>
 
 <?php
