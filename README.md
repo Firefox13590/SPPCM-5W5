@@ -6,6 +6,7 @@ Projet web en équipe
 
 - MAMP 5.0.6
 - Wordpress 7.1
+  - Advanced Custom Fields (ACF) 6.8.10+
 - Git 2.54.0 (2.54.0.windows.1)+
 - Git LFS 3.7.1+
 - GitHub

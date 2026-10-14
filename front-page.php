@@ -24,6 +24,8 @@ get_header();
 
     <?php
     if (have_posts()) :
+      global $wp_query;
+      $wp_query->post_count = 5;
       while (have_posts()):
         the_post();
     ?>
@@ -58,15 +60,40 @@ get_header();
         $queryPage->the_post();
     ?>
 
-        <article class="info-item">
+        <div class="info-item">
           <h2><?= the_title(); ?></h2>
           <h4><?= get_the_date(); ?></h4>
-        </article>
+        </div>
 
     <?php
       endwhile;
     endif;
     ?>
+  </section>
+
+  <section id="acces-rapide-faq">
+    <h1>FAQ</h1>
+    <?php for ($i = 0; $i < 5; $i++): ?>
+
+      <div class="faq-item">
+        <input type="checkbox" name="cc-faq-<?= $i; ?>" id="cc-faq-<?= $i; ?>" class="none">
+        <label class="faq-item-title" for="cc-faq-<?= $i; ?>">
+          <span><?= $i; ?></span>
+          <h3>Question</h3>
+          <span>+</span>
+        </label>
+        <div class="faq-item-content">
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Nulla necessitatibus labore nisi,
+            esse facere ducimus id saepe impedit ipsam,
+            inventore cum ex repellendus autem enim amet laborum?
+            Enim, voluptatum fuga?
+          </p>
+        </div>
+      </div>
+
+    <?php endfor; ?>
   </section>
 </main>
 

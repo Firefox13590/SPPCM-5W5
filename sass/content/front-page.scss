@@ -1,0 +1,106 @@
+main#front-page {
+
+  /* 
+  FRONT-PAGE (ACCUEIL)
+  */
+  & section#acces-rapide-actu {
+    /* accès rapide actualités */
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    gap: 2em;
+
+    & h1 {
+      margin: 0;
+      margin-right: 5vw;
+      align-self: flex-end;
+    }
+
+    & article.actu-item {
+      flex-basis: 5em;
+      width: 90vw;
+
+      & figure {
+        & img {
+          width: 100%;
+          height: 50px;
+          padding-bottom: 100px;
+          background-color: grey;
+          box-shadow: -4px -4px 0 red;
+        }
+
+        & figcaption {
+          padding: 1em;
+          box-shadow: 4px 4px 0 black;
+        }
+      }
+    }
+  }
+
+
+  & section#acces-rapide-info {
+    /* accès rapide infolettres */
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    gap: 2em;
+
+    & h1 {
+      margin: 0;
+      margin-right: 5vw;
+      align-self: flex-end;
+    }
+  }
+
+
+  & section#acces-rapide-faq {
+
+    /* accès rapide FAQ */
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    gap: 2em;
+
+    & h1 {
+      margin: 0;
+      margin-right: 5vw;
+      align-self: flex-end;
+    }
+
+    & div.faq-item {
+      width: 90vw;
+      box-shadow: 4px 4px 0 red;
+
+      & input:checked {
+        &~div.faq-item-content {
+          // max-height: 1000px;
+          // max-height: 50vh;
+          max-height: 5em;
+
+          overflow-y: scroll;
+        }
+      }
+
+      & label.faq-item-title {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        padding: 1em 1.5em;
+
+        background-color: #1f1f1f;
+        color: #FFE8CE;
+
+        cursor: pointer;
+      }
+
+      & div.faq-item-content {
+        max-height: 0;
+        padding: 0 1em;
+
+        overflow: hidden;
+        transition: max-height .5s;
+      }
+    }
+  }
+}
