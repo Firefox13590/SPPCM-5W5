@@ -1,3 +1,6 @@
+<?php
+require(__DIR__ . '/utils/oneShotScripts/infolettres.php');
+?>
 FRONT PAGE ENFANT <br>
 
 
@@ -55,9 +58,11 @@ get_header();
       'post_parent' => 5569,
     );
     $queryPage = new WP_Query($argsPage);
+
     if ($queryPage->have_posts()):
       while ($queryPage->have_posts()):
         $queryPage->the_post();
+        $pageContent = get_the_content();
     ?>
 
         <div class="info-item">
@@ -78,7 +83,7 @@ get_header();
       <div class="faq-item">
         <input type="checkbox" name="cc-faq-<?= $i; ?>" id="cc-faq-<?= $i; ?>" class="none">
         <label class="faq-item-title" for="cc-faq-<?= $i; ?>">
-          <span><?= $i; ?></span>
+          <span><?= $i + 1; ?></span>
           <h3>Question</h3>
           <span>+</span>
         </label>
@@ -96,6 +101,12 @@ get_header();
     <?php endfor; ?>
   </section>
 </main>
+
+<div>
+  <?php
+  // DebugPostContent();
+  ?>
+</div>
 
 <?php
 get_sidebar();
