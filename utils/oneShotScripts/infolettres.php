@@ -1,5 +1,15 @@
 <?php
 
+
+$formatter = datefmt_create(
+  'fr_CA',
+  IntlDateFormatter::NONE,
+  IntlDateFormatter::NONE,
+  'America/Toronto',
+  IntlDateFormatter::GREGORIAN,
+  'd MMMM yyyy'
+);
+
 /**
  * Débogue et récupère les textes importants. 
  * 
@@ -9,21 +19,13 @@
  */
 function DebugPostContent(): void
 {
+  global $formatter;
   $argsDebug = array(
     'post_type' => 'page',
     'post_parent' => 5569,
     'posts_per_page' => 1,
   );
   $queryDebug = new WP_Query($argsDebug);
-
-  $formatter = datefmt_create(
-    'fr_CA',
-    IntlDateFormatter::NONE,
-    IntlDateFormatter::NONE,
-    'America/Toronto',
-    IntlDateFormatter::GREGORIAN,
-    'd MMMM yyyy'
-  );
 
   if ($queryDebug->have_posts()) {
     while ($queryDebug->have_posts()) {
@@ -68,13 +70,57 @@ function DebugPostContent(): void
         // echo ('summary content: ' .  strip_tags($summaryNContent) . '<br>');
 
         // echo ('<br><br><br>');
-      }
 
-      MassCreatePosts($dateConvResult, $hrefContent, $summaryNContent);
+
+        MassCreatePosts($dateConvResult, $hrefContent, $summaryNContent);
+      }
 
       // echo ('<br><br><br><br><br>');
     }
   }
 }
 
-function MassCreatePosts(int|float|false $date, string|false $lien, string|false $content): void {}
+function MassCreatePosts(int|float|false $timestamp, string|false $lien, string|false $content): void
+{
+  global $formatter;
+  $date = '';
+  $date = datefmt_format($formatter, $timestamp);
+
+  // var_dump($timestamp . '<br>');
+  // var_dump($date . '<br>');
+  // echo (date('Y', $timestamp) . '<br>');
+  // echo (date('F', $timestamp) . '<br>');
+  // var_dump($lien . '<br>');
+  // var_dump($content . '<br>');
+
+  $argsParentsInfo = array(
+    'post_type' => 'infolettre',
+  );
+  $queryParentsInfo = new WP_Query($argsParentsInfo);
+  if ($queryParentsInfo->have_posts()) {
+    while ($queryParentsInfo->have_posts()) {
+      $queryParentsInfo->the_post();
+      the_title();
+      echo ('<br>');
+      echo (the_title() . '-annee-scolaire');
+      echo ('<br>');
+      var_dump(explode('-', the_title(display: false)));
+      echo ('<br>');
+    }
+    echo ('<br>');
+  }
+
+  if ($date !== false && $lien !== false) {
+    $postDetails = array(
+      'post_title' => $date,
+      'post_content' => 'Use ACF get_field(\'info_resume\')',
+      'post_status' => 'publish',
+      'post_type' => 'infolettre',
+      'tax_query' => array(
+        'taxonomy' => 'annee-scolaire',
+        'field' => 'slug',
+        'terms' => the_title() . '-annee-scolaire',
+      ),
+    );
+  }
+}
