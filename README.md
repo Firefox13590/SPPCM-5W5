@@ -5,7 +5,7 @@ Projet web en équipe
 ## Stack technologique
 
 - MAMP 5.0.6
-- Wordpress 7.1
+- Wordpress 7.1-fr
   - Advanced Custom Fields (ACF) 6.8.10+
 - Git 2.54.0 (2.54.0.windows.1)+
 - Git LFS 3.7.1+
@@ -45,6 +45,7 @@ Projet web en équipe
   - Le nom des constantes qui ne sont pas des éléments HTML doivent être en SCREAMING_SNAKE_CASE.
 - Le nom des classes et fonctions doivent être en PascalCase.
 - Le nom des classes et identifiants CSS doivent être en kebab-case.
+- le nom des identifiants personnalisés pour les systèmes utilisés (WordPress, MySQL, ACF, etc.) doit suivre la même nomenclature que celle déja éxistante (souvent snake_case).
 
 - Le nom des variables, constantes, classes, etc. peut contenir des abréviations.
   - Si les abréviations ne sont pas universelles (hp -> hit points, js -> JavaScript, el -> element, img -> image, etc.), préciser le nom complet avec un commentaire.

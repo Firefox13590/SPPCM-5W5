@@ -2,8 +2,8 @@
  * 
  * @class Accordeon
  * 
- * @property {NodeListOf<Element>} listeInputsCheck 
- * @property {Number} posCheckActif 
+ * @property {NodeListOf<Element>} listeInputsCheck La liste complète des inputs de type checkbox qui ont été trouvés sur la page actuelle.
+ * @property {Number} posCheckActif L'index du checkbox présentement actif. -1 par d♪0faut pour signifier qu'aucun checkbox n'est actif.
  */
 export default class Accordeon {
   listeInputsCheck;
@@ -23,6 +23,7 @@ export default class Accordeon {
   }
 
   /**
+   * Active le checkbox cliqué s'il ne l'est pas déjà.
    * 
    * @param {HTMLInputElement} checkbox Le checkbox qui s'est fait cliquer
    * 
@@ -40,6 +41,9 @@ export default class Accordeon {
     if (this.posCheckActif > -1) { this.listeInputsCheck[this.posCheckActif].checked = true; }
   }
 
+  /**
+   * Désactive tous les checkboxs.
+   */
   DisableAllCheckboxes() {
     this.listeInputsCheck.forEach(element => {
       element.checked = false;

@@ -104,7 +104,7 @@ get_header();
 
 <div>
   <?php
-  // DebugPostContent();
+  DebugPostContent();
   ?>
 </div>
 
