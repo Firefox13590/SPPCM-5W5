@@ -72,4 +72,36 @@ function underscores_child_scripts() {
 add_action( 'wp_enqueue_scripts', 'underscores_child_scripts' );
 */
 
-?>
+
+/**
+ * Ajouter un menu de gestion des partenaires du footer dans WordPress pour pas se casser
+ * la tête si on veut ajouter ou enlever un partenaire
+ * @return void
+ */
+function EnregistrerPartenairesFooter() {
+    register_post_type( 'sppcm_partenaire', array(
+        'labels' => array(
+            'name' => 'Partenaires',
+            'singular_name' => 'Partenaire',
+            'add_new' => 'Ajouter un partenaire',
+            'add_new_item' => 'Ajouter un partenaire',
+            'edit_item' => 'Modifier le partenaire',
+            'all_items' => 'Tous les partenaires',
+            'search_items' => 'Rechercher des partenaires',
+            'not_found' => 'Aucun partenaire trouvé.',
+        ),
+
+        // Les partenaires sont affichés dans le footer.
+        'public' => false,
+        'show_ui' => true,
+        'show_in_menu' => true,
+        'show_in_nav_menus' => false,
+        'menu_icon' => 'dashicons-groups',
+        'supports' => array( 'title', 'page-attributes' ),
+        'capability_type' => 'page',
+        'map_meta_cap' => true,
+        'rewrite' => false,
+        'query_var' => false,
+    ) );
+}
+add_action( 'init', 'EnregistrerPartenairesFooter' );

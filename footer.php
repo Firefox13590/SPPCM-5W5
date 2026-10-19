@@ -14,25 +14,23 @@
 	<footer id="colophon" class="site-footer">
 
 		<?php
-		// Les partenaires sont gérés dans la page "Instances Syndicales" et ensuite affichés dans le footer
-		$pagePartenaires = get_page_by_path( 'instances-syndicales-et-representants-es-des-enseignants-es' );
 		$partenairesFooter = array();
-		$champsPartenaires = array( 'partenaireCsn', 'partenaireFneeq', 'partenaireMainRouge', 'partenairePlanete' );
 
-		if ( function_exists( 'get_field' ) && $pagePartenaires instanceof WP_Post ) {
-			foreach ( $champsPartenaires as $nomChampPartenaire ) {
-				$donneesPartenaire = get_field( $nomChampPartenaire, $pagePartenaires->ID );
+		if ( function_exists( 'get_field' ) ) {
+			// Modification pour pharly: Créer un champ général "partenaires" qui peut prendre plusieurs valeurs
+			$publicationsPartenaires = get_posts( array(
+				'post_type' => 'sppcm_partenaire',
+				'post_status' => 'publish',
+				'numberposts' => -1,
+				'orderby' => array( 'menu_order' => 'ASC', 'title' => 'ASC', 'ID' => 'ASC' ),
+			) );
 
-				if ( ! is_array( $donneesPartenaire ) ) {
-					continue;
-				}
-
-				$nomPartenaire = trim( (string) ( $donneesPartenaire['nom'] ?? '' ) );
-				$imagePartenaire = absint( $donneesPartenaire['image'] ?? 0 );
-				$lienPartenaire = esc_url( $donneesPartenaire['lien'] ?? '', array( 'http', 'https' ) );
+			foreach ( $publicationsPartenaires as $publicationPartenaire ) {
+				$nomPartenaire = get_the_title( $publicationPartenaire->ID );
+				$imagePartenaire = absint( get_field( 'imagePartenaire', $publicationPartenaire->ID ) );
+				$lienPartenaire = esc_url( get_field( 'lienPartenaire', $publicationPartenaire->ID ) ?: '', array( 'http', 'https' ) );
 				$balisageImagePartenaire = '';
 
-				// WordPress génère l'image avec le nom du partenaire.
 				if ( $imagePartenaire ) {
 					$balisageImagePartenaire = wp_get_attachment_image(
 						$imagePartenaire,
@@ -42,7 +40,7 @@
 					);
 				}
 
-				if ( '' !== $nomPartenaire && '' !== $balisageImagePartenaire ) {
+				if ( '' !== trim( $nomPartenaire ) && $balisageImagePartenaire ) {
 					$partenairesFooter[] = array(
 						'image' => $balisageImagePartenaire,
 						'lien' => $lienPartenaire,

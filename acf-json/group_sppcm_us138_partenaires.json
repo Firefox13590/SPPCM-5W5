@@ -1,94 +1,39 @@
 {
     "key": "group_sppcm_us138_partenaires",
-    "title": "Partenaires (Footer)",
+    "title": "Partenaire du footer",
     "fields": [
         {
-            "key": "field_sppcm_us138_partenairecsn",
-            "label": "Négo table centrale CSN",
-            "name": "partenaireCsn",
+            "key": "field_sppcm_us138_image",
+            "label": "Image du partenaire",
+            "name": "imagePartenaire",
             "aria-label": "",
-            "type": "group",
-            "instructions": "Informations de ce partenaire dans le pied de page.",
-            "required": 0,
+            "type": "image",
+            "instructions": "Choisir le logo ou le visuel du partenaire.",
+            "required": 1,
             "conditional_logic": false,
             "wrapper": {
                 "width": "",
                 "class": "",
                 "id": ""
             },
-            "layout": "block",
-            "sub_fields": [
-                {
-                    "key": "field_sppcm_us138_nomcsn",
-                    "label": "Nom du partenaire",
-                    "name": "nom",
-                    "aria-label": "",
-                    "type": "text",
-                    "instructions": "Nom lisible utilisé pour identifier le partenaire et son lien.",
-                    "required": 0,
-                    "conditional_logic": false,
-                    "wrapper": {
-                        "width": "100",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "Négo table centrale CSN",
-                    "maxlength": "",
-                    "placeholder": "",
-                    "prepend": "",
-                    "append": ""
-                },
-                {
-                    "key": "field_sppcm_us138_imagecsn",
-                    "label": "Image du partenaire",
-                    "name": "image",
-                    "aria-label": "",
-                    "type": "image",
-                    "instructions": "Choisir le visuel dans la médiathèque. Renseigner son texte alternatif.",
-                    "required": 0,
-                    "conditional_logic": false,
-                    "wrapper": {
-                        "width": "50",
-                        "class": "",
-                        "id": ""
-                    },
-                    "return_format": "id",
-                    "preview_size": "medium",
-                    "library": "all",
-                    "mime_types": "jpg,jpeg,png,webp",
-                    "min_width": 0,
-                    "min_height": 0,
-                    "min_size": 0,
-                    "max_width": 0,
-                    "max_height": 0,
-                    "max_size": 0
-                },
-                {
-                    "key": "field_sppcm_us138_liencsn",
-                    "label": "Lien du partenaire",
-                    "name": "lien",
-                    "aria-label": "",
-                    "type": "url",
-                    "instructions": "Adresse complète du site du partenaire, commençant par https:\/\/.",
-                    "required": 0,
-                    "conditional_logic": false,
-                    "wrapper": {
-                        "width": "50",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "",
-                    "placeholder": "https:\/\/"
-                }
-            ]
+            "return_format": "id",
+            "preview_size": "medium",
+            "library": "all",
+            "mime_types": "jpg,jpeg,png,webp",
+            "min_width": 0,
+            "min_height": 0,
+            "min_size": 0,
+            "max_width": 0,
+            "max_height": 0,
+            "max_size": 0
         },
         {
-            "key": "field_sppcm_us138_partenairefneeq",
-            "label": "Négo table sectorielle FNEEQ",
-            "name": "partenaireFneeq",
+            "key": "field_sppcm_us138_lien",
+            "label": "Lien du partenaire",
+            "name": "lienPartenaire",
             "aria-label": "",
-            "type": "group",
-            "instructions": "Informations de ce partenaire dans le pied de page.",
+            "type": "url",
+            "instructions": "Adresse complète du site. Laisser vide pour afficher seulement l’image.",
             "required": 0,
             "conditional_logic": false,
             "wrapper": {
@@ -96,239 +41,16 @@
                 "class": "",
                 "id": ""
             },
-            "layout": "block",
-            "sub_fields": [
-                {
-                    "key": "field_sppcm_us138_nomfneeq",
-                    "label": "Nom du partenaire",
-                    "name": "nom",
-                    "aria-label": "",
-                    "type": "text",
-                    "instructions": "Nom lisible utilisé pour identifier le partenaire et son lien.",
-                    "required": 0,
-                    "conditional_logic": false,
-                    "wrapper": {
-                        "width": "100",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "Négo table sectorielle FNEEQ",
-                    "maxlength": "",
-                    "placeholder": "",
-                    "prepend": "",
-                    "append": ""
-                },
-                {
-                    "key": "field_sppcm_us138_imagefneeq",
-                    "label": "Image du partenaire",
-                    "name": "image",
-                    "aria-label": "",
-                    "type": "image",
-                    "instructions": "Choisir le visuel dans la médiathèque. Renseigner son texte alternatif.",
-                    "required": 0,
-                    "conditional_logic": false,
-                    "wrapper": {
-                        "width": "50",
-                        "class": "",
-                        "id": ""
-                    },
-                    "return_format": "id",
-                    "preview_size": "medium",
-                    "library": "all",
-                    "mime_types": "jpg,jpeg,png,webp",
-                    "min_width": 0,
-                    "min_height": 0,
-                    "min_size": 0,
-                    "max_width": 0,
-                    "max_height": 0,
-                    "max_size": 0
-                },
-                {
-                    "key": "field_sppcm_us138_lienfneeq",
-                    "label": "Lien du partenaire",
-                    "name": "lien",
-                    "aria-label": "",
-                    "type": "url",
-                    "instructions": "Adresse complète du site du partenaire, commençant par https:\/\/.",
-                    "required": 0,
-                    "conditional_logic": false,
-                    "wrapper": {
-                        "width": "50",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "",
-                    "placeholder": "https:\/\/"
-                }
-            ]
-        },
-        {
-            "key": "field_sppcm_us138_partenairemainrouge",
-            "label": "Coalition Main rouge",
-            "name": "partenaireMainRouge",
-            "aria-label": "",
-            "type": "group",
-            "instructions": "Informations de ce partenaire dans le pied de page.",
-            "required": 0,
-            "conditional_logic": false,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "layout": "block",
-            "sub_fields": [
-                {
-                    "key": "field_sppcm_us138_nommainrouge",
-                    "label": "Nom du partenaire",
-                    "name": "nom",
-                    "aria-label": "",
-                    "type": "text",
-                    "instructions": "Nom lisible utilisé pour identifier le partenaire et son lien.",
-                    "required": 0,
-                    "conditional_logic": false,
-                    "wrapper": {
-                        "width": "100",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "Coalition Main rouge",
-                    "maxlength": "",
-                    "placeholder": "",
-                    "prepend": "",
-                    "append": ""
-                },
-                {
-                    "key": "field_sppcm_us138_imagemainrouge",
-                    "label": "Image du partenaire",
-                    "name": "image",
-                    "aria-label": "",
-                    "type": "image",
-                    "instructions": "Choisir le visuel dans la médiathèque. Renseigner son texte alternatif.",
-                    "required": 0,
-                    "conditional_logic": false,
-                    "wrapper": {
-                        "width": "50",
-                        "class": "",
-                        "id": ""
-                    },
-                    "return_format": "id",
-                    "preview_size": "medium",
-                    "library": "all",
-                    "mime_types": "jpg,jpeg,png,webp",
-                    "min_width": 0,
-                    "min_height": 0,
-                    "min_size": 0,
-                    "max_width": 0,
-                    "max_height": 0,
-                    "max_size": 0
-                },
-                {
-                    "key": "field_sppcm_us138_lienmainrouge",
-                    "label": "Lien du partenaire",
-                    "name": "lien",
-                    "aria-label": "",
-                    "type": "url",
-                    "instructions": "Adresse complète du site du partenaire, commençant par https:\/\/.",
-                    "required": 0,
-                    "conditional_logic": false,
-                    "wrapper": {
-                        "width": "50",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "",
-                    "placeholder": "https:\/\/"
-                }
-            ]
-        },
-        {
-            "key": "field_sppcm_us138_partenaireplanete",
-            "label": "La Planète s’invite au travail",
-            "name": "partenairePlanete",
-            "aria-label": "",
-            "type": "group",
-            "instructions": "Informations de ce partenaire dans le pied de page.",
-            "required": 0,
-            "conditional_logic": false,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "layout": "block",
-            "sub_fields": [
-                {
-                    "key": "field_sppcm_us138_nomplanete",
-                    "label": "Nom du partenaire",
-                    "name": "nom",
-                    "aria-label": "",
-                    "type": "text",
-                    "instructions": "Nom lisible utilisé pour identifier le partenaire et son lien.",
-                    "required": 0,
-                    "conditional_logic": false,
-                    "wrapper": {
-                        "width": "100",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "La Planète s’invite au travail",
-                    "maxlength": "",
-                    "placeholder": "",
-                    "prepend": "",
-                    "append": ""
-                },
-                {
-                    "key": "field_sppcm_us138_imageplanete",
-                    "label": "Image du partenaire",
-                    "name": "image",
-                    "aria-label": "",
-                    "type": "image",
-                    "instructions": "Choisir le visuel dans la médiathèque. Renseigner son texte alternatif.",
-                    "required": 0,
-                    "conditional_logic": false,
-                    "wrapper": {
-                        "width": "50",
-                        "class": "",
-                        "id": ""
-                    },
-                    "return_format": "id",
-                    "preview_size": "medium",
-                    "library": "all",
-                    "mime_types": "jpg,jpeg,png,webp",
-                    "min_width": 0,
-                    "min_height": 0,
-                    "min_size": 0,
-                    "max_width": 0,
-                    "max_height": 0,
-                    "max_size": 0
-                },
-                {
-                    "key": "field_sppcm_us138_lienplanete",
-                    "label": "Lien du partenaire",
-                    "name": "lien",
-                    "aria-label": "",
-                    "type": "url",
-                    "instructions": "Adresse complète du site du partenaire, commençant par https:\/\/.",
-                    "required": 0,
-                    "conditional_logic": false,
-                    "wrapper": {
-                        "width": "50",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "",
-                    "placeholder": "https:\/\/"
-                }
-            ]
+            "default_value": "",
+            "placeholder": "https:\/\/"
         }
     ],
     "location": [
         [
             {
-                "param": "page",
+                "param": "post_type",
                 "operator": "==",
-                "value": "5819"
+                "value": "sppcm_partenaire"
             }
         ]
     ],
@@ -337,12 +59,12 @@
     "style": "default",
     "label_placement": "top",
     "instruction_placement": "label",
-    "hide_on_screen": "",
+    "hide_on_screen": [],
     "active": true,
-    "description": "US138 : modifier les quatre partenaires du footer depuis la page Instances syndicales. Les valeurs de contenu restent dans la base de données.",
+    "description": "Un groupe commun à tous les partenaires. Le titre de la publication sert de nom. Ajouter, retirer ou modifier les partenaires depuis le menu Partenaires.",
     "show_in_rest": 0,
     "display_title": "",
     "allow_ai_access": false,
     "ai_description": "",
-    "modified": 1792356438
+    "modified": 1792413786
 }
