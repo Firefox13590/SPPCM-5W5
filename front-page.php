@@ -53,13 +53,16 @@ get_header();
   <section id="acces-rapide-info">
     <h1>Infolettres</h1>
     <?php
+    $pageInfolettres = get_page_by_path('infolettre-accueil');
     $argsPage = array(
       'post_type' => 'page',
-      'post_parent' => 5569,
+      'post_status' => 'publish',
+      'post_parent' => $pageInfolettres ? $pageInfolettres->ID : 0,
     );
-    $queryPage = new WP_Query($argsPage);
+    // Sans page parent, ne pas afficher d'autres pages à la place des infolettres.
+    $queryPage = $pageInfolettres && $pageInfolettres->post_status === 'publish' ? new WP_Query($argsPage) : null;
 
-    if ($queryPage->have_posts()):
+    if ($queryPage && $queryPage->have_posts()):
       while ($queryPage->have_posts()):
         $queryPage->the_post();
         $pageContent = get_the_content();
@@ -72,7 +75,12 @@ get_header();
 
     <?php
       endwhile;
+    else:
+    ?>
+      <p>Aucune infolettre n’est disponible pour le moment.</p>
+    <?php
     endif;
+    wp_reset_postdata();
     ?>
   </section>
 
