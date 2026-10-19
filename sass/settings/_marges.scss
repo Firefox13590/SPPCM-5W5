@@ -3,42 +3,58 @@
 --------------------------------------------------------------------*/
 
 
-// A modifier selon les besoins du projet
-$margePageGauche: 1em;
-$margePageDroite: 1em;
-$margePageHaut: 1em;
-$margePageBas: 1em;
+// changer page pour utiliser @mixin
+@mixin margePage() {
+  margin-top: 1em;
+  margin-bottom:1em;
+  margin-left: 1em;
+  margin-right: 1em;
+}
 
-$margeSectionHaut: 1em;
-$margeSectionBas: 1em;
-$margeSectionGauche: 1em;
-$margeSectionDroite: 1em;
+@mixin margeSection() {
+  margin-top: 1em;
+  margin-bottom:1em;
+  margin-left: 1em;
+  margin-right: 1em;
+}
 
-$margeTexteHaut: 1em;
-$margeTexteBas: 1em;
-$margeTexteGauche: 1em;
-$margeTexteDroite: 1em;
+@mixin margeTexte() {
+  margin-top: 1em;
+  margin-bottom:1em;
+  margin-left: 1em;
+  margin-right: 1em;
+}
 
-$margeInfolettreHaut: 1em;
-$margeInfolettreBas: 1em;
-$margeInfolettreGauche: 1em;
-$margeInfolettreDroite: 1em;
+@mixin margeInfolettre() {
+  margin-top: 1em;
+  margin-bottom:1em;
+  margin-left: 1em;
+  margin-right: 1em;
+}
 
-$margeArticleHaut: 1em;
-$margeArticleBas: 1em;
-$margeArticleGauche: 1em;
-$margeArticleDroite: 1em;
+@mixin margeArticle(){
+  margin-top: 1em;
+  margin-bottom:1em;
+  margin-left: 1em;
+  margin-right: 1em;
+}
 
-$margeImageHaut: 1em;
-$margeImageBas: 1em;
-$margeImageGauche: 1em;
-$margeImageDroite: 1em;
+@mixin margeImage(){
+    margin-top: 1em;
+    margin-bottom:1em;
+    margin-left: 1em;
+    margin-right: 1em;
+}
+
+@mixin margeNavigation() {
+  margin-top: 1em;
+  margin-bottom:1em;
+  margin-left: 1em;
+  margin-right: 1em;
+}
 
 $margeFooterHaut: 1em;
 
 $margeHeaderBas: 1em;
 
-$margeNavigationHaut: 1em;
-$margeNavigationBas: 1em;
-$margeNavigationGauche: 1em;
-$margeNavigationDroite: 1em;
+

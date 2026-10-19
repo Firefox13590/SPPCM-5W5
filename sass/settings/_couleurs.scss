@@ -17,23 +17,53 @@ Couleurs
   $couleurSectionDisabledBlanc:#D4D4D4;
 
   /* Couleurs containers */
-  $couleurContainerPrincipalDefault: $couleurTertiaire;
-  $couleurContainerPrincipalHover:$couleurPrincipale;
-  $couleurContainerPrincipalActive:$couleurSectionActivePrincipale;
-  $couleurContainerPrincipalFocus:$couleurPrincipale;
-  $couleurContainerPrincipalDisabled:$couleurSectionDisabledPrimaire;
+  @mixin couleurContainerPrimaire($couleurTertiaire, $couleurPrincipale, $couleurSectionActivePrincipale, $couleurSectionDisabledPrimaire) {
+    background-color: $couleurTertiaire;
+    &:hover {
+        background-color: $couleurPrincipale;
+    }
+    &:active {
+        background-color: $couleurSectionActivePrincipale;
+    }
+    &:focus {
+        background-color: $couleurPrincipale;
+    }
+    &:disabled {
+        background-color: $couleurSectionDisabledPrimaire;
+    }
+  }
 
-  $couleurContainerSecondaireDefault: $couleurPrincipale;
-  $couleurContainerSecondaireHover:$couleurPrincipale;
-  $couleurContainerSecondaireActive:$couleurSectionActiveSecondaire;
-  $couleurContainerSecondaireFocus:$couleurPrincipale;
-  $couleurContainerSecondaireDisabled:$couleurSectionDisabledSecondaire;
+  @mixin couleurContainerSecondaire($couleurPrincipale, $couleurSectionActiveSecondaire, $couleurSectionDisabledSecondaire) {
+    background-color: $couleurPrincipale;
+    &:hover {
+        background-color: $couleurPrincipale;
+    }
+    &:active {
+        background-color: $couleurSectionActiveSecondaire;
+    }
+    &:focus {
+        background-color: $couleurPrincipale;
+    }
+    &:disabled {
+        background-color: $couleurSectionDisabledSecondaire;
+    }
+  }
 
-  $couleurContainerTertiaireDefault:$couleurSecondaireBlanc;
-  $couleurContainerTertiaireHover:$couleurSectionHoverBlanc;
-  $couleurContainerTertiaireActive:$couleurSectionActiveBlanc;
-  $couleurContainerTertiaireFocus:$couleurSectionFocusBlanc;
-  $couleurContainerTertiaireDisabled:$couleurSectionDisabledBlanc;
+  @mixin couleurContainerTertiaire($couleurSecondaireBlanc, $couleurSectionHoverBlanc, $couleurSectionActiveBlanc, $couleurSectionFocusBlanc, $couleurSectionDisabledBlanc) {
+    background-color: $couleurSecondaireBlanc;
+    &:hover {
+        background-color: $couleurSectionHoverBlanc;
+    }
+    &:active {
+        background-color: $couleurSectionActiveBlanc;
+    }
+    &:focus {
+        background-color: $couleurSectionFocusBlanc;
+    }
+    &:disabled {
+        background-color: $couleurSectionDisabledBlanc;
+    }
+  }
 
   $couleurDropShadowPrincipale:$couleurPrincipale;
   $couleurDropShadowTertiaire:$couleurTertiaire;
