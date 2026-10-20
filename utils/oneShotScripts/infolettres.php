@@ -33,7 +33,6 @@ function DebugPostContent(): void
   $argsDebug = array(
     'post_type' => 'page',
     'post_parent' => 5569,
-    // 'posts_per_page' => 1,
     'posts_per_page' => -1,
     'orderby' => 'title',
     'order' => 'ASC',
@@ -95,6 +94,7 @@ function DebugPostContent(): void
       // echo ('<br><br><br><br><br>');
     }
   }
+  wp_reset_postdata();
 
   // var_dump(date('j F Y', mktime(0, 0, 0, 6, 1, 2026)));
   // var_dump(strtotime(date('j F Y', mktime(0, 0, 0, 6, 1, 2026))));
@@ -132,6 +132,7 @@ function MassCreatePosts(int|float|false $timestamp, string|false $lien, string|
     'tax_query' => array(
       array(
         'taxonomy' => 'annee-scolaire',
+        'field' => 'term_id',
         'terms' => 218,
         'include_children' => false,
       ),
@@ -178,6 +179,7 @@ function MassCreatePosts(int|float|false $timestamp, string|false $lien, string|
       }
     }
   }
+  wp_reset_postdata();
 
   if ($date !== false) {
     // echo ('can create post: ');

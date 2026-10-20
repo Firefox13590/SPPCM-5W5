@@ -46,6 +46,7 @@ get_header();
     <?php
       endwhile;
     endif;
+    wp_reset_postdata();
     ?>
 
   </section>
@@ -53,26 +54,40 @@ get_header();
   <section id="acces-rapide-info">
     <h1>Infolettres</h1>
     <?php
-    $argsPage = array(
-      'post_type' => 'page',
-      'post_parent' => 5569,
+    $argsInfo = array(
+      'post_type' => 'infolettre',
+      'posts_per_page' => 5,
+      'tax_query' => array(
+        array(
+          'taxonomy' => 'annee-scolaire',
+          'field' => 'term_id',
+          'terms' => 218,
+          'include_children' => false,
+          'operator' => 'NOT IN',
+        ),
+      ),
     );
-    $queryPage = new WP_Query($argsPage);
+    $queryInfo = new WP_Query($argsInfo);
 
-    if ($queryPage && $queryPage->have_posts()):
-      while ($queryPage->have_posts()):
-        $queryPage->the_post();
-        $pageContent = get_the_content();
+    if ($queryInfo && $queryInfo->have_posts()):
+      while ($queryInfo->have_posts()):
+        $queryInfo->the_post();
+        $champs = get_fields();
+        $infoResume = $champs['info_resume'];
     ?>
 
         <div class="info-item">
           <h2><?= the_title(); ?></h2>
-          <h4><?= get_the_date(); ?></h4>
+          <a href="<?= get_field('info_lien'); ?>" target="_blank">
+            <h4><?= get_field('info_date'); ?></h4>
+          </a>
+          <div><?= get_field('info_resume'); ?></div>
         </div>
 
     <?php
       endwhile;
     endif;
+    wp_reset_postdata();
     ?>
   </section>
 
