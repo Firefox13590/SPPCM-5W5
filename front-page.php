@@ -1,5 +1,5 @@
 <?php
-require(__DIR__ . '/utils/oneShotScripts/infolettres.php');
+// require(__DIR__ . '/utils/oneShotScripts/infolettres.php');
 ?>
 FRONT PAGE ENFANT <br>
 
@@ -53,14 +53,11 @@ get_header();
   <section id="acces-rapide-info">
     <h1>Infolettres</h1>
     <?php
-    $pageInfolettres = get_page_by_path('infolettre-accueil');
     $argsPage = array(
       'post_type' => 'page',
-      'post_status' => 'publish',
-      'post_parent' => $pageInfolettres ? $pageInfolettres->ID : 0,
+      'post_parent' => 5569,
     );
-    // Sans page parent, ne pas afficher d'autres pages à la place des infolettres.
-    $queryPage = $pageInfolettres && $pageInfolettres->post_status === 'publish' ? new WP_Query($argsPage) : null;
+    $queryPage = new WP_Query($argsPage);
 
     if ($queryPage && $queryPage->have_posts()):
       while ($queryPage->have_posts()):
@@ -75,12 +72,7 @@ get_header();
 
     <?php
       endwhile;
-    else:
-    ?>
-      <p>Aucune infolettre n’est disponible pour le moment.</p>
-    <?php
     endif;
-    wp_reset_postdata();
     ?>
   </section>
 
@@ -109,12 +101,6 @@ get_header();
     <?php endfor; ?>
   </section>
 </main>
-
-<div>
-  <?php
-  DebugPostContent();
-  ?>
-</div>
 
 <?php
 get_sidebar();
