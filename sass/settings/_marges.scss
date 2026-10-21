@@ -1,60 +1,21 @@
 /*--------------------------------------------------------------------
 # Marges
 --------------------------------------------------------------------*/
+$margeHalf:0.25em;
+$margeXXXS:0.5em;
+$margeXXS:1em;
+$margeXS:1.5em;
+$margeS:2em;
+$margeM:2.5em;
+$margeL:3em;
+$margeXL:4em;
+$margeXXL:5em;
+$margeXXXL:5.5em;
 
 
-// changer page pour utiliser @mixin
-@mixin margePage() {
-  margin-top: 1em;
-  margin-bottom:1em;
-  margin-left: 1em;
-  margin-right: 1em;
-}
-
-@mixin margeSection() {
-  margin-top: 1em;
-  margin-bottom:1em;
-  margin-left: 1em;
-  margin-right: 1em;
-}
-
-@mixin margeTexte() {
-  margin-top: 1em;
-  margin-bottom:1em;
-  margin-left: 1em;
-  margin-right: 1em;
-}
-
-@mixin margeInfolettre() {
-  margin-top: 1em;
-  margin-bottom:1em;
-  margin-left: 1em;
-  margin-right: 1em;
-}
-
-@mixin margeArticle(){
-  margin-top: 1em;
-  margin-bottom:1em;
-  margin-left: 1em;
-  margin-right: 1em;
-}
-
-@mixin margeImage(){
-    margin-top: 1em;
-    margin-bottom:1em;
-    margin-left: 1em;
-    margin-right: 1em;
-}
-
-@mixin margeNavigation() {
-  margin-top: 1em;
-  margin-bottom:1em;
-  margin-left: 1em;
-  margin-right: 1em;
-}
-
-$margeFooterHaut: 1em;
-
-$margeHeaderBas: 1em;
 
 
+//Gutter
+$gutterMobile: 2em;
+$gutterTablet: 2em;
+$gutterPC: 5em;
