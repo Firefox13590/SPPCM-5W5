@@ -1,5 +1,23 @@
 <?php
 // require(__DIR__ . '/utils/oneShotScripts/infolettres.php');
+
+$formatteurLisible = datefmt_create(
+  'fr_CA',
+  IntlDateFormatter::NONE,
+  IntlDateFormatter::NONE,
+  'America/Toronto',
+  IntlDateFormatter::GREGORIAN,
+  'd MMMM yyyy'
+);
+$formatteurLogique = datefmt_create(
+  'fr_CA',
+  IntlDateFormatter::NONE,
+  IntlDateFormatter::NONE,
+  'America/Toronto',
+  IntlDateFormatter::GREGORIAN,
+  'yyyyMMdd'
+);
+
 ?>
 FRONT PAGE ENFANT <br>
 
@@ -66,20 +84,20 @@ get_header();
           'operator' => 'NOT IN',
         ),
       ),
+      'orderby' => 'meta_value_num',
+      'meta_key' => 'info_date',
     );
     $queryInfo = new WP_Query($argsInfo);
 
     if ($queryInfo && $queryInfo->have_posts()):
       while ($queryInfo->have_posts()):
         $queryInfo->the_post();
-        $champs = get_fields();
-        $infoResume = $champs['info_resume'];
+        $infoDate = get_field('info_date');
     ?>
 
         <div class="info-item">
-          <h2><?= the_title(); ?></h2>
           <a href="<?= get_field('info_lien'); ?>" target="_blank">
-            <h4><?= get_field('info_date'); ?></h4>
+            <h2><?= datefmt_format($formatteurLisible, datefmt_parse($formatteurLogique, $infoDate)); ?></h2>
           </a>
           <div><?= get_field('info_resume'); ?></div>
         </div>
