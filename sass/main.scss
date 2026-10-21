@@ -26,10 +26,10 @@
 
 //  paramètres
 @use "settings/normalize";
-@use "settings/colors";
+@use "settings/couleurs";
 
 // styles
 // @use "general";
 // @use "header";
-// @use "footer";
-@use "readme";
+@use "_footer";
+// @use "readme";

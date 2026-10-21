@@ -1,6 +1,23 @@
-@use './settings/colors' as *;
-
-
+@use "./settings/couleurs";
+ 
+ 
 footer {
-    background-color: $colorPrimary;
+    background-color: #f00;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+& img{
+    // width: 40px !important;
+    height: 3rem !important;
 }
+& #logo{
+    // width:50%;
+    height:8rem;
+    // height: auto;
+}
+& .reseaux ul{
+    display: flex;
+    flex-direction: row;
+}
+}
+ 

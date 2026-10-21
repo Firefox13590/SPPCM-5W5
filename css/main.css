@@ -24,50 +24,26 @@
  */
 @import '/node_modules/normalize.css/normalize.css';
 @import '/node_modules/modern-normalize/modern-normalize.css';
-/* 
-    STYLES GÉNÉRAUX
-*/
-*,
-::before,
-::after {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-h1 {
-  font-size: 5em;
-}
-
-p {
-  font-family: "Courier New", Courier, monospace;
-}
-
-/* 
-  HEADER
-*/
-header {
-  background-color: red;
-}
-header nav {
+/*--------------------------------------------------------------------
+Couleurs
+--------------------------------------------------------------------*/
+/* Couleurs globales */
+/* Couleurs containers */
+footer {
+  background-color: #f00;
   display: flex;
-  justify-content: space-around;
+  flex-direction: column;
   align-items: center;
 }
-header nav span.nav-item {
-  background-color: black;
-  color: red;
+footer img {
+  height: 3rem !important;
 }
-header nav span.nav-item:hover {
-  background-color: white;
-  color: blue;
+footer #logo {
+  height: 8rem;
 }
-
-/* 
-  FOOTER
-*/
-footer {
-  background-color: red;
+footer .reseaux ul {
+  display: flex;
+  flex-direction: row;
 }
 
 /*# sourceMappingURL=main.css.map */
