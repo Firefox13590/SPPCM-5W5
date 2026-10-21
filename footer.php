@@ -1,5 +1,5 @@
 <!-- Ici ce trouve 67 (coordonnées)-->
-<nav>
+<!-- <nav>
     <ul>
         <li>
             <a href="sppcm@cmaisonneuve.qc.ca">Icône de email</a>
@@ -11,7 +11,9 @@
             <a href="3800, rue Sherbrooke Est, Local : A-4452 Montréal (Québec) H1X 2A2">Icône de point</a>
         </li>
     </ul>
-</nav>
+</nav> -->
+
+<img src="http://localhost/SPPCM/wordpress/wp-content/uploads/2018/02/sppcm_logo_rgb.png" alt="Logo SPPCM">
 
 <!-- Ici ce trouve 66 (réseaux sociaux)-->
 <nav>
