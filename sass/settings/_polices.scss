@@ -1,0 +1,20 @@
+/*--------------------------------------------------------------------
+# Polices
+--------------------------------------------------------------------*/
+/* Polices */
+@import url("https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;600;700&family=Syne:wght@400;500;600;700;800&display=swap");
+  /* H2 */
+  $policeH2: "Syne", sans-serif;
+  $policeH2TaillePC: 4em;
+  $policeH2TailleTablette: 3em;
+  $policeH2TailleMobile: 2em;
+  $policeH2Weight: 720;
+  /* H3 */
+  $policeH3: "Syne", sans-serif;
+  $policeH3Taille: 1.5em;
+  $policeH3Weight: 700;
+  /* P */
+  $policeP: "Lexend", sans-serif;
+  $policePTailleMobile: 1em;
+  $policePTaille: 1.5em;
+  $policePWeight: 500;
