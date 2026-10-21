@@ -10,9 +10,6 @@
         <li>
             <a href="3800, rue Sherbrooke Est, Local : A-4452 Montréal (Québec) H1X 2A2">Icône de point</a>
         </li>
-        <li>
-            <a href="(514) 254-4371">Icône de telecopieur</a>
-        </li>
     </ul>
 </nav>
 
@@ -30,6 +27,27 @@
         </li>
         <li>
             <a href="https://fneeq.qc.ca/fr/accueil/">Icône FNEEQ</a>
+        </li>
+    </ul>
+</nav>
+
+<!-- Ici ce trouve les partenaires de la SPPCM-->
+<nav>
+    <ul>
+        <li>
+            <p>Nos fières partenaires:</p>
+        </li>
+        <li>
+            <a href="https://www.frontcommun.org/">Négo table centrale CSN</a>
+        </li>
+        <li>
+            <a href="https://fneeq.qc.ca/fr/">Négo table sectorielle FNEEQ</a>
+        </li>
+        <li>
+            <a href="https://www.nonauxhausses.org/">Coalition main rouge</a>
+        </li>
+        <li>
+            <a href="https://secteurpublic.quebec/">La Planète s’invite au travail</a>
         </li>
     </ul>
 </nav>
