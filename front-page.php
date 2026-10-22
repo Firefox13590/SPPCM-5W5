@@ -41,7 +41,7 @@ get_header();
 
 <main id="front-page">
   <section id="acces-rapide-actu">
-    <h1>Actualités</h1>
+    <h2>Actualités</h2>
 
     <?php
     if (have_posts()) :
@@ -49,11 +49,16 @@ get_header();
       $wp_query->post_count = 5;
       while (have_posts()):
         the_post();
+
+        $actuImgCouverture = get_the_post_thumbnail();
+        // var_dump($actuImgCouverture);
     ?>
 
         <article class="actu-item">
           <figure>
-            <img src="<?= the_post_thumbnail(); ?>">
+            <?php if ($actuImgCouverture !== ''): ?>
+              <img src="<?= $actuImgCouverture; ?>">
+            <?php endif; ?>
             <figcaption>
               <h2><?= the_title(); ?></h2>
               <h4><?= get_the_date(); ?></h4>
@@ -70,7 +75,7 @@ get_header();
   </section>
 
   <section id="acces-rapide-info">
-    <h1>Infolettres</h1>
+    <h2>Infolettres</h2>
     <?php
     $argsInfo = array(
       'post_type' => 'infolettre',
@@ -92,25 +97,32 @@ get_header();
     if ($queryInfo && $queryInfo->have_posts()):
       while ($queryInfo->have_posts()):
         $queryInfo->the_post();
+        // var_dump($queryInfo->current_post);
+
         $infoDate = get_field('info_date');
+        $infoDateTimestamp = datefmt_parse($formatteurLogique, $infoDate);
+        $infoDateFormattee = datefmt_format($formatteurLisible, $infoDateTimestamp);
+        // var_dump($infoDate);
+        // var_dump($infoDateTimestamp);
+        // var_dump($infoDateFormattee);
     ?>
 
-        <div class="info-item">
-          <a href="<?= get_field('info_lien'); ?>" target="_blank">
-            <h2><?= datefmt_format($formatteurLisible, datefmt_parse($formatteurLogique, $infoDate)); ?></h2>
-          </a>
-          <div><?= get_field('info_resume'); ?></div>
-        </div>
+        <a class="info-item <?php if ($queryInfo->current_post === 0) echo ('latest'); ?>"
+          href="<?= get_field('info_lien'); ?>" target="_blank">
+          <h2><?= $infoDateFormattee; ?></h2>
+        </a>
 
     <?php
       endwhile;
     endif;
     wp_reset_postdata();
     ?>
+
+    <a href="http://localhost/Refonte_SPPCM/wordpress/infolettre-accueil/" id="info-voir-plus">Voir plus</a>
   </section>
 
   <section id="acces-rapide-faq">
-    <h1>FAQ</h1>
+    <h2>FAQ</h2>
     <?php for ($i = 0; $i < 5; $i++): ?>
 
       <div class="faq-item">

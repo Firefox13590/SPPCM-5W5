@@ -14,7 +14,7 @@ export default class Accordeon {
   }
 
   Init() {
-    // console.log('classe Accordeon');
+    console.log('classe Accordeon');
     this.listeInputsCheck = document.querySelectorAll("input[type='checkbox']");
     // console.log(this.listeInputsCheck);
     this.listeInputsCheck.forEach(el => {
