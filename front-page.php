@@ -54,16 +54,18 @@ get_header();
         // var_dump($actuImgCouverture);
     ?>
 
-        <article class="actu-item">
-          <figure>
-            <?php if ($actuImgCouverture !== ''): ?>
-              <img src="<?= $actuImgCouverture; ?>">
-            <?php endif; ?>
-            <figcaption>
-              <h2><?= the_title(); ?></h2>
-              <h4><?= get_the_date(); ?></h4>
-            </figcaption>
-          </figure>
+        <article role="button" class="actu-item">
+          <a href="<?= the_permalink(); ?>">
+            <figure>
+              <?php if ($actuImgCouverture !== ''): ?>
+                <img src="<?= $actuImgCouverture; ?>">
+              <?php endif; ?>
+              <figcaption>
+                <h2><?= the_title(); ?></h2>
+                <h4><?= get_the_date(); ?></h4>
+              </figcaption>
+            </figure>
+          </a>
         </article>
 
     <?php
@@ -71,6 +73,10 @@ get_header();
     endif;
     wp_reset_postdata();
     ?>
+
+    <a role="button" href="http://localhost/Refonte_SPPCM/wordpress/category/actualite/" class="voir-plus">
+      <h2>Voir plus</h2>
+    </a>
 
   </section>
 
@@ -107,7 +113,7 @@ get_header();
         // var_dump($infoDateFormattee);
     ?>
 
-        <a class="info-item <?php if ($queryInfo->current_post === 0) echo ('latest'); ?>"
+        <a role="button" class="info-item <?php if ($queryInfo->current_post === 0) echo ('latest'); ?>"
           href="<?= get_field('info_lien'); ?>" target="_blank">
           <h2><?= $infoDateFormattee; ?></h2>
         </a>
@@ -118,14 +124,16 @@ get_header();
     wp_reset_postdata();
     ?>
 
-    <a href="http://localhost/Refonte_SPPCM/wordpress/infolettre-accueil/" id="info-voir-plus">Voir plus</a>
+    <a role="button" href="http://localhost/Refonte_SPPCM/wordpress/infolettre-accueil/" class="info-item voir-plus">
+      <h2>Voir plus</h2>
+    </a>
   </section>
 
   <section id="acces-rapide-faq">
     <h2>FAQ</h2>
     <?php for ($i = 0; $i < 5; $i++): ?>
 
-      <div class="faq-item">
+      <div role="button" class="faq-item">
         <input type="checkbox" name="cc-faq-<?= $i; ?>" id="cc-faq-<?= $i; ?>" class="none">
         <label class="faq-item-title" for="cc-faq-<?= $i; ?>">
           <span><?= $i + 1; ?></span>

@@ -13,7 +13,7 @@ body {
   color: black;
   background-color: #FFE8CE;
 
-  overflow-x: hidden;
+  // overflow: hidden;
 }
 
 main {
@@ -24,6 +24,11 @@ p {
   font-family: "Courier New", Courier, monospace;
   margin: 0;
   padding: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
 }
 
 .none {
