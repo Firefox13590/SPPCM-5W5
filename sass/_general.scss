@@ -1,6 +1,8 @@
 /* 
     STYLES GÉNÉRAUX
 */
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&family=Syne:wght@400..800&display=swap');
+
 *,
 ::before,
 ::after {
@@ -20,8 +22,17 @@ main {
   margin: 10vh 0;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Syne", sans-serif;
+}
+
 p {
-  font-family: "Courier New", Courier, monospace;
+  font-family: "Lexend", "Courier New", Courier, sans-serif, monospace;
   margin: 0;
   padding: 0;
 }

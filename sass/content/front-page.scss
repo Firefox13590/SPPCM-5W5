@@ -4,16 +4,41 @@ main#front-page {
   FRONT-PAGE (ACCUEIL)
   styles mobile
   */
-  &>section {
-    margin: 5vh 5vw;
+  @media only screen and (min-width: 992px) {
+    display: grid;
+    // grid-template-columns: repeat(3, 1fr);
+    // grid-template-rows: repeat(3, 1fr);
+    grid-template-areas:
+      "actu actu info"
+      "actu actu faq"
+      "actu actu faq"
+    ;
+    align-content: start;
+    // gap: calc(1vw + 1vh);
+    gap: 5%;
+
+    margin: 10vh 5vw;
   }
 
-  &>section>h2 {
-    align-self: flex-end;
+  &>section {
+    margin: 5vh 5vw;
 
-    @media only screen and (min-width: 768px) {
-      align-self: flex-start;
-      flex-basis: 100%;
+    @media only screen and (min-width: 992px) {
+      margin: 0;
+      align-self: start;
+    }
+
+    &>h2 {
+      align-self: flex-end;
+
+      @media only screen and (min-width: 768px) {
+        align-self: flex-start;
+        flex-basis: 100%;
+      }
+
+      @media only screen and (min-width: 992px) {
+        align-self: flex-end;
+      }
     }
   }
 
@@ -36,6 +61,13 @@ main#front-page {
       }
     }
 
+    @media only screen and (min-width: 992px) {
+      grid-area: actu;
+      justify-content: space-between;
+      align-items: start;
+      column-gap: 0;
+    }
+
     & article.actu-item {
       flex-basis: 5em;
       width: 90vw;
@@ -47,6 +79,14 @@ main#front-page {
 
         &:nth-of-type(1) {
           flex-basis: 90vw;
+        }
+      }
+
+      @media only screen and (min-width: 992px) {
+        flex-basis: 30%;
+
+        &:nth-of-type(1) {
+          flex-basis: 100%;
         }
       }
 
@@ -98,6 +138,13 @@ main#front-page {
         height: 5em;
       }
 
+      @media only screen and (min-width: 992px) {
+        // align-self: flex-end;
+        // flex: 0 0 30%;
+        // margin-left: 70%;
+        flex-basis: 100%;
+      }
+
       &>h2 {
         font-size: 2em;
       }
@@ -125,8 +172,18 @@ main#front-page {
       column-gap: 10vw;
     }
 
+    @media only screen and (min-width: 992px) {
+      grid-area: info;
+      flex-flow: column nowrap;
+      margin: 0;
+    }
+
     &>h2 {
       margin: 0 5vw;
+
+      @media only screen and (min-width: 992px) {
+        margin: 0;
+      }
     }
 
     & a {
@@ -147,6 +204,11 @@ main#front-page {
 
       @media only screen and (min-width: 768px) {
         flex: 0 0 40vw;
+      }
+
+      @media only screen and (min-width: 992px) {
+        flex-basis: 5em;
+        width: 100%;
       }
 
       & h2 {
@@ -177,6 +239,7 @@ main#front-page {
           left: .25em;
 
           text-transform: uppercase;
+          font-family: "Syne", sans-serif;
         }
       }
     }
@@ -214,11 +277,7 @@ main#front-page {
       }
 
       @media only screen and (min-width: 992px) {
-        transform: perspective(1cm) rotateY(178deg);
-      }
-
-      @media only screen and (min-width: 1200px) {
-        transform: perspective(1cm) rotateY(179deg);
+        all: initial;
       }
     }
   }
@@ -239,6 +298,11 @@ main#front-page {
       column-gap: 10vw;
     }
 
+    @media only screen and (min-width: 992px) {
+      grid-area: faq;
+      flex-flow: column nowrap;
+    }
+
     & div.faq-item {
       width: 90vw;
       box-shadow: 4px 4px 0 #E63C23;
@@ -246,6 +310,10 @@ main#front-page {
       @media only screen and (min-width: 768px) {
         flex: 0 0 40vw;
         width: auto;
+      }
+
+      @media only screen and (min-width: 992px) {
+        flex-basis: 100%;
       }
 
       & input:checked {
@@ -280,13 +348,14 @@ main#front-page {
             flex-basis: 100%;
 
             &:nth-child(2) {
-              text-align: center;
-            }
-
-            &:nth-child(3) {
               text-align: right;
             }
           }
+        }
+
+        @media only screen and (min-width: 992px) {
+          height: auto;
+          padding: .5em .75em;
         }
       }
 

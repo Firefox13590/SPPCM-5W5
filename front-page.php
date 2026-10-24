@@ -136,7 +136,6 @@ get_header();
       <div role="button" class="faq-item">
         <input type="checkbox" name="cc-faq-<?= $i; ?>" id="cc-faq-<?= $i; ?>" class="none">
         <label class="faq-item-title" for="cc-faq-<?= $i; ?>">
-          <span><?= $i + 1; ?></span>
           <h3>Question</h3>
           <span>+</span>
         </label>
