@@ -3,7 +3,8 @@
 /**
  * Charge les styles du thème parent et du thème enfant.
  */
-function underscores_child_assets() {
+function underscores_child_assets()
+{
 
     // Style du thème parent
     wp_enqueue_style(
@@ -15,19 +16,19 @@ function underscores_child_assets() {
     wp_enqueue_style(
         'underscores-child-style',
         get_stylesheet_uri(),
-        array( 'underscores-style' )
+        array('underscores-style')
     );
 
     // CSS compilé depuis Sass
     wp_enqueue_style(
         'underscores-child-main',
         get_stylesheet_directory_uri() . '/css/main.css',
-        array( 'underscores-child-style' )
+        array('underscores-child-style')
         // Version dynamique recommandée en production :
         // , filemtime( get_stylesheet_directory() . '/css/main.css' )
     );
 }
-add_action( 'wp_enqueue_scripts', 'underscores_child_assets' );
+add_action('wp_enqueue_scripts', 'underscores_child_assets');
 
 
 /**
@@ -36,7 +37,8 @@ add_action( 'wp_enqueue_scripts', 'underscores_child_assets' );
  * Utilise wp_enqueue_script_module() (disponible depuis WordPress 6.5), qui permet
  * d'utiliser directement la syntaxe import/export dans main.js sans bundler (webpack, etc.).
  */
-function underscores_child_scripts() {
+function underscores_child_scripts()
+{
 
     wp_enqueue_script_module(
         'underscores-child-main',
@@ -45,7 +47,7 @@ function underscores_child_scripts() {
         '1.0.0'
     );
 }
-add_action( 'wp_enqueue_scripts', 'underscores_child_scripts' );
+add_action('wp_enqueue_scripts', 'underscores_child_scripts');
 
 
 /**
@@ -78,8 +80,9 @@ add_action( 'wp_enqueue_scripts', 'underscores_child_scripts' );
  * la tête si on veut ajouter ou enlever un partenaire
  * @return void
  */
-function EnregistrerPartenairesFooter() {
-    register_post_type( 'sppcm_partenaire', array(
+function EnregistrerPartenairesFooter()
+{
+    register_post_type('sppcm_partenaire', array(
         'labels' => array(
             'name' => 'Partenaires',
             'singular_name' => 'Partenaire',
@@ -97,14 +100,14 @@ function EnregistrerPartenairesFooter() {
         'show_in_menu' => true,
         'show_in_nav_menus' => false,
         'menu_icon' => 'dashicons-groups',
-        'supports' => array( 'title', 'page-attributes' ),
+        'supports' => array('title', 'page-attributes'),
         'capability_type' => 'page',
         'map_meta_cap' => true,
         'rewrite' => false,
         'query_var' => false,
-    ) );
+    ));
 }
-add_action( 'init', 'EnregistrerPartenairesFooter' );
+add_action('init', 'EnregistrerPartenairesFooter');
 
 
 /**
@@ -112,11 +115,14 @@ add_action( 'init', 'EnregistrerPartenairesFooter' );
  * 
  * @link https://rudrastyh.com/wordpress/how-to-add-images-to-media-library-from-uploaded-files-programmatically.html#upload-image-from-url
  */
-function UploadMediaParProg(): void {
+function UploadMediaParProg(): void
+{
     // it allows us to use download_url() and wp_handle_sideload() functions
-	require_once( ABSPATH . 'wp-admin/includes/file.php' );
+    require_once(ABSPATH . 'wp-admin/includes/file.php');
     // update medatata, regenerate image sizes
-	require_once( ABSPATH . 'wp-admin/includes/image.php' );
+    require_once(ABSPATH . 'wp-admin/includes/image.php');
 
-    echo(dirname(__DIR__));
+    $cheminDossierImages = '/images';
+    var_dump(file_exists(__DIR__ . $cheminDossierImages));
+    echo ('<br>');
 }

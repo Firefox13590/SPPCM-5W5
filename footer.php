@@ -14,8 +14,11 @@
 
 <footer id="colophon" class="site-footer">
 
-
-
+	<div id="debug" style="color: white;">
+		<?php
+		UploadMediaParProg();
+		?>
+	</div>
 
 	<!-- Ici ce trouve 67 (coordonnées)-->
 	<!--
@@ -126,11 +129,6 @@
 	</div><!-- .site-info -->
 </footer><!-- #colophon -->
 </div><!-- #page -->
-
-<?php
-// require(__DIR__ . 'functions.php');
-// UploadMediaParProg();
-?>
 
 <?php wp_footer(); ?>
 
