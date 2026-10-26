@@ -1,5 +1,5 @@
 @use "./settings/couleurs";
- 
+
  
 footer {
     background-color: couleurs.$couleurTertiaire;
@@ -19,16 +19,17 @@ footer {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    
+    width:100vw;
 }
 & .reseaux ul{
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-between;
+    // width: 80vw;
 }
 & ul{
     list-style-type: none !important;
-
+    padding: 0 !important;
+    margin: 0 !important;
 }
 }
- 

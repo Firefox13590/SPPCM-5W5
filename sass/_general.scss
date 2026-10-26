@@ -9,6 +9,10 @@
   box-sizing: border-box;
 }
 
+html,body{
+  overflow-x: hidden;
+}
+
 h1 {
   font-size: 5em;
 }
