@@ -14,6 +14,47 @@
 
 <footer id="colophon" class="site-footer">
 
+
+
+
+	<!-- Ici ce trouve 67 (coordonnées)-->
+	<!--
+    <ul>
+        <li>
+            <a href="sppcm@cmaisonneuve.qc.ca">Icône de email</a>
+        </li>
+        <li>
+            <a href="(514) 254-7131">Icône de téléphone</a>
+        </li>
+        <li>
+            <a href="3800, rue Sherbrooke Est, Local : A-4452 Montréal (Québec) H1X 2A2">Icône de point</a>
+        </li>
+    </ul>
+ -->
+
+
+	<div id="logo">
+		<img src="http://localhost/Refonte_SPPCM/wordpress/wp-content/uploads/2018/02/cropped-sppcm_logo_rgb.png" alt="Logo SPPCM">
+	</div>
+
+	<!-- Ici ce trouve 66 (réseaux sociaux)-->
+	<div class="reseaux">
+		<ul>
+			<li>
+				<a href="https://www.facebook.com/SPPCMaisonneuve#"><img src="http://localhost/Refonte_SPPCM/wordpress/wp-content/uploads/2018/03/logo_fb.png" alt="facebook"></a>
+			</li>
+			<li>
+				<a href="mailto:sppcm@cmaisonneuve.qc.ca"><img src="http://localhost/Refonte_SPPCM/wordpress/wp-content/uploads/2018/03/logo_mail.png" alt="email"></a>
+			</li>
+			<li>
+				<a href="https://www.csn.qc.ca/"><img src="http://localhost/Refonte_SPPCM/wordpress/wp-content/uploads/2018/03/logo_csn.png" alt="CSN"></a>
+			</li>
+			<li>
+				<a href="https://fneeq.qc.ca/fr/accueil/"><img src="http://localhost/Refonte_SPPCM/wordpress/wp-content/uploads/2018/03/logo_fneeq.png" alt="FNEEQ"></a>
+			</li>
+		</ul>
+	</div>
+
 	<?php
 	$partenairesFooter = array();
 
@@ -69,46 +110,6 @@
 			</ul>
 		</section>
 	<?php endif; ?>
-
-
-
-<!-- Ici ce trouve 67 (coordonnées)-->
-<!--
-    <ul>
-        <li>
-            <a href="sppcm@cmaisonneuve.qc.ca">Icône de email</a>
-        </li>
-        <li>
-            <a href="(514) 254-7131">Icône de téléphone</a>
-        </li>
-        <li>
-            <a href="3800, rue Sherbrooke Est, Local : A-4452 Montréal (Québec) H1X 2A2">Icône de point</a>
-        </li>
-    </ul>
- -->
-
- 
-    <div>
-        <img id="logo" src="http://localhost/SPPCM/wordpress/wp-content/uploads/2018/02/sppcm_logo_rgb.png" alt="Logo SPPCM">
-    </div>
- 
-    <!-- Ici ce trouve 66 (réseaux sociaux)-->
-    <div class="reseaux">
-        <ul>
-            <li>
-                <a href="https://www.facebook.com/SPPCMaisonneuve#"><img src="http://localhost/SPPCM/wordpress/wp-content/uploads/2018/03/logo_fb.png" alt="facebook"></a>
-            </li>
-            <li>
-                <a href="sppcm@cmaisonneuve.qc.ca"><img src="http://localhost/SPPCM/wordpress/wp-content/uploads/2018/03/logo_mail.png" alt="email"></a>
-            </li>
-            <li>
-                <a href="https://www.csn.qc.ca/"><img src="http://localhost/SPPCM/wordpress/wp-content/uploads/2018/03/logo_csn.png" alt="CSN"></a>
-            </li>
-            <li>
-                <a href="https://fneeq.qc.ca/fr/accueil/"><img src="http://localhost/SPPCM/wordpress/wp-content/uploads/2018/03/logo_fneeq.png" alt="FNEEQ"></a>
-            </li>
-        </ul>
-    </div>
 
 	<div class="site-info">
 		<a href="<?php echo esc_url(__('https://wordpress.org/', 'underscores')); ?>">

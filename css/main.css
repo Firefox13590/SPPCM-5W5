@@ -30,20 +30,29 @@ Couleurs
 /* Couleurs globales */
 /* Couleurs containers */
 footer {
-  background-color: #f00;
+  background-color: #1f1f1f;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-footer img {
-  height: 3rem !important;
+footer .reseaux img {
+  height: 3rem;
 }
 footer #logo {
   height: 8rem;
 }
+footer .reseaux {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
 footer .reseaux ul {
   display: flex;
   flex-direction: row;
+  justify-content: center;
+}
+footer ul {
+  list-style-type: none !important;
 }
 
 /*# sourceMappingURL=main.css.map */
