@@ -15,25 +15,55 @@ Couleurs
   $couleurSectionFocusBlanc:#F3F3F3;
   $couleurSectionActiveBlanc:#F8F8F8;
   $couleurSectionDisabledBlanc:#D4D4D4;
+  
 
   /* Couleurs containers */
-  $couleurContainerPrincipalDefault: $couleurTertiaire;
-  $couleurContainerPrincipalHover:$couleurPrincipale;
-  $couleurContainerPrincipalActive:$couleurSectionActivePrincipale;
-  $couleurContainerPrincipalFocus:$couleurPrincipale;
-  $couleurContainerPrincipalDisabled:$couleurSectionDisabledPrimaire;
+  @mixin couleurContainerPrimaire($couleurTertiaire:#1f1f1f, $couleurPrincipale: #e63c23, $couleurSectionActivePrincipale:#F05640, $couleurSectionDisabledPrimaire:#949494) {
+    background-color: $couleurTertiaire;
+    &:hover {
+        background-color: $couleurPrincipale;
+    }
+    &:active {
+        background-color: $couleurSectionActivePrincipale;
+    }
+    &:focus {
+        background-color: $couleurPrincipale;
+    }
+    &:disabled {
+        background-color: $couleurSectionDisabledPrimaire;
+    }
+  }
 
-  $couleurContainerSecondaireDefault: $couleurPrincipale;
-  $couleurContainerSecondaireHover:$couleurPrincipale;
-  $couleurContainerSecondaireActive:$couleurSectionActiveSecondaire;
-  $couleurContainerSecondaireFocus:$couleurPrincipale;
-  $couleurContainerSecondaireDisabled:$couleurSectionDisabledSecondaire;
+  @mixin couleurContainerSecondaire($couleurPrincipale:#e63c23, $couleurSectionActiveSecondaire:#454545, $couleurSectionDisabledSecondaire:#CD6A5C) {
+    background-color: $couleurPrincipale;
+    &:hover {
+        background-color: $couleurPrincipale;
+    }
+    &:active {
+        background-color: $couleurSectionActiveSecondaire;
+    }
+    &:focus {
+        background-color: $couleurPrincipale;
+    }
+    &:disabled {
+        background-color: $couleurSectionDisabledSecondaire;
+    }
+  }
 
-  $couleurContainerTertiaireDefault:$couleurSecondaireBlanc;
-  $couleurContainerTertiaireHover:$couleurSectionHoverBlanc;
-  $couleurContainerTertiaireActive:$couleurSectionActiveBlanc;
-  $couleurContainerTertiaireFocus:$couleurSectionFocusBlanc;
-  $couleurContainerTertiaireDisabled:$couleurSectionDisabledBlanc;
+  @mixin couleurContainerTertiaire($couleurSecondaireBlanc:#fffcf8, $couleurSectionHoverBlanc:#F3F3F3, $couleurSectionActiveBlanc:#F8F8F8, $couleurSectionFocusBlanc:#F3F3F3, $couleurSectionDisabledBlanc:#D4D4D4) {
+    background-color: $couleurSecondaireBlanc;
+    &:hover {
+        background-color: $couleurSectionHoverBlanc;
+    }
+    &:active {
+        background-color: $couleurSectionActiveBlanc;
+    }
+    &:focus {
+        background-color: $couleurSectionFocusBlanc;
+    }
+    &:disabled {
+        background-color: $couleurSectionDisabledBlanc;
+    }
+  }
 
-  $couleurDropShadowPrincipale:$couleurPrincipale;
-  $couleurDropShadowTertiaire:$couleurTertiaire;
+  
