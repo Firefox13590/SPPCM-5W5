@@ -26,7 +26,7 @@ p {
   HEADER
 */
 header {
-  background-color: $color_primary;
+  background-color: $colorPrimary;
 
   & nav {
     display: flex;
@@ -35,7 +35,7 @@ header {
 
     & span.nav-item {
       background-color: black;
-      color: $color_primary;
+      color: $colorPrimary;
 
       &:hover {
         background-color: white;
@@ -51,5 +51,5 @@ header {
   FOOTER
 */
 footer {
-  background-color: $color_primary;
+  background-color: $colorPrimary;
 }

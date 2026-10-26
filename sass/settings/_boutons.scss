@@ -1,0 +1,13 @@
+
+
+
+@mixin Bouton($width, $height, $font-size, $padding, $border-radius, $background-color, $color, $border) {
+  width: $width;
+  height: $height;
+  font-size: $font-size;
+  padding: $padding;
+  border-radius: $border-radius;
+  background-color: $background-color;
+  color: $color;
+  border: $border;
+}

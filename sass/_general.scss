@@ -1,6 +1,8 @@
 /* 
     STYLES GÉNÉRAUX
 */
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&family=Syne:wght@400..800&display=swap');
+
 *,
 ::before,
 ::after {
@@ -9,10 +11,37 @@
   box-sizing: border-box;
 }
 
-h1 {
-  font-size: 5em;
+body {
+  color: black;
+  background-color: #FFE8CE;
+
+  // overflow: hidden;
+}
+
+main {
+  margin: 10vh 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Syne", sans-serif;
 }
 
 p {
-  font-family: "Courier New", Courier, monospace;
+  font-family: "Lexend", "Courier New", Courier, sans-serif, monospace;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.none {
+  display: none;
 }
