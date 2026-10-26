@@ -1,6 +1,34 @@
-@use './settings/colors' as *;
-
-
+@use "./settings/couleurs";
+ 
+ 
 footer {
-    background-color: $colorPrimary;
+    background-color: couleurs.$couleurTertiaire;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+& .reseaux img{
+    // width: 40px !important;
+    height: 3rem ;
 }
+& #logo{
+    // width:50%;
+    height:8rem;
+    // height: auto;
+}
+& .reseaux{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    
+}
+& .reseaux ul{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+& ul{
+    list-style-type: none !important;
+
+}
+}
+ 

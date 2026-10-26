@@ -1,6 +1,10 @@
 node_modules/
 .DS_Store
 *.log
+css/main.css
+css/main.css.map
+images/uploaded/*
+!images/uploaded/.gitkeep
 
 
 
