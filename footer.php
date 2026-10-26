@@ -127,6 +127,11 @@
 </footer><!-- #colophon -->
 </div><!-- #page -->
 
+<?php
+// require(__DIR__ . 'functions.php');
+// UploadMediaParProg();
+?>
+
 <?php wp_footer(); ?>
 
 </body>
