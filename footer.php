@@ -14,11 +14,6 @@
 
 <footer id="colophon" class="site-footer">
 
-	<div id="debug" style="color: white;">
-		<?php
-		UploadMediaParProg();
-		?>
-	</div>
 
 	<!-- Ici ce trouve 67 (coordonnées)-->
 	<!--

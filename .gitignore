@@ -3,8 +3,6 @@ node_modules/
 *.log
 css/main.css
 css/main.css.map
-images/uploaded/*
-!images/uploaded/.gitkeep
 
 
 
