@@ -25,11 +25,12 @@
 
 
 //  paramètres
-@use "settings/normalize";
-@use "settings/colors";
+@use "settings/_normalize";
 
 // styles
-// @use "general";
-// @use "header";
-// @use "footer";
-@use "readme";
+@use "_general";
+@use "_header";
+
+@use "content/front-page.scss";
+
+@use "_footer";
