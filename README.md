@@ -6,11 +6,12 @@ Projet web en équipe
 
 - MAMP 5.0.6
 - Wordpress 7.1-fr
-  - Advanced Custom Fields (ACF) 6.8.10+
+  - Advanced Custom Fields (ACF) 6.8.10
 - Git 2.54.0 (2.54.0.windows.1)+
 - Git LFS 3.7.1+
 - GitHub
 - Figma
+- NPM 11.16.0+
 
 ## Méthodologie
 
@@ -71,6 +72,8 @@ Projet web en équipe
 ### Particularités
 
 #### CSS/SCSS
+
+S'il y a des problèmes de style sur le site, utiliser la commande `npm run watch`.
 
 Pour les **requêtes média (media queries CSS/SCSS)** ce qui est permis:
 
