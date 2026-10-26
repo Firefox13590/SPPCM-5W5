@@ -1,0 +1,69 @@
+/*--------------------------------------------------------------------
+Couleurs
+--------------------------------------------------------------------*/
+/* Couleurs globales */
+  $couleurPrincipale: #e63c23;
+  $couleurSecondaireBeige: #ffe8ce;
+  $couleurSecondaireBlanc: #fffcf8;
+  $couleurTertiaire: #1f1f1f;
+
+  $couleurSectionActivePrincipale: #F05640;
+  $couleurSectionActiveSecondaire: #454545;
+  $couleurSectionDisabledPrimaire: #949494;
+  $couleurSectionDisabledSecondaire: #CD6A5C;
+  $couleurSectionHoverBlanc:#F3F3F3;
+  $couleurSectionFocusBlanc:#F3F3F3;
+  $couleurSectionActiveBlanc:#F8F8F8;
+  $couleurSectionDisabledBlanc:#D4D4D4;
+  
+
+  /* Couleurs containers */
+  @mixin couleurContainerPrimaire($couleurTertiaire:#1f1f1f, $couleurPrincipale: #e63c23, $couleurSectionActivePrincipale:#F05640, $couleurSectionDisabledPrimaire:#949494) {
+    background-color: $couleurTertiaire;
+    &:hover {
+        background-color: $couleurPrincipale;
+    }
+    &:active {
+        background-color: $couleurSectionActivePrincipale;
+    }
+    &:focus {
+        background-color: $couleurPrincipale;
+    }
+    &:disabled {
+        background-color: $couleurSectionDisabledPrimaire;
+    }
+  }
+
+  @mixin couleurContainerSecondaire($couleurPrincipale:#e63c23, $couleurSectionActiveSecondaire:#454545, $couleurSectionDisabledSecondaire:#CD6A5C) {
+    background-color: $couleurPrincipale;
+    &:hover {
+        background-color: $couleurPrincipale;
+    }
+    &:active {
+        background-color: $couleurSectionActiveSecondaire;
+    }
+    &:focus {
+        background-color: $couleurPrincipale;
+    }
+    &:disabled {
+        background-color: $couleurSectionDisabledSecondaire;
+    }
+  }
+
+  @mixin couleurContainerTertiaire($couleurSecondaireBlanc:#fffcf8, $couleurSectionHoverBlanc:#F3F3F3, $couleurSectionActiveBlanc:#F8F8F8, $couleurSectionFocusBlanc:#F3F3F3, $couleurSectionDisabledBlanc:#D4D4D4) {
+    background-color: $couleurSecondaireBlanc;
+    &:hover {
+        background-color: $couleurSectionHoverBlanc;
+    }
+    &:active {
+        background-color: $couleurSectionActiveBlanc;
+    }
+    &:focus {
+        background-color: $couleurSectionFocusBlanc;
+    }
+    &:disabled {
+        background-color: $couleurSectionDisabledBlanc;
+    }
+  }
+
+  

@@ -1,6 +1,6 @@
 export class Test {
     constructor() {
-        
+
 
         this.init();
     }
