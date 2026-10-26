@@ -37,7 +37,7 @@ Projet web en équipe
 - Structure standard pour un script JavaScript fonctionnel (même logique pour le code PHP): [**readme.js**](/js/readme.js).
 - Structure standard pour une feuille de styles CSS (même logique pour SASS): [**readme.css**](/css/readme.css), [**readme.scss**](/sass/_readme.scss).
   - Travailler uniquement avec les fichiers SCSS pour les styles; les fichiers css seront le résultat de la transpilation SCSS -> CSS.
-  - TOUJOURS penser aux styles suivant la méthode de travail _**mobile first**_.
+  - TOUJOURS penser aux styles en suivant la méthode de travail _**mobile first**_.
 
 #### Nomenclature
 
@@ -67,3 +67,20 @@ Projet web en équipe
 | RANGEES_MAX_PAR_PLATEFORME | RANGEES_MAX   | PLATEFORME          |                     |
 | $colorPrimary              | color         | Primary             |                     |
 | $colorPrimary              | couleur       | primaire            |                     |
+
+### Particularités
+
+#### CSS/SCSS
+
+Pour les **requêtes média (media queries CSS/SCSS)** ce qui est permis:
+
+- Imbriquer les media queries dans le bloc de déclarations (affectation de valeur à une propriété). Voir [front-page.scss](/sass/content/front-page.scss).
+- Mettre les requêtes média à l'extérieur d'un bloc de déclarations, mais les mettre après le bloc de déclarations cible pour que les styles s'appliquent. Voir [main.css](/css/main.css).
+
+Pour les **variables de styles**:
+
+Allez vous renseigner sur le [site officiel de SASS](https://sass-lang.com/). Rapellez-vous que ces variables vont être utilisées par d'autres personnes. Il doit y avoir une attention particulière sur les noms et l'implémentation des variables de manières à ce qu'elle soient pas trop chiantes a employer.
+
+#### ACF
+
+Pour **ACF**: préfixer les clés des champs ACF par le nom du champ (ou une portion du nom si celui-ci est long ou contient plusieurs mots).

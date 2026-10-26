@@ -6,15 +6,12 @@ main#front-page {
   */
   @media only screen and (min-width: 992px) {
     display: grid;
-    // grid-template-columns: repeat(3, 1fr);
-    // grid-template-rows: repeat(3, 1fr);
     grid-template-areas:
       "actu actu info"
       "actu actu faq"
       "actu actu faq"
     ;
     align-content: start;
-    // gap: calc(1vw + 1vh);
     gap: 5%;
 
     margin: 10vh 5vw;
@@ -54,6 +51,7 @@ main#front-page {
     @media only screen and (min-width: 768px) {
       flex-flow: row wrap;
       justify-content: center;
+      align-items: start;
       column-gap: 10vw;
 
       &>h2 {
@@ -139,9 +137,6 @@ main#front-page {
       }
 
       @media only screen and (min-width: 992px) {
-        // align-self: flex-end;
-        // flex: 0 0 30%;
-        // margin-left: 70%;
         flex-basis: 100%;
       }
 
