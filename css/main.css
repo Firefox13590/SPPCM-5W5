@@ -29,6 +29,25 @@ Couleurs
 --------------------------------------------------------------------*/
 /* Couleurs globales */
 /* Couleurs containers */
+/* 
+    STYLES GÉNÉRAUX
+*/
+*,
+::before,
+::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+h1 {
+  font-size: 5em;
+}
+
+p {
+  font-family: "Courier New", Courier, monospace;
+}
+
 footer {
   background-color: #1f1f1f;
   display: flex;
@@ -45,14 +64,17 @@ footer .reseaux {
   display: flex;
   flex-direction: row;
   justify-content: center;
+  width: 100vw;
 }
 footer .reseaux ul {
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: space-between;
 }
 footer ul {
   list-style-type: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
 }
 
 /*# sourceMappingURL=main.css.map */
