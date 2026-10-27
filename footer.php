@@ -97,7 +97,7 @@
 				<?php foreach ($partenairesFooter as $partenaireFooter) : ?>
 					<li class="partenaire-footer">
 						<?php if ($partenaireFooter['lien']) : ?>
-							<a href="<?php echo esc_url($partenaireFooter['lien']); ?>">
+							<a href="<?php echo esc_url($partenaireFooter['lien']); ?>" target="_blank" rel="noopener noreferrer">
 								<?php echo $partenaireFooter['image'];  ?>
 							</a>
 						<?php else : ?>
@@ -110,22 +110,15 @@
 	<?php endif; ?>
 
 	<div class="site-info">
-		<a href="<?php echo esc_url(__('https://wordpress.org/', 'underscores')); ?>">
-			<?php
-			/* translators: %s: CMS name, i.e. WordPress. */
-			printf(esc_html__('Proudly powered by %s', 'underscores'), 'WordPress');
-			?>
-		</a>
-		<span class="sep"> | </span>
-		<?php
-		/* translators: 1: Theme name, 2: Theme author. */
-		printf(esc_html__('Theme: %1$s by %2$s.', 'underscores'), 'underscores', '<a href="http://underscores.me/">Underscores.me</a>');
-		?>
+		COPYRIGTH 
 	</div><!-- .site-info -->
 </footer><!-- #colophon -->
 </div><!-- #page -->
 
 <?php wp_footer(); ?>
+
+
+
 
 </body>
 

@@ -7,9 +7,9 @@
  * Voir le bloc alternatif plus bas pour un pattern qui automatise cette étape via un
  * mapping HTML → classe JS.
  */
-import { Test } from './Test.js';
+//import { Test } from './Test.js';
 
-new Test();
+//new Test();
 
 
 /**
@@ -61,10 +61,9 @@ import { classesMapping } from './classMapping.js';
  *
  * À utiliser comme solution de repli au bloc d'import/instanciation de classe ci-dessus — pas en plus.
  */
-/*
+
 document.addEventListener('DOMContentLoaded', () => {
 
     console.log('main.js');
 
 });
-*/
