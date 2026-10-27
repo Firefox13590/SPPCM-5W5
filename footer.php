@@ -92,7 +92,7 @@
 
 	<?php if ($partenairesFooter) : ?>
 		<section class="partenaires-footer" aria-labelledby="titre-partenaires-footer">
-			<h2 id="titre-partenaires-footer"><?php esc_html_e('Nos partenaires', 'underscores-child'); ?></h2>
+			<!-- <h2 id="titre-partenaires-footer"><?php esc_html_e('Nos partenaires', 'underscores-child'); ?></h2> -->
 			<ul class="liste-partenaires-footer">
 				<?php foreach ($partenairesFooter as $partenaireFooter) : ?>
 					<li class="partenaire-footer">
@@ -110,7 +110,7 @@
 	<?php endif; ?>
 
 	<div class="site-info">
-		COPYRIGTH 
+		Copyright © 2023 SPPCM - Le Syndicat des professeures et professeurs du Collège Maisonneuve. Tous droits réservés.
 	</div><!-- .site-info -->
 </footer><!-- #colophon -->
 </div><!-- #page -->
