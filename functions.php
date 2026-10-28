@@ -3,7 +3,8 @@
 /**
  * Charge les styles du thème parent et du thème enfant.
  */
-function underscores_child_assets() {
+function underscores_child_assets()
+{
 
     // Style du thème parent
     wp_enqueue_style(
@@ -15,19 +16,19 @@ function underscores_child_assets() {
     wp_enqueue_style(
         'underscores-child-style',
         get_stylesheet_uri(),
-        array( 'underscores-style' )
+        array('underscores-style')
     );
 
     // CSS compilé depuis Sass
     wp_enqueue_style(
         'underscores-child-main',
         get_stylesheet_directory_uri() . '/css/main.css',
-        array( 'underscores-child-style' )
+        array('underscores-child-style')
         // Version dynamique recommandée en production :
         // , filemtime( get_stylesheet_directory() . '/css/main.css' )
     );
 }
-add_action( 'wp_enqueue_scripts', 'underscores_child_assets' );
+add_action('wp_enqueue_scripts', 'underscores_child_assets');
 
 
 /**
@@ -36,7 +37,8 @@ add_action( 'wp_enqueue_scripts', 'underscores_child_assets' );
  * Utilise wp_enqueue_script_module() (disponible depuis WordPress 6.5), qui permet
  * d'utiliser directement la syntaxe import/export dans main.js sans bundler (webpack, etc.).
  */
-function underscores_child_scripts() {
+function underscores_child_scripts()
+{
 
     wp_enqueue_script_module(
         'underscores-child-main',
@@ -45,7 +47,7 @@ function underscores_child_scripts() {
         '1.0.0'
     );
 }
-add_action( 'wp_enqueue_scripts', 'underscores_child_scripts' );
+add_action('wp_enqueue_scripts', 'underscores_child_scripts');
 
 
 /**

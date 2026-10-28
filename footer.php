@@ -15,8 +15,6 @@
 <footer id="colophon" class="site-footer">
 
 
-
-
 	<!-- Ici ce trouve 67 (coordonnées)-->
 	<!--
     <ul>
@@ -94,12 +92,12 @@
 
 	<?php if ($partenairesFooter) : ?>
 		<section class="partenaires-footer" aria-labelledby="titre-partenaires-footer">
-			<h2 id="titre-partenaires-footer"><?php esc_html_e('Nos partenaires', 'underscores-child'); ?></h2>
+			<!-- <h2 id="titre-partenaires-footer"><?php esc_html_e('Nos partenaires', 'underscores-child'); ?></h2> -->
 			<ul class="liste-partenaires-footer">
 				<?php foreach ($partenairesFooter as $partenaireFooter) : ?>
 					<li class="partenaire-footer">
 						<?php if ($partenaireFooter['lien']) : ?>
-							<a href="<?php echo esc_url($partenaireFooter['lien']); ?>">
+							<a href="<?php echo esc_url($partenaireFooter['lien']); ?>" target="_blank" rel="noopener noreferrer">
 								<?php echo $partenaireFooter['image'];  ?>
 							</a>
 						<?php else : ?>
@@ -112,27 +110,15 @@
 	<?php endif; ?>
 
 	<div class="site-info">
-		<a href="<?php echo esc_url(__('https://wordpress.org/', 'underscores')); ?>">
-			<?php
-			/* translators: %s: CMS name, i.e. WordPress. */
-			printf(esc_html__('Proudly powered by %s', 'underscores'), 'WordPress');
-			?>
-		</a>
-		<span class="sep"> | </span>
-		<?php
-		/* translators: 1: Theme name, 2: Theme author. */
-		printf(esc_html__('Theme: %1$s by %2$s.', 'underscores'), 'underscores', '<a href="http://underscores.me/">Underscores.me</a>');
-		?>
+		Copyright © 2023 SPPCM - Le Syndicat des professeures et professeurs du Collège Maisonneuve. Tous droits réservés.
 	</div><!-- .site-info -->
 </footer><!-- #colophon -->
 </div><!-- #page -->
 
-<?php
-// require(__DIR__ . 'functions.php');
-// UploadMediaParProg();
-?>
-
 <?php wp_footer(); ?>
+
+
+
 
 </body>
 
