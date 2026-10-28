@@ -14,6 +14,7 @@
 
 <footer id="colophon" class="site-footer">
 
+	<div class="footer-content">
 
 	<!-- Ici ce trouve 67 (coordonnées)-->
 	<!--
@@ -108,6 +109,8 @@
 			</ul>
 		</section>
 	<?php endif; ?>
+	
+	</div><!-- .footer-content -->
 
 	<div class="site-info">
 		Copyright © 2023 SPPCM - Le Syndicat des professeures et professeurs du Collège Maisonneuve. Tous droits réservés.

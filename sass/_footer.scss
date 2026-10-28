@@ -1,13 +1,13 @@
 @use "./settings/couleurs";
 
 
-footer {
+.footer-content {
     background-color: couleurs.$couleurTertiaire;
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 2.5rem;
-
+    padding-bottom:2.5rem;
     & .reseaux img {
         // width: 40px !important;
         height: 2.5rem;
@@ -43,23 +43,23 @@ footer {
         padding: 0 !important;
         margin: 0 !important;
     }
-    & .site-info{
-        text-align: center;
-        color: couleurs.$couleurSecondaireBlanc;
-
-
-        // border: 2px solid red;
-    }
+    
     // & .liste-partenaires-footer{
     //     width : 25rem;
     //     height : 15rem;
     //     overflow: hidden;
     // }
+    & .liste-partenaires-footer{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
     & .partenaire-footer{
-        width : clamp(0rem, 100%, 25rem);
+        width : clamp(0rem, 80%, 25rem);
         height : 15rem;
         overflow: hidden;
-
+        box-shadow: 4px 4px 0px 0px couleurs.$couleurPrincipale;
+        
     }
     & .partenaire-footer img{
         width : 25rem;
@@ -68,11 +68,19 @@ footer {
 
     }
 }
+.site-info{
+        text-align: center;
+        color: couleurs.$couleurSecondaireBlanc;
+        background-color: couleurs.$couleurTertiaire;
+
+        // border: 2px solid red;
+    }
 @media (min-width: 834px) {
-    footer.site-footer{
+    .site-footer .footer-content{
         flex-direction: row;
         align-items: center;
-
+        padding:2.5rem;
     }
+    
 
 }
