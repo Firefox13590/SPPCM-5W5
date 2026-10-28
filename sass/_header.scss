@@ -1,6 +1,6 @@
-@use './settings/colors' as *;
+@use './settings/couleurs' as *;
 
 
 header {
-    background-color: $colorPrimary;
+    background-color: $couleurPrincipale;
 }

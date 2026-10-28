@@ -26,7 +26,8 @@ get_header();
       <h1>Page non trouvée</h1>
       <p>La page que vous recherchez n'existe pas ou a été déplacée.</p>
     <?php endif; ?>
-    <p><a href="<?php echo esc_url($lienAccueil); ?>">Retour à l’accueil</a></p>
+    <a class="btn-retour" href="<?php echo esc_url($lienAccueil); ?>"><span>Retour à l'accueil </span>
+    <span class="btn-retour__fleche" aria-hidden="true">→</span></a>
   </section>
 </main>
 
