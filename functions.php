@@ -84,6 +84,7 @@ function remove_editor()
     // ajouter la clé du post type dans ce array pour inclure d'autres post types
     $targetPostTypes = array(
         'infolettre',
+        'membre-executif',
     );
     foreach ($targetPostTypes as $targetPostType) {
         remove_post_type_support($targetPostType, 'editor');

@@ -15,7 +15,7 @@ export default class Accordeon {
 
   Init() {
     console.log('classe Accordeon');
-    this.listeInputsCheck = document.querySelectorAll("input[type='checkbox']");
+    this.listeInputsCheck = document.querySelectorAll(".js-accordeon input[type='checkbox']");
     // console.log(this.listeInputsCheck);
     this.listeInputsCheck.forEach(el => {
       el.addEventListener("click", () => this.SetActiveCheck(el));
