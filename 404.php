@@ -46,12 +46,6 @@ get_header();
                     <span>Retour à l’accueil</span>
                     <span aria-hidden="true">→</span>
                 </a>
-
-                <?php if ($erreurService) : ?>
-                    <a class="btn-reessayer" href="<?php echo esc_url(home_url('/')); ?>">
-                        Réessayer
-                    </a>
-                <?php endif; ?>
             </div>
         </div>
     </section>
