@@ -50,27 +50,6 @@
             "append": ""
         },
         {
-            "key": "field_6ae7ca633d721",
-            "label": "Poste",
-            "name": "comite_poste",
-            "aria-label": "",
-            "type": "text",
-            "instructions": "Mettre ici le poste actuel du membre au sein du collège (postes enseignant).",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "maxlength": "",
-            "allow_in_bindings": 0,
-            "placeholder": "Enseignant en Biologie",
-            "prepend": "",
-            "append": ""
-        },
-        {
             "key": "field_6ae7cb953d722",
             "label": "Role",
             "name": "comite_role",
@@ -88,6 +67,27 @@
             "maxlength": "",
             "allow_in_bindings": 0,
             "placeholder": "Président(e)",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_6ae7ca633d721",
+            "label": "Poste",
+            "name": "comite_poste",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Mettre ici le poste actuel du membre au sein du collège (postes enseignant).",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "placeholder": "Enseignant en Biologie",
             "prepend": "",
             "append": ""
         },
@@ -134,5 +134,5 @@
     "display_title": "",
     "allow_ai_access": false,
     "ai_description": "",
-    "modified": 1793577066
+    "modified": 1793629505
 }
