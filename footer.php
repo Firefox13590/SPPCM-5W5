@@ -16,8 +16,8 @@
 
 	<div class="footer-content">
 
-	<!-- Ici ce trouve 67 (coordonnées)-->
-	<!--
+		<!-- Ici ce trouve 67 (coordonnées)-->
+		<!--
     <ul>
         <li>
             <a href="sppcm@cmaisonneuve.qc.ca">Icône de email</a>
@@ -31,85 +31,88 @@
     </ul>
  -->
 
+		<div class="groupe-infos">
 
-	<div id="logo">
-		<img src="http://localhost/Refonte_SPPCM/wordpress/wp-content/uploads/2018/02/cropped-sppcm_logo_rgb.png" alt="Logo SPPCM">
-	</div><!-- #logo -->
+			<div id="logo">
+				<img src="http://localhost/Refonte_SPPCM/wordpress/wp-content/uploads/2018/02/cropped-sppcm_logo_rgb.png" alt="Logo SPPCM">
+			</div><!-- #logo -->
 
-	<!-- Ici ce trouve 66 (réseaux sociaux)-->
-	<div class="reseaux">
-		<ul>
-			<li>
-				<a href="https://www.facebook.com/SPPCMaisonneuve#"><img src="http://localhost/Refonte_SPPCM/wordpress/wp-content/uploads/2018/03/logo_fb.png" alt="facebook"></a>
-			</li>
-			<li>
-				<a href="mailto:sppcm@cmaisonneuve.qc.ca"><img src="http://localhost/Refonte_SPPCM/wordpress/wp-content/uploads/2018/03/logo_mail.png" alt="email"></a>
-			</li>
-			<li>
-				<a href="https://www.csn.qc.ca/"><img src="http://localhost/Refonte_SPPCM/wordpress/wp-content/uploads/2018/03/logo_csn.png" alt="CSN"></a>
-			</li>
-			<li>
-				<a href="https://fneeq.qc.ca/fr/accueil/"><img src="http://localhost/Refonte_SPPCM/wordpress/wp-content/uploads/2018/03/logo_fneeq.png" alt="FNEEQ"></a>
-			</li>
-		</ul>
-	</div><!-- .reseaux -->
+			<!-- Ici ce trouve 66 (réseaux sociaux)-->
+			<div class="reseaux">
+				<ul>
+					<li>
+						<a href="https://www.facebook.com/SPPCMaisonneuve#"><img src="http://localhost/Refonte_SPPCM/wordpress/wp-content/uploads/2018/03/logo_fb.png" alt="facebook"></a>
+					</li>
+					<li>
+						<a href="mailto:sppcm@cmaisonneuve.qc.ca"><img src="http://localhost/Refonte_SPPCM/wordpress/wp-content/uploads/2018/03/logo_mail.png" alt="email"></a>
+					</li>
+					<li>
+						<a href="https://www.csn.qc.ca/"><img src="http://localhost/Refonte_SPPCM/wordpress/wp-content/uploads/2018/03/logo_csn.png" alt="CSN"></a>
+					</li>
+					<li>
+						<a href="https://fneeq.qc.ca/fr/accueil/"><img src="http://localhost/Refonte_SPPCM/wordpress/wp-content/uploads/2018/03/logo_fneeq.png" alt="FNEEQ"></a>
+					</li>
+				</ul>
+			</div><!-- .reseaux -->
 
-	<?php
-	$partenairesFooter = array();
+		</div><!-- .groupe-infos -->
 
-	if (function_exists('get_field')) {
-		// Modification pour pharly: Créer un champ général "partenaires" qui peut prendre plusieurs valeurs
-		$publicationsPartenaires = get_posts(array(
-			'post_type' => 'sppcm_partenaire',
-			'post_status' => 'publish',
-			'numberposts' => -1,
-			'orderby' => array('menu_order' => 'ASC', 'title' => 'ASC', 'ID' => 'ASC'),
-		));
+		<?php
+		$partenairesFooter = array();
 
-		foreach ($publicationsPartenaires as $publicationPartenaire) {
-			$nomPartenaire = get_the_title($publicationPartenaire->ID);
-			$imagePartenaire = absint(get_field('imagePartenaire', $publicationPartenaire->ID));
-			$lienPartenaire = esc_url(get_field('lienPartenaire', $publicationPartenaire->ID) ?: '', array('http', 'https'));
-			$balisageImagePartenaire = '';
+		if (function_exists('get_field')) {
+			// Modification pour pharly: Créer un champ général "partenaires" qui peut prendre plusieurs valeurs
+			$publicationsPartenaires = get_posts(array(
+				'post_type' => 'sppcm_partenaire',
+				'post_status' => 'publish',
+				'numberposts' => -1,
+				'orderby' => array('menu_order' => 'ASC', 'title' => 'ASC', 'ID' => 'ASC'),
+			));
 
-			if ($imagePartenaire) {
-				$balisageImagePartenaire = wp_get_attachment_image(
-					$imagePartenaire,
-					'medium',
-					false,
-					array('alt' => $nomPartenaire)
-				);
-			}
+			foreach ($publicationsPartenaires as $publicationPartenaire) {
+				$nomPartenaire = get_the_title($publicationPartenaire->ID);
+				$imagePartenaire = absint(get_field('imagePartenaire', $publicationPartenaire->ID));
+				$lienPartenaire = esc_url(get_field('lienPartenaire', $publicationPartenaire->ID) ?: '', array('http', 'https'));
+				$balisageImagePartenaire = '';
 
-			if ('' !== trim($nomPartenaire) && $balisageImagePartenaire) {
-				$partenairesFooter[] = array(
-					'image' => $balisageImagePartenaire,
-					'lien' => $lienPartenaire,
-				);
+				if ($imagePartenaire) {
+					$balisageImagePartenaire = wp_get_attachment_image(
+						$imagePartenaire,
+						'medium',
+						false,
+						array('alt' => $nomPartenaire)
+					);
+				}
+
+				if ('' !== trim($nomPartenaire) && $balisageImagePartenaire) {
+					$partenairesFooter[] = array(
+						'image' => $balisageImagePartenaire,
+						'lien' => $lienPartenaire,
+					);
+				}
 			}
 		}
-	}
-	?>
+		?>
 
-	<?php if ($partenairesFooter) : ?>
-		<section class="partenaires-footer" aria-labelledby="titre-partenaires-footer">
-			<!-- <h2 id="titre-partenaires-footer"><?php esc_html_e('Nos partenaires', 'underscores-child'); ?></h2> -->
-			<ul class="liste-partenaires-footer">
-				<?php foreach ($partenairesFooter as $partenaireFooter) : ?>
-					<li class="partenaire-footer">
-						<?php if ($partenaireFooter['lien']) : ?>
-							<a href="<?php echo esc_url($partenaireFooter['lien']); ?>" target="_blank" rel="noopener noreferrer">
-								<?php echo $partenaireFooter['image'];  ?>
-							</a>
-						<?php else : ?>
-							<?php echo $partenaireFooter['image']; ?>
-						<?php endif; ?>
-					</li>
-				<?php endforeach; ?>
-			</ul>
-		</section>
-	<?php endif; ?>
-	
+		<?php if ($partenairesFooter) : ?>
+			<section class="partenaires-footer" aria-labelledby="titre-partenaires-footer">
+				<!-- <h2 id="titre-partenaires-footer"><?php esc_html_e('Nos partenaires', 'underscores-child'); ?></h2> -->
+				<ul class="liste-partenaires-footer">
+					<?php foreach ($partenairesFooter as $partenaireFooter) : ?>
+						<li class="partenaire-footer">
+							<?php if ($partenaireFooter['lien']) : ?>
+								<a href="<?php echo esc_url($partenaireFooter['lien']); ?>" target="_blank" rel="noopener noreferrer">
+									<?php echo $partenaireFooter['image'];  ?>
+								</a>
+							<?php else : ?>
+								<?php echo $partenaireFooter['image']; ?>
+							<?php endif; ?>
+						</li>
+					<?php endforeach; ?>
+				</ul>
+			</section>
+		<?php endif; ?>
+
 	</div><!-- .footer-content -->
 
 	<div class="site-info">
