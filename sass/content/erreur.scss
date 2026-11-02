@@ -1,37 +1,178 @@
-#error-404{
-    // APPROCHE MOBILE FIRST
- .btn-retour{
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap:0.75em;
+@use "../settings/couleurs" as *;
 
-    padding: 0.875em 1.5em;
-    border: 0.125rem solide;
-    border-radius: 0;
+/*
+    STYLES GÉNÉRAUX
+*/
+.page-erreur {
+    margin: 0;
+    padding: 2.5rem 1.25rem 3.5rem;
+    background: $couleurSecondaireBeige;
+}
 
-;
-    }
-
-
+/*
+    CONTENU DE LA PAGE D’ERREUR
+*/
+#error-404 {
     width: 100%;
-    padding: 2.5rem 1.25rem;
+    max-width: 72rem;
     min-height: 60vh;
-
+    margin: auto;
+    padding: 2rem 1.25rem;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    gap: 2rem;
+    border: 0.1875rem solid $couleurTertiaire;
+    box-shadow: 0.5rem 0.5rem $couleurTertiaire;
+    color: $couleurTertiaire;
     text-align: center;
-    gap: 1.5rem;
 
-    // DIMENSIONS IPAD
-    @media only screen and (min-width: 768px) {
-        padding: 3.75rem 2.5rem;
+    // Numéro de l’erreur style
+    .code-erreur {
+        padding: 0.75rem 1rem;
+        background: $couleurPrincipale;
+        border: 0.1875rem solid $couleurTertiaire;
+        box-shadow: 0.375rem 0.375rem $couleurTertiaire;
+        font-family: "Syne", sans-serif;
+        font-size: clamp(4rem, 15vw, 10rem);
+        font-weight: 800;
+        line-height: 1;
+        letter-spacing: -0.06em;
+        transform: rotate(-4deg);
     }
 
-    // DIMENSIONS DESKTOP
-    @media only screen and (min-width: 992px) {
-        padding: 5rem 3.75rem;
+    // Titre et message
+    .contenu-erreur {
+        min-width: 0;
+        max-width: 36rem;
+    }
+
+    h1 {
+        margin: 0 0 1rem;
+        font-size: clamp(1.75rem, 4vw, 3rem);
+        font-weight: 800;
+        line-height: 1.15;
+        overflow-wrap: normal;
+        word-break: normal;
+    }
+
+    &.erreur-service h1 {
+        font-size: clamp(1.25rem, 2.5vw, 2rem);
+        line-height: 1.25;
+    }
+
+    p {
+        font-size: 1rem;
+        line-height: 1.7;
+    }
+
+    /*
+        BOUTONS
+    */
+    .actions-erreur {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1.25rem;
+        margin-top: 2rem;
+
+        a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.75em;
+            min-height: 3rem;
+            padding: 0.875em 1.25em;
+            border: 0.1875rem solid $couleurTertiaire;
+            box-shadow: 0.25rem 0.25rem $couleurPrincipale;
+            background: $couleurSecondaireBeige;
+            color: $couleurTertiaire;
+            font-family: "Lexend", sans-serif;
+            font-weight: 600;
+            text-decoration: none;
+
+            // Navigation au clavier
+            &:focus-visible {
+                outline: 0.1875rem solid $couleurTertiaire;
+                outline-offset: 0.375rem;
+            }
+
+            // Bouton appuyé
+            &:active {
+                transform: translate(0.25rem, 0.25rem);
+                box-shadow: none;
+            }
+        }
+
+        .btn-retour {
+            background: $couleurTertiaire;
+            color: $couleurSecondaireBlanc;
+        }
+    }
+
+    // Hover des boutons
+    @media (hover: hover) {
+        .actions-erreur a:hover {
+            background: $couleurPrincipale;
+            color: $couleurTertiaire;
+            box-shadow: 0.25rem 0.25rem $couleurTertiaire;
+        }
+    }
+
+    /*
+        IPAD
+    */
+    @media (min-width: 48em) {
+        padding: 3.5rem 2.5rem;
+        gap: 3rem;
+    }
+
+    /*
+        PC
+    */
+    @media (min-width: 62em) {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1.3fr);
+        padding: 4rem 3rem;
+        gap: 4rem;
+        text-align: left;
+
+        .code-erreur {
+            justify-self: center;
+            font-size: clamp(4rem, 8vw, 7rem);
+        }
+
+        .actions-erreur {
+            justify-content: flex-start;
+        }
+    }
+}
+
+/*
+    POSITIONNEMENT DE LA PAGE
+*/
+body.error404,
+body:has(.page-erreur) {
+    #page {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .page-erreur {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    // Ajustement pour la barre d’admin wordpress prq la barre est placé bizarrement
+    &.admin-bar #page {
+        min-height: calc(100vh - 2rem);
+
+        @media (max-width: 48.875em) {
+            min-height: calc(100vh - 2.875rem);
+        }
     }
 }
