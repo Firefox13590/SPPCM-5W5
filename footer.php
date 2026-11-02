@@ -34,7 +34,7 @@
 
 	<div id="logo">
 		<img src="http://localhost/Refonte_SPPCM/wordpress/wp-content/uploads/2018/02/cropped-sppcm_logo_rgb.png" alt="Logo SPPCM">
-	</div>
+	</div><!-- #logo -->
 
 	<!-- Ici ce trouve 66 (réseaux sociaux)-->
 	<div class="reseaux">
@@ -52,7 +52,7 @@
 				<a href="https://fneeq.qc.ca/fr/accueil/"><img src="http://localhost/Refonte_SPPCM/wordpress/wp-content/uploads/2018/03/logo_fneeq.png" alt="FNEEQ"></a>
 			</li>
 		</ul>
-	</div>
+	</div><!-- .reseaux -->
 
 	<?php
 	$partenairesFooter = array();

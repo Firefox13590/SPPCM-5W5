@@ -75,12 +75,21 @@
 
         // border: 2px solid red;
     }
-@media (min-width: 834px) {
+@media (min-width: 768px) {
     .site-footer .footer-content{
         flex-direction: row;
         align-items: center;
         padding:2.5rem;
+    
+    & .reseaux{
+        width: 50%;
+    }
     }
     
+    
 
+}
+
+*{
+    // border:3px solid red !important;
 }
