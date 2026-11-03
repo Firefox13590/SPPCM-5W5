@@ -95,11 +95,11 @@
 		?>
 
 		<?php if ($partenairesFooter) : ?>
-			<section class="partenaires-footer" aria-labelledby="titre-partenaires-footer">
+			<section class="partenaires-footer swiper mySwiper" aria-labelledby="titre-partenaires-footer">
 				<!-- <h2 id="titre-partenaires-footer"><?php esc_html_e('Nos partenaires', 'underscores-child'); ?></h2> -->
-				<ul class="liste-partenaires-footer">
+				<ul class="liste-partenaires-footer swiper-wrapper">
 					<?php foreach ($partenairesFooter as $partenaireFooter) : ?>
-						<li class="partenaire-footer">
+						<li class="partenaire-footer swiper-slide">
 							<?php if ($partenaireFooter['lien']) : ?>
 								<a href="<?php echo esc_url($partenaireFooter['lien']); ?>" target="_blank" rel="noopener noreferrer">
 									<?php echo $partenaireFooter['image'];  ?>
@@ -110,6 +110,7 @@
 						</li>
 					<?php endforeach; ?>
 				</ul>
+				<div class="swiper-pagination"></div>
 			</section>
 		<?php endif; ?>
 
