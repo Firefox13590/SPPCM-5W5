@@ -88,3 +88,57 @@ function UploadMediaParProg(): void {
 
     echo(dirname(__DIR__));
 }
+
+/**TEST
+ * SIMON 
+ */
+function underscores_child_menus() {
+    register_nav_menus(
+        array(
+            'menu-1' => esc_html__( 'Header', 'underscores' ),
+            'menu-2' => esc_html__( 'Footer', 'underscores' ),
+        )
+    );
+}
+add_action( 'after_setup_theme', 'underscores_child_menus', 20 );
+
+
+
+/**
+ * Ajoute au Customizer une section de réglages propres au SPPCM.
+ *
+ * @param WP_Customize_Manager $wp_customize Objet du Customizer, fourni par le hook.
+ * @return void
+ */
+function underscores_child_parametres_ajustables( $wp_customize ) {
+	
+    // Section : regroupe les contrôles dans un panneau du Customizer (priorité 30 : sous l'identité du site).
+    $wp_customize->add_section( 
+		'sppcm_parametres_ajustables', 
+		array(
+			'title' => __( 'Contrôles personnalisés pour SPPCM' ),
+			'priority' => 30
+		)
+	);
+
+	/**
+     * Texte de présentation de l'organisation (footer).
+     */
+
+    // Réglage : définit la donnée stockée (en base de données, dans les options du thème).
+	$wp_customize->add_setting( 
+		'sppcm_presentation_syndicat_footer'
+	);
+
+    // Contrôle : le champ affiché dans l'interface, lié au réglage par le même identifiant.
+	$wp_customize->add_control( 
+        'sppcm_presentation_syndicat_footer', 
+        array(
+            'type' => 'textarea',
+            'label' => __( 'Présentation de l\'organisation dans le footer' ),
+            'section' => 'sppcm_parametres_ajustables'
+        ) 
+    );
+
+}
+add_action( 'customize_register', 'underscores_child_parametres_ajustables' );
