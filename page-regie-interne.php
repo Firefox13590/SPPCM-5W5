@@ -1,5 +1,3 @@
-blah
-
 <?php
 
 /**
@@ -11,9 +9,8 @@ get_header();
 ?>
 
 <main id="regie-interne">
-    <h2>Régie interne</h2>
-    <h3>Documents</h3>
-    test
+    <h2 id="titre-regie">Régie interne</h2>
+    <h3 id="titre-section-documents">Documents</h3>
     <?php
     $argRegie = array(
         'post_type' => 'regie_interne',
@@ -22,8 +19,10 @@ get_header();
         'order' => 'DESC'
     );
     $queryRegie = new WP_Query($argRegie);
-
-
+    
+?>
+    <div class="documents-regie">
+    <?php
     if ($queryRegie && $queryRegie->have_posts()):
         while ($queryRegie->have_posts()):
             $queryRegie->the_post();
@@ -33,7 +32,7 @@ get_header();
     ?>
             <article class="document-regie">
 
-                <h3><?php the_title(); ?></h3>
+                <h3 class="titre-document"><?php the_title(); ?></h3>
 
                 <?php if ($description) : ?>
                     <div class="description">
@@ -42,10 +41,10 @@ get_header();
                 <?php endif; ?>
 
                 <?php if ($lien) : ?>
-                    <a href="<?php echo esc_url($lien); ?>"
+                    <a class="lien-document-container" href="<?php echo esc_url($lien); ?>"
                         target="_blank"
                         rel="noopener noreferrer">
-                        Consulter le document
+                        Voir le document
                     </a>
                 <?php endif; ?>
 
@@ -59,6 +58,7 @@ get_header();
 
     wp_reset_postdata();
     ?>
+    </div>
 </main>
 
 
