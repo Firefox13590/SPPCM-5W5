@@ -1,4 +1,4 @@
-@use './settings/colors' as *;
+
 
 
 /* 
@@ -26,7 +26,7 @@ p {
   HEADER
 */
 header {
-  background-color: $colorPrimary;
+  background-color: red;
 
   & nav {
     display: flex;
@@ -35,7 +35,7 @@ header {
 
     & span.nav-item {
       background-color: black;
-      color: $colorPrimary;
+      color: red;
 
       &:hover {
         background-color: white;
@@ -51,5 +51,5 @@ header {
   FOOTER
 */
 footer {
-  background-color: $colorPrimary;
+  background-color: red;
 }
