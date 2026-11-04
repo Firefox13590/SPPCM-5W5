@@ -7,9 +7,11 @@
  * Voir le bloc alternatif plus bas pour un pattern qui automatise cette étape via un
  * mapping HTML → classe JS.
  */
-import { Test } from './Test.js';
+import { Test } from './modules/Test.js';
+import Accordeon from './modules/Accordeon.js';
 
 new Test();
+new Accordeon();
 
 
 /**

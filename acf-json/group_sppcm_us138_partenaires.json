@@ -59,12 +59,12 @@
     "style": "default",
     "label_placement": "top",
     "instruction_placement": "label",
-    "hide_on_screen": [],
+    "hide_on_screen": "",
     "active": true,
     "description": "Un groupe commun à tous les partenaires. Le titre de la publication sert de nom. Ajouter, retirer ou modifier les partenaires depuis le menu Partenaires.",
     "show_in_rest": 0,
     "display_title": "",
     "allow_ai_access": false,
     "ai_description": "",
-    "modified": 1792413786
+    "modified": 1793151526
 }

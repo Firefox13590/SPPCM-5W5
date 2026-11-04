@@ -1,0 +1,13 @@
+/*---------------------
+    Box Shadow
+----------------------*/
+
+@mixin boxShadowNoire($couleurTertiaire: #1F1F1F, $x, $y) {
+    box-shadow: $couleurTertiaire $x $y;
+}
+@mixin boxShadowRouge($couleurPrincipale: #e63c23, $x, $y) {
+    box-shadow: $couleurPrincipale $x $y;
+}
+@mixin boxShadowGris($couleurSectionDisabledPrimaire: #949494, $x, $y) {
+    box-shadow: $couleurSectionDisabledPrimaire $x $y;
+}
