@@ -28,13 +28,8 @@ function underscores_child_assets()
     );
 }
 add_action('wp_enqueue_scripts', 'underscores_child_assets');
-<<<<<<< HEAD
  
  
-=======
-
-
->>>>>>> c6cc64a2ea8bb0e5e0664c4a7c36a37b261d24d1
 /**
  * Enregistre et charge le script JS principal du thème enfant en tant que module ES natif.
  *
@@ -43,11 +38,6 @@ add_action('wp_enqueue_scripts', 'underscores_child_assets');
  */
 function underscores_child_scripts()
 {
-<<<<<<< HEAD
- 
-=======
-
->>>>>>> c6cc64a2ea8bb0e5e0664c4a7c36a37b261d24d1
     wp_enqueue_script_module(
         'underscores-child-main',
         get_stylesheet_directory_uri() . '/js/main.js',
@@ -56,13 +46,8 @@ function underscores_child_scripts()
     );
 }
 add_action('wp_enqueue_scripts', 'underscores_child_scripts');
-<<<<<<< HEAD
- 
- 
-=======
 
 
->>>>>>> c6cc64a2ea8bb0e5e0664c4a7c36a37b261d24d1
 /**
  * [ALTERNATIVE — désactivée] Enregistre et charge main.js via l'API classique wp_enqueue_script().
  *
@@ -86,23 +71,6 @@ function underscores_child_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'underscores_child_scripts' );
 */
-<<<<<<< HEAD
- 
- 
-/**
- * Permet de téléverser une image par programmation.
- *
- * @link https://rudrastyh.com/wordpress/how-to-add-images-to-media-library-from-uploaded-files-programmatically.html#upload-image-from-url
- */
-function UploadMediaParProg(): void {
-    // it allows us to use download_url() and wp_handle_sideload() functions
-    require_once( ABSPATH . 'wp-admin/includes/file.php' );
-    // update medatata, regenerate image sizes
-    require_once( ABSPATH . 'wp-admin/includes/image.php' );
- 
-    echo(dirname(__DIR__));
-}
-=======
 
 
 
@@ -228,4 +196,3 @@ function ChoisirPageErreurActualites($gabarit)
     return $gabarit;
 }
 add_filter('template_include', 'ChoisirPageErreurActualites');
->>>>>>> c6cc64a2ea8bb0e5e0664c4a7c36a37b261d24d1
