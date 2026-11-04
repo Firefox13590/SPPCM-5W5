@@ -1,4 +1,314 @@
-
-
-header {
+@use "./settings/couleurs" as *;
+@use "./settings/polices" as *;
+/*
+   IPHONE
+*/
+.entete-site {
+   padding: 1rem;
+   font-family: $policeA;
+   * {
+       box-sizing: border-box;
+   }
+   a {
+       text-decoration: none;
+   }
+   button,
+   input {
+       font: inherit;
+   }
+   a:focus-visible,
+   button:focus-visible,
+   summary:focus-visible,
+   input:focus-visible {
+       outline: 0.1875rem solid currentColor;
+       outline-offset: 0.25rem;
+   }
+   /*
+       BARRE ET LOGO
+   */
+   .barre-entete {
+       position: relative;
+       display: flex;
+       flex-wrap: wrap;
+       align-items: center;
+       gap: 0.75rem;
+       padding: 1.25rem 0.75rem;
+       background: $couleurPrincipale;
+   }
+   .logo-entete {
+       flex-shrink: 0;
+       padding: 0.125rem 0.5rem;
+       border: 0.1875rem solid $couleurTertiaire;
+       border-radius: 0.875rem 0 0.875rem 0;
+       color: $couleurTertiaire;
+       font-family: $policeH2;
+       font-size: $policeATailleL;
+       font-weight: 800;
+       line-height: 1;
+   }
+   .bouton-menu {
+       display: flex;
+       align-items: center;
+       justify-content: center;
+       width: 2.75rem;
+       height: 2.75rem;
+       margin-left: auto;
+       padding: 0;
+       border: 0;
+       background: transparent;
+       color: $couleurTertiaire;
+       font-size: 2rem;
+       line-height: 1;
+       cursor: pointer;
+   }
+   /*
+       MENU OUVERT
+   */
+   .navigation-principale {
+       display: none;
+       order: 4;
+       flex-basis: 100%;
+       min-width: 0;
+   }
+&.menu-ouvert .navigation-principale {
+       display: block;
+   }
+   .liste-menu,
+   .sous-menu {
+       margin: 0;
+       padding: 0;
+       list-style: none;
+   }
+   .liste-menu {
+       display: flex;
+       flex-direction: column;
+       gap: 0.625rem;
+> li > a,
+       summary {
+           display: block;
+           padding: 0.625rem 0.875rem;
+           background: $couleurTertiaire;
+           color: $couleurSecondaireBlanc;
+           font-size: $policeATailleL;
+           font-weight: $policeH3Weight;
+           line-height: 1.25;
+       }
+       // Ordre des liens sur iPhone et iPad.
+> li:nth-child(1) {
+           order: 2;
+       }
+> li:nth-child(2) {
+           order: 1;
+       }
+> li:nth-child(3) {
+           order: 4;
+       }
+> li:nth-child(4) {
+           order: 3;
+       }
+> li:nth-child(5) {
+           order: 5;
+       }
+   }
+   /*
+       SOUS-MENUS
+   */
+   summary {
+       list-style: none;
+       cursor: pointer;
+&::-webkit-details-marker {
+           display: none;
+       }
+&::after {
+           content: "+";
+           display: inline-block;
+           margin-left: 0.75rem;
+           font-weight: 800;
+       }
+   }
+   .groupe-menu[open] {
+       background: $couleurSecondaireBlanc;
+       summary {
+           background: $couleurSecondaireBlanc;
+           color: $couleurTertiaire;
+&::after {
+               content: "−";
+           }
+       }
+   }
+   .sous-menu {
+       padding: 0.25rem 0.875rem 0.75rem;
+       background: $couleurSecondaireBlanc;
+       a {
+           display: block;
+           padding: 0.5rem 0;
+           color: $couleurTertiaire;
+           font-size: $policeATailleM;
+           font-weight: $policeAWeight;
+&:hover {
+               text-decoration: underline;
+           }
+       }
+   }
+   /*
+       RECHERCHE
+   */
+   .recherche-entete {
+       position: relative;
+       display: none;
+       align-items: center;
+       margin: 0;
+       button {
+           display: flex;
+           align-items: center;
+           justify-content: center;
+           width: 2.75rem;
+           height: 2.75rem;
+           padding: 0.5rem;
+           border: 0;
+           background: transparent;
+           color: $couleurSecondaireBeige;
+           cursor: pointer;
+       }
+       svg {
+           width: 1.5rem;
+           height: 1.5rem;
+           fill: none;
+           stroke: currentColor;
+           stroke-width: 2;
+       }
+       input {
+           position: absolute;
+           top: calc(100% + 0.75rem);
+           right: 0;
+           z-index: 30;
+           width: min(16rem, calc(100vw - 4rem));
+           padding: 0.75rem;
+           border: 0.125rem solid $couleurTertiaire;
+           background: $couleurSecondaireBlanc;
+           color: $couleurTertiaire;
+           visibility: hidden;
+       }
+&:focus-within input {
+           visibility: visible;
+       }
+   }
+   .texte-cache {
+       position: absolute;
+       width: 0.0625rem;
+       height: 0.0625rem;
+       overflow: hidden;
+       clip-path: inset(50%);
+       white-space: nowrap;
+   }
+   /*
+       IPAD
+   */
+   @media (min-width: 48em) {
+       padding: 1.5rem;
+       .barre-entete {
+           width: fit-content;
+           gap: 0.5rem;
+           padding: 0.375rem 0.625rem;
+           box-shadow: 0.25rem 0.25rem $couleurTertiaire;
+       }
+       .logo-entete {
+           border: 0;
+           background: $couleurSectionActivePrincipale;
+       }
+       .bouton-menu {
+           margin-left: 0.5rem;
+           color: $couleurSecondaireBeige;
+       }
+       .recherche-entete {
+           display: flex;
+       }
+       .navigation-principale {
+           position: absolute;
+           top: calc(100% + 0.25rem);
+           left: 0;
+           z-index: 20;
+           width: min(24rem, calc(100vw - 3rem));
+           padding: 0.75rem;
+           background: $couleurPrincipale;
+           box-shadow: 0.25rem 0.25rem $couleurTertiaire;
+       }
+   }
+   /*
+       DESKTOP
+   */
+   @media (min-width: 75em) {
+       padding: 1.875rem 1.5rem;
+       .barre-entete {
+           width: 100%;
+           max-width: 170rem;
+           margin: auto;
+           padding: 0.375rem 1rem;
+           flex-wrap: nowrap;
+           gap: 1.25rem;
+       }
+       .bouton-menu {
+           display: none;
+       }
+       .navigation-principale {
+           position: static;
+           display: block;
+           order: 0;
+           flex: 1;
+           width: auto;
+           padding: 0;
+           background: transparent;
+           box-shadow: none;
+       }
+       .liste-menu {
+           flex-direction: row;
+           align-items: center;
+           gap: 1.25rem;
+> li {
+               order: 0;
+           }
+> li > a,
+           summary {
+               padding: 0.625rem 0;
+               background: transparent;
+               color: $couleurSecondaireBeige;
+               font-size: $policeATailleM;
+               font-weight: $policeAWeight;
+               white-space: nowrap;
+           }
+> li > a:hover {
+               text-decoration: underline;
+               text-underline-offset: 0.25rem;
+           }
+       }
+       summary::after {
+           content: "⌄";
+           margin-left: 0.375rem;
+       }
+       .groupe-menu {
+           position: relative;
+       }
+       .groupe-menu[open] {
+           background: transparent;
+           summary {
+               background: transparent;
+               color: $couleurSecondaireBeige;
+&::after {
+                   content: "⌃";
+               }
+           }
+       }
+       .sous-menu {
+           position: absolute;
+           top: 100%;
+           left: 0;
+           z-index: 20;
+           min-width: 15rem;
+           padding: 0.75rem;
+           box-shadow: 0.25rem 0.25rem $couleurTertiaire;
+       }
+       .recherche-entete {
+           margin-left: auto;
+       }
+   }
 }
