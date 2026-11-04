@@ -7,17 +7,10 @@
     //Template Name: Credits;
 ?>
 
-
-<div class="titre">
-<h1>
-    CRÉDITS
-</h1>
-</div>
-
-<main>
+<main class="credits">
     <div class="personne-credits">
         <div class="img-personne-credits">
-            <img src="typeshit.jpg" alt="Bazile Sit Down">      
+            <img src="typeshit.jpg" alt="image de Bazile Sit Down">      
         </div>
         
         <div class="nom-personne-credits">                      
