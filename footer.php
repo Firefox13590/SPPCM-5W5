@@ -95,11 +95,10 @@
 		?>
 
 		<?php if ($partenairesFooter) : ?>
-			<div class="partenaires-footer" aria-labelledby="titre-partenaires-footer">
-				<!-- <h2 id="titre-partenaires-footer"><?php esc_html_e('Nos partenaires', 'underscores-child'); ?></h2> -->
-				<ul class="liste-partenaires-footer">
+			<div class="partenaires-footer carrousel-container">
+				<ul class="liste-partenaires-footer carrousel-items-container">
 					<?php foreach ($partenairesFooter as $partenaireFooter) : ?>
-						<li class="partenaire-footer">
+						<li class="partenaire-footer carrousel-item">
 							<?php if ($partenaireFooter['lien']) : ?>
 								<a href="<?php echo esc_url($partenaireFooter['lien']); ?>" target="_blank" rel="noopener noreferrer">
 									<?php echo $partenaireFooter['image'];  ?>

@@ -2,7 +2,7 @@
  * 
  * @class Accordeon
  * 
- * @property {NodeListOf<Element>} listeInputsCheck La liste complète des inputs de type checkbox qui ont été trouvés sur la page actuelle.
+ * @property {NodeList<Element>} listeInputsCheck La liste complète des inputs de type checkbox qui ont été trouvés sur la page actuelle.
  * @property {Number} posCheckActif L'index du checkbox présentement actif. -1 par d♪0faut pour signifier qu'aucun checkbox n'est actif.
  */
 export default class Accordeon {

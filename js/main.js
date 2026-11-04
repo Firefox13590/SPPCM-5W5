@@ -9,9 +9,11 @@
  */
 import { Test } from './modules/Test.js';
 import Accordeon from './modules/Accordeon.js';
+import Carrousel from './modules/Carrousel.js';
 
 new Test();
 new Accordeon();
+new Carrousel();
 
 //new Test();
 
