@@ -4,6 +4,7 @@
  */
 
     get_header(); 
+    //Template Name: Credits;
 ?>
 
 
@@ -16,18 +17,18 @@
 <main>
     <div class="personne-credits">
         <div class="img-personne-credits">
-            <img src="typeshit.jpg" alt="Bazile Sit Down">      //image personne
+            <img src="typeshit.jpg" alt="Bazile Sit Down">      
         </div>
         
-        <div class="nom-personne-credits">                      //nom personne
+        <div class="nom-personne-credits">                      
             <h3>Bazile Sit Down</h3>
         </div>
 
-        <div class="info-personne-credits">                     //info personne
+        <div class="info-personne-credits">                     
             <p>Directeur Gooning en chef</p>
         </div>
        
-        <div class="icones-reseaux-credits">                    //icone credits
+        <div class="icones-reseaux-credits">                    
             <div class=icone-reseau-credits>
                 <a href="https://example.com">
                 <img src="icon.svg" alt="LinkedIn" >
@@ -47,18 +48,18 @@
 
         <div class="personne-credits">
         <div class="img-personne-credits">
-            <img src="typeshit.jpg" alt="Bazile Sit Down">      //image personne
+            <img src="typeshit.jpg" alt="Bazile Sit Down">      
         </div>
         
-        <div class="nom-personne-credits">                      //nom personne
+        <div class="nom-personne-credits">                    
             <h3>Bazile Sit Down</h3>
         </div>
 
-        <div class="info-personne-credits">                     //info personne
+        <div class="info-personne-credits">                    
             <p>Directeur Gooning en chef</p>
         </div>
        
-        <div class="icones-reseaux-credits">                    //icone credits
+        <div class="icones-reseaux-credits">                   
             <div class=icone-reseau-credits>
                 <a href="https://example.com">
                 <img src="icon.svg" alt="LinkedIn" >
@@ -78,18 +79,18 @@
 
         <div class="personne-credits">
         <div class="img-personne-credits">
-            <img src="typeshit.jpg" alt="Bazile Sit Down">      //image personne
+            <img src="typeshit.jpg" alt="Bazile Sit Down">      
         </div>
         
-        <div class="nom-personne-credits">                      //nom personne
+        <div class="nom-personne-credits">                    
             <h3>Bazile Sit Down</h3>
         </div>
 
-        <div class="info-personne-credits">                     //info personne
+        <div class="info-personne-credits">                    
             <p>Directeur Gooning en chef</p>
         </div>
        
-        <div class="icones-reseaux-credits">                    //icone credits
+        <div class="icones-reseaux-credits">                   
             <div class=icone-reseau-credits>
                 <a href="https://example.com">
                 <img src="icon.svg" alt="LinkedIn" >
@@ -109,18 +110,18 @@
 
         <div class="personne-credits">
         <div class="img-personne-credits">
-            <img src="typeshit.jpg" alt="Bazile Sit Down">      //image personne
+            <img src="typeshit.jpg" alt="Bazile Sit Down">      
         </div>
         
-        <div class="nom-personne-credits">                      //nom personne
+        <div class="nom-personne-credits">                    
             <h3>Bazile Sit Down</h3>
         </div>
 
-        <div class="info-personne-credits">                     //info personne
+        <div class="info-personne-credits">                    
             <p>Directeur Gooning en chef</p>
         </div>
        
-        <div class="icones-reseaux-credits">                    //icone credits
+        <div class="icones-reseaux-credits">                   
             <div class=icone-reseau-credits>
                 <a href="https://example.com">
                 <img src="icon.svg" alt="LinkedIn" >
@@ -140,18 +141,18 @@
 
         <div class="personne-credits">
         <div class="img-personne-credits">
-            <img src="typeshit.jpg" alt="Bazile Sit Down">      //image personne
+            <img src="typeshit.jpg" alt="Bazile Sit Down">      
         </div>
         
-        <div class="nom-personne-credits">                      //nom personne
+        <div class="nom-personne-credits">                    
             <h3>Bazile Sit Down</h3>
         </div>
 
-        <div class="info-personne-credits">                     //info personne
+        <div class="info-personne-credits">                    
             <p>Directeur Gooning en chef</p>
         </div>
        
-        <div class="icones-reseaux-credits">                    //icone credits
+        <div class="icones-reseaux-credits">                   
             <div class=icone-reseau-credits>
                 <a href="https://example.com">
                 <img src="icon.svg" alt="LinkedIn" >
