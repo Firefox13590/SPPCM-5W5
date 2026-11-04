@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 @use "./settings/couleurs";
+=======
+>>>>>>> c6cc64a2ea8bb0e5e0664c4a7c36a37b261d24d1
 
 .footer-content {
   background-color: couleurs.$couleurTertiaire;
@@ -8,6 +11,7 @@
   // gap: clamp(0rem, 2.5rem, 2.5rem);
   padding-bottom: 2.5rem;
 
+<<<<<<< HEAD
   & .reseaux img {
     // width: 40px !important;
     height: 2.5rem;
@@ -262,4 +266,7 @@ https://swiperjs.com/demos
 
 * {
   // border:3px solid red !important;
+=======
+footer {
+>>>>>>> c6cc64a2ea8bb0e5e0664c4a7c36a37b261d24d1
 }

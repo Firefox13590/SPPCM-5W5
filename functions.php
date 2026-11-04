@@ -5,7 +5,6 @@
  */
 function underscores_child_assets()
 {
- 
     // Style du thème parent
     wp_enqueue_style(
         'underscores-style',
@@ -29,8 +28,13 @@ function underscores_child_assets()
     );
 }
 add_action('wp_enqueue_scripts', 'underscores_child_assets');
+<<<<<<< HEAD
  
  
+=======
+
+
+>>>>>>> c6cc64a2ea8bb0e5e0664c4a7c36a37b261d24d1
 /**
  * Enregistre et charge le script JS principal du thème enfant en tant que module ES natif.
  *
@@ -39,7 +43,11 @@ add_action('wp_enqueue_scripts', 'underscores_child_assets');
  */
 function underscores_child_scripts()
 {
+<<<<<<< HEAD
  
+=======
+
+>>>>>>> c6cc64a2ea8bb0e5e0664c4a7c36a37b261d24d1
     wp_enqueue_script_module(
         'underscores-child-main',
         get_stylesheet_directory_uri() . '/js/main.js',
@@ -48,8 +56,13 @@ function underscores_child_scripts()
     );
 }
 add_action('wp_enqueue_scripts', 'underscores_child_scripts');
+<<<<<<< HEAD
  
  
+=======
+
+
+>>>>>>> c6cc64a2ea8bb0e5e0664c4a7c36a37b261d24d1
 /**
  * [ALTERNATIVE — désactivée] Enregistre et charge main.js via l'API classique wp_enqueue_script().
  *
@@ -73,6 +86,7 @@ function underscores_child_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'underscores_child_scripts' );
 */
+<<<<<<< HEAD
  
  
 /**
@@ -88,3 +102,130 @@ function UploadMediaParProg(): void {
  
     echo(dirname(__DIR__));
 }
+=======
+
+
+
+/* 
+Retire l'éditeur par défaut pour des types d'articles spécifiques
+*/
+function remove_editor()
+{
+    // ajouter la clé du post type dans ce array pour inclure d'autres post types
+    $targetPostTypes = array(
+        'infolettre',
+    );
+    foreach ($targetPostTypes as $targetPostType) {
+        remove_post_type_support($targetPostType, 'editor');
+    }
+}
+add_action('admin_init', 'remove_editor');
+
+/**
+ * Vérifie si un import Feedzy des actualités a échoué à sa dernière exécution.
+ */
+function VerifierErreurActualites()
+{
+    $importsActualites = get_posts(array(
+        'post_type' => 'feedzy_imports',
+        'post_status' => 'publish',
+        'numberposts' => -1,
+        'meta_key' => 'import_post_type',
+        'meta_value' => 'post',
+    ));
+
+    foreach ($importsActualites as $importActualites) {
+        $erreursImport = get_post_meta($importActualites->ID, 'import_errors', true);
+        $resultatImport = get_post_meta($importActualites->ID, 'import_info', true);
+
+        // Feedzy enregistre import_info quand l'import se termine normalement,
+        // même sans nouvel article. Une erreur d'image ne bloque donc pas la page.
+        if (!empty($erreursImport) && empty($resultatImport)) {
+            return true;
+        }
+    }
+
+    return false;
+}
+
+/**
+ * Dirige vers la page d'erreur si l'import des actualités échoue.
+ */
+function RedirigerErreurActualites()
+{
+    if (!is_front_page() || is_feed() || is_preview()) {
+        return;
+    }
+
+    // Le lien de retour permet de consulter l'accueil même pendant une panne.
+    if (isset($_GET['retour-accueil']) && $_GET['retour-accueil'] === '1') {
+        return;
+    }
+
+    if (!isset($_GET['erreur-flux']) && !isset($_GET['erreur-infolettres']) && VerifierErreurActualites()) {
+        wp_safe_redirect(add_query_arg('erreur-flux', '1', home_url('/')), 302);
+        exit;
+    }
+}
+add_action('template_redirect', 'RedirigerErreurActualites');
+
+/**
+ * Vérifie que la page des infolettres et ses pages annuelles sont disponibles.
+ */
+function VerifierErreurInfolettres()
+{
+    $pageInfolettres = get_page_by_path('infolettre-accueil');
+
+    if (!$pageInfolettres || $pageInfolettres->post_status !== 'publish') {
+        return true;
+    }
+
+    $pagesInfolettres = get_posts(array(
+        'post_type' => 'page',
+        'post_status' => 'publish',
+        'post_parent' => $pageInfolettres->ID,
+        'posts_per_page' => 1,
+        'fields' => 'ids',
+    ));
+
+    return empty($pagesInfolettres);
+}
+
+/**
+ * Dirige vers la page d'erreur quand la liste des infolettres est indisponible.
+ */
+function RedirigerErreurInfolettres()
+{
+    if ((!is_front_page() && !is_page('infolettre-accueil')) || is_feed() || is_preview()) {
+        return;
+    }
+
+    if (isset($_GET['retour-accueil']) && $_GET['retour-accueil'] === '1') {
+        return;
+    }
+
+    if (!isset($_GET['erreur-flux']) && !isset($_GET['erreur-infolettres']) && VerifierErreurInfolettres()) {
+        wp_safe_redirect(add_query_arg('erreur-infolettres', '1', home_url('/')), 302);
+        exit;
+    }
+}
+add_action('template_redirect', 'RedirigerErreurInfolettres');
+
+/**
+ * Réutilise le gabarit d'erreur pour les actualités ou les infolettres indisponibles.
+ */
+function ChoisirPageErreurActualites($gabarit)
+{
+    $erreurFlux = isset($_GET['erreur-flux']) && $_GET['erreur-flux'] === '1';
+    $erreurInfolettres = isset($_GET['erreur-infolettres']) && $_GET['erreur-infolettres'] === '1';
+
+    if (is_front_page() && ($erreurFlux || $erreurInfolettres)) {
+        status_header(503);
+        nocache_headers();
+        return get_stylesheet_directory() . '/404.php';
+    }
+
+    return $gabarit;
+}
+add_filter('template_include', 'ChoisirPageErreurActualites');
+>>>>>>> c6cc64a2ea8bb0e5e0664c4a7c36a37b261d24d1
