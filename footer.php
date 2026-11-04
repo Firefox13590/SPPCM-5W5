@@ -95,11 +95,11 @@
 		?>
 
 		<?php if ($partenairesFooter) : ?>
-			<section class="partenaires-footer swiper mySwiper" aria-labelledby="titre-partenaires-footer">
+			<div class="partenaires-footer" aria-labelledby="titre-partenaires-footer">
 				<!-- <h2 id="titre-partenaires-footer"><?php esc_html_e('Nos partenaires', 'underscores-child'); ?></h2> -->
-				<ul class="liste-partenaires-footer swiper-wrapper">
+				<ul class="liste-partenaires-footer">
 					<?php foreach ($partenairesFooter as $partenaireFooter) : ?>
-						<li class="partenaire-footer swiper-slide">
+						<li class="partenaire-footer">
 							<?php if ($partenaireFooter['lien']) : ?>
 								<a href="<?php echo esc_url($partenaireFooter['lien']); ?>" target="_blank" rel="noopener noreferrer">
 									<?php echo $partenaireFooter['image'];  ?>
@@ -110,14 +110,14 @@
 						</li>
 					<?php endforeach; ?>
 				</ul>
-				<div class="swiper-pagination"></div>
-			</section>
+				<div class="carrousel-pagination"></div>
+			</div>
 		<?php endif; ?>
 
 	</div><!-- .footer-content -->
 
 	<div class="site-info">
-		Copyright © 2023 SPPCM - Le Syndicat des professeures et professeurs du Collège Maisonneuve. Tous droits réservés.
+		Copyright © <?= date('Y'); ?> SPPCM - Le Syndicat des professeures et professeurs du Collège Maisonneuve. Tous droits réservés.
 	</div><!-- .site-info -->
 </footer><!-- #colophon -->
 </div><!-- #page -->
