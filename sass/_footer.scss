@@ -1,6 +1,6 @@
 @use "./settings/couleurs";
 
-.footer-content {
+.site-footer .footer-content {
   background-color: couleurs.$couleurTertiaire;
   display: flex;
   flex-direction: column;
@@ -102,6 +102,7 @@
       align-items: center;
 
       $gapPagItem: 2em;
+      margin-top: $gapPagItem;
       gap: $gapPagItem;
 
       & div {
@@ -173,6 +174,10 @@
       // width: 40vw;
       // gap: clamp(0rem, 0.5rem, 0.5rem);
       gap: 1rem;
+    }
+
+    & div.partenaires-footer {
+      flex-basis: 30%;
     }
   }
 }
