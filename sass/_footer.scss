@@ -79,17 +79,42 @@
       align-items: center;
       gap: 100%;
 
-      padding: 4px;
       transition: transform 1s;
 
       & li.partenaire-footer {
-        height: 100%;
+        // flex: 0 0 100%;
+        flex: 0 0 calc(100% - 4px);
+        // width: 100%;
+        // height: 100%;
 
         & img {
-          // width: 100%;
-          max-width: 100vw;
-          height: 100%;
+          // max-width: none;
+          width: 100%;
+          // height: 100%;
           box-shadow: 4px 4px 0px 0px couleurs.$couleurPrincipale;
+        }
+      }
+    }
+
+    & div.carrousel-pagination {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      $gapPagItem: 2em;
+      gap: $gapPagItem;
+
+      & div {
+        flex-basis: $gapPagItem;
+        height: $gapPagItem;
+
+        background-color: couleurs.$couleurSecondaireBlanc;
+        border: ($gapPagItem / 4) solid couleurs.$couleurSecondaireBlanc;
+
+        cursor: pointer;
+
+        &.active {
+          background-color: couleurs.$couleurPrincipale;
         }
       }
     }

@@ -109,7 +109,12 @@
 						</li>
 					<?php endforeach; ?>
 				</ul>
-				<div class="carrousel-pagination"></div>
+				<div class="carrousel-pagination">
+					<!-- <div onclick="Carrousel.SetPaginationIndex(this)" class="active"></div>
+					<div onclick="Carrousel.SetPaginationIndex(this)"></div>
+					<div onclick="Carrousel.SetPaginationIndex(this)"></div>
+					<div onclick="Carrousel.SetPaginationIndex(this)"></div> -->
+				</div>
 			</div>
 		<?php endif; ?>
 
