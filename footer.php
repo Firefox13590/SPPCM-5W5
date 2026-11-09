@@ -38,26 +38,61 @@
 			</div><!-- #logo -->
 
 			<!-- Ici ce trouve 66 (réseaux sociaux)-->
-			<div class="reseaux">
-				<ul>
-					<li>
-						<a href="https://www.facebook.com/SPPCMaisonneuve#"><img src="http://localhost/Refonte_SPPCM/wordpress/wp-content/uploads/2018/03/logo_fb.png" alt="facebook"></a>
-					</li>
-					<li>
-						<a href="mailto:sppcm@cmaisonneuve.qc.ca"><img src="http://localhost/Refonte_SPPCM/wordpress/wp-content/uploads/2018/03/logo_mail.png" alt="email"></a>
-					</li>
-					<li>
-						<a href="https://www.csn.qc.ca/"><img src="http://localhost/Refonte_SPPCM/wordpress/wp-content/uploads/2018/03/logo_csn.png" alt="CSN"></a>
-					</li>
-					<li>
-						<a href="https://fneeq.qc.ca/fr/accueil/"><img src="http://localhost/Refonte_SPPCM/wordpress/wp-content/uploads/2018/03/logo_fneeq.png" alt="FNEEQ"></a>
-					</li>
-					<li>
-						<a href="https://www.csn.qc.ca/"><img src="http://localhost/Refonte_SPPCM/wordpress/wp-content/uploads/2018/03/logo_csn.png" alt="CSN"></a>
-					</li>
-				</ul>
-			</div><!-- .reseaux -->
+			<?php
+			$reseauxFooter = array();
 
+			if (function_exists('get_field')) {
+				
+				$publicationsReseaux = get_posts(array(
+					'post_type' => 'sppcm_reseau_social',
+					'post_status' => 'publish',
+					'numberposts' => -1,
+					'orderby' => array('menu_order' => 'ASC', 'title' => 'ASC', 'ID' => 'ASC'),
+				));
+
+				foreach ($publicationsReseaux as $publicationReseau) {
+					$nomReseau = get_the_title($publicationReseau->ID);
+					$imageReseau = absint(get_field('imageReseau', $publicationReseau->ID));
+					$lienReseau = esc_url(get_field('lienReseau', $publicationReseau->ID) ?: '', array('http', 'https'));
+					$balisageImageReseau = '';
+
+					if ($imageReseau) {
+						$balisageImageReseau = wp_get_attachment_image(
+							$imageReseau,
+							'medium',
+							false,
+							array('alt' => $nomReseau)
+						);
+					}
+
+					if ('' !== trim($nomReseau) && $balisageImageReseau) {
+						$reseauxFooter[] = array(
+							'image' => $balisageImageReseau,
+							'lien' => $lienReseau,
+						);
+					}
+				}
+			}
+			?>
+
+			<?php if ($reseauxFooter) : ?>
+				<div class="reseaux">
+					<ul>
+						<?php foreach ($reseauxFooter as $reseauFooter) : ?>
+							<li>
+								<?php if ($reseauFooter['lien']) : ?>
+									<a href="<?php echo esc_url($reseauFooter['lien']); ?>" target="_blank" rel="noopener noreferrer">
+										<?php echo $reseauFooter['image'];  ?>
+									</a>
+								<?php else : ?>
+									<?php echo $reseauFooter['image']; ?>
+								<?php endif; ?>
+							</li>
+						<?php endforeach; ?>
+					</ul>
+					<div class="carrousel-pagination"></div>
+				</div><!-- .reseaux -->
+			<?php endif; ?>
 		</div><!-- .groupe-infos -->
 
 		<?php
