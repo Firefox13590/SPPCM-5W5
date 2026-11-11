@@ -42,7 +42,7 @@
 			$reseauxFooter = array();
 
 			if (function_exists('get_field')) {
-				
+
 				$publicationsReseaux = get_posts(array(
 					'post_type' => 'sppcm_reseau_social',
 					'post_status' => 'publish',
@@ -154,7 +154,9 @@
 	</div><!-- .footer-content -->
 
 	<div class="site-info">
-		Copyright © <?= date('Y'); ?> SPPCM - Le Syndicat des professeures et professeurs du Collège Maisonneuve. Tous droits réservés.
+		<a href="<?php echo home_url('/credits/'); ?>">
+			Copyright © <?= date('Y'); ?> SPPCM - Le Syndicat des professeures et professeurs du Collège Maisonneuve. Tous droits réservés.
+		</a>
 	</div><!-- .site-info -->
 </footer><!-- #colophon -->
 </div><!-- #page -->
