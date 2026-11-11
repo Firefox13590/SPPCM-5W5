@@ -1,10 +1,11 @@
+@use "./settings/polices" as *;
+@use "./settings/marges" as *;
+@use "./settings/couleurs" as *;
 /* 
     STYLES GÉNÉRAUX
 */
 @import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&family=Syne:wght@400..800&display=swap');
-@use "./settings/polices" as *;
-@use "./settings/marges" as *;
-@use "./settings/couleurs" as *;
+
 *,
 ::before,
 ::after {
@@ -30,11 +31,11 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: $PoliceH2;
+  font-family: $policeH2;
 }
 
 p {
-  font-family: $PoliceP;
+  font-family: $policeP;
   margin: 0;
   padding: 0;
 }

@@ -2,7 +2,7 @@
 @use "./settings/marges" as *;
 
 .site-footer .footer-content {
-  background-color: couleurs.$couleurTertiaire;
+  background-color: $couleurTertiaire;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -94,7 +94,7 @@
           // max-width: none;
           width: 100%;
           // height: 100%;
-          box-shadow: 4px 4px 0px 0px couleurs.$couleurPrincipale;
+          box-shadow: 4px 4px 0px 0px $couleurPrincipale;
         }
       }
     }
@@ -112,13 +112,13 @@
         flex-basis: $gapPagItem;
         height: $gapPagItem;
 
-        background-color: couleurs.$couleurSecondaireBlanc;
-        border: ($gapPagItem / 4) solid couleurs.$couleurSecondaireBlanc;
+        background-color: $couleurSecondaireBlanc;
+        border: ($gapPagItem / 4) solid $couleurSecondaireBlanc;
 
         cursor: pointer;
 
         &.active {
-          background-color: couleurs.$couleurPrincipale;
+          background-color: $couleurPrincipale;
         }
       }
     }
@@ -231,8 +231,8 @@
 
 .site-info {
   text-align: center;
-  color: couleurs.$couleurSecondaireBlanc;
-  background-color: couleurs.$couleurTertiaire;
+  color: $couleurSecondaireBlanc;
+  background-color: $couleurTertiaire;
 
   // border: 2px solid red;
 }
