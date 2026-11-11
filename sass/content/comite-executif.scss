@@ -1,0 +1,15 @@
+@use "../settings/couleurs" as *;
+@use "../settings/polices" as *;
+@use "../settings/boutons" as *;
+@use "../settings/marges" as *;
+@use "../settings/navigation" as *;
+@use "../settings/boxshadow" as boxShadow;
+
+main#comite-executif{
+  article{
+    img{
+      height: 10vh;
+      @include boxShadow.boxShadowRouge($x: 4px, $y: 4px)
+    }
+  }
+}

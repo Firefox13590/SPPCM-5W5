@@ -113,7 +113,7 @@
         height: $gapPagItem;
 
         background-color: $couleurSecondaireBlanc;
-        border: ($gapPagItem / 4) solid $couleurSecondaireBlanc;
+        border: calc($gapPagItem / 4) solid $couleurSecondaireBlanc;
 
         cursor: pointer;
 
