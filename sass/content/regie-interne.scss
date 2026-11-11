@@ -8,48 +8,59 @@
 main#regie-interne {
     background-color: $couleurSecondaireBeige;
     margin: $margeXXS;
-
+    display: flex;
+    flex-direction: column;
     h2#titre-regie {
         color: $couleurTertiaire;
         font-family: $policeH2;
-        font-size: $policeH2TailleXS;
+        font-size: $policeH2TailleS;
         font-weight: $policeH2Weight;
+        margin-bottom: $margeXXXS;
     }
-
-
-    h3#titre-section-documents {
-        color: $couleurTertiaire;
-        font-family: $policeH3;
-        font-size: $policeH3TailleM;
-        font-weight: $policeH3Weight;
-    }
-
 
     div.documents-regie {
+        animation: apparitionGlobaleDocuments 0.5s ease-out;
         display: grid;
+        align-self: center;
         //1 par ligne sur mobile, 2 sur tablette, 2 sur desktop
         grid-template-columns: repeat(1, 1fr);
-        gap: $margeXXS;
+        gap: $margeS;
         background-color: $couleurSecondaireBlanc;
         padding: $margeXS;
         @include boxShadowRouge($x: $margeHalf, $y: $margeHalf);
+        width:90%;
 
         article.document-regie {
             background-color: $couleurTertiaire;
             display: grid;
-            grid-template-rows: 1fr 1.5fr auto;
+            grid-template-rows: 1fr 1fr auto;
             padding: $margeM;
             @include boxShadowRouge($x: $margeHalf, $y: $margeHalf);
+            transition: transform 0.3s ease-in-out;
 
             &:hover {
                 @include boxShadowGris($x: $margeHalf, $y: $margeHalf);
+                transform:scale(1.02);
+                transition: transform 0.3s ease-in-out;
             }
 
-            h3.titre-document {
-                color: $couleurSecondaireBlanc;
-                font-family: $policeH3;
-                font-size: $policeH3TailleM;
-                font-weight: $policeH3Weight;
+            #document-regie-header {
+                display: flex;
+                align-items: center;
+                gap: $margeXS;
+                
+                .icone-document {
+                    width: $margeL;
+                    height: $margeL;
+                }
+
+                h3.titre-document {
+                    color: $couleurSecondaireBlanc;
+                    font-family: $policeH3;
+                    font-size: $policeH3TailleM;
+                    font-weight: $policeH3Weight;
+                    width: 100%;
+                }
             }
 
             div.description {
@@ -59,13 +70,14 @@ main#regie-interne {
                 font-weight: $policePWeight;
                 padding-top: $margeXS;
                 padding-bottom: $margeXS;
+                height: 100%;
             }
 
             a.lien-document-container {
                 text-align: center;
                 height: $margeM;
                 $font-size: $policePTailleM;
-                padding: $margeHalf $margeHalf;
+                padding: $margeXXXS;
                 background-color: $couleurPrincipale;
                 border: none;
                 width: 100%;
@@ -73,7 +85,7 @@ main#regie-interne {
                 font-weight: $policeAWeight;
                 font-size: $policeATailleM;
                 color: $couleurSecondaireBlanc;
-                justify-self: flex-end;
+                vertical-align: middle;
 
                 &:hover {
                     background-color: $couleurSectionHoverBlanc;
@@ -98,6 +110,8 @@ main#regie-interne {
 
         div.documents-regie {
             grid-template-columns: repeat(2, 1fr);
+            gap: $margeS;
+            width:100%;
         }
     }
 
@@ -117,7 +131,19 @@ main#regie-interne {
         div.documents-regie {
             grid-template-columns: repeat(2, 1fr);
             gap: $margeM;
+            width:100%;
         }
     }
 
+}
+
+@keyframes apparitionGlobaleDocuments {
+    0% {
+        opacity: 0;
+        transform: translateY($margeHalf);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
