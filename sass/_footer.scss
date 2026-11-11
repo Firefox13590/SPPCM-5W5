@@ -1,4 +1,5 @@
-@use "./settings/couleurs";
+@use "./settings/couleurs" as *;
+@use "./settings/marges" as *;
 
 .site-footer .footer-content {
   background-color: couleurs.$couleurTertiaire;

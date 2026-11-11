@@ -10,10 +10,12 @@
 import { Test } from './modules/Test.js';
 import Accordeon from './modules/Accordeon.js';
 import Carrousel from './modules/Carrousel.js';
+import Entete from './modules/Entete.js?v=2';
 
 new Test();
 new Accordeon();
 new Carrousel();
+new Entete();
 
 //new Test();
 
@@ -69,4 +71,4 @@ import { classesMapping } from './classMapping.js';
 document.addEventListener("DOMContentLoaded", () => {
   console.log("main.js");
 });
- */
+*/

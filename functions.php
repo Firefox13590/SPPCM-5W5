@@ -22,9 +22,8 @@ function underscores_child_assets()
     wp_enqueue_style(
         'underscores-child-main',
         get_stylesheet_directory_uri() . '/css/main.css',
-        array('underscores-child-style')
-        // Version dynamique recommandée en production :
-        // , filemtime( get_stylesheet_directory() . '/css/main.css' )
+        array('underscores-child-style'),
+        filemtime(get_stylesheet_directory() . '/css/main.css')
     );
 }
 add_action('wp_enqueue_scripts', 'underscores_child_assets');
@@ -42,7 +41,7 @@ function underscores_child_scripts()
         'underscores-child-main',
         get_stylesheet_directory_uri() . '/js/main.js',
         array(),                // Dépendances de modules (autres modules requis avant celui-ci, si besoin).
-        '1.0.0'
+        filemtime(get_stylesheet_directory() . '/js/main.js')
     );
 }
 add_action('wp_enqueue_scripts', 'underscores_child_scripts');
