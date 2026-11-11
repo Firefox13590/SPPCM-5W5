@@ -154,7 +154,7 @@
 	</div><!-- .footer-content -->
 
 	<div class="site-info">
-		<a href="<?php echo home_url('/credits/'); ?>">
+		<a href="<?php echo esc_url( home_url( '/credits/' ) ); ?>">
 			Copyright © <?= date('Y'); ?> SPPCM - Le Syndicat des professeures et professeurs du Collège Maisonneuve. Tous droits réservés.
 		</a>
 	</div><!-- .site-info -->
