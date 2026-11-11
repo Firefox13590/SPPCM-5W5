@@ -2,7 +2,7 @@
 @use "./settings/marges" as *;
 
 .site-footer .footer-content {
-  background-color: couleurs.$couleurTertiaire;
+  background-color: $couleurTertiaire;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -89,13 +89,28 @@
         flex: 0 0 calc(100% - 4px);
         // width: 100%;
         // height: 100%;
-
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        & a{
+          //NOTE : if statement ce case c'est bon pour height wise vice versa
+          width: 50%;
+          height: auto;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
         & img {
           // max-width: none;
           width: 100%;
+          height: 100%;
           // height: 100%;
-          box-shadow: 4px 4px 0px 0px couleurs.$couleurPrincipale;
+          box-shadow: 4px 4px 0px 0px $couleurPrincipale;
+          // display: flex;
+          // align-items: center;
+          // justify-content: center;
         }
+        //NOTE : ceci affecte les partenaires
       }
     }
 
@@ -112,13 +127,13 @@
         flex-basis: $gapPagItem;
         height: $gapPagItem;
 
-        background-color: couleurs.$couleurSecondaireBlanc;
-        border: ($gapPagItem / 4) solid couleurs.$couleurSecondaireBlanc;
+        background-color: $couleurSecondaireBlanc;
+        border: calc($gapPagItem / 4) solid $couleurSecondaireBlanc;
 
         cursor: pointer;
 
         &.active {
-          background-color: couleurs.$couleurPrincipale;
+          background-color: $couleurPrincipale;
         }
       }
     }
@@ -210,13 +225,21 @@
       // height: auto;
     }
 
-    // & .partenaire-footer {
-    //   // width: 30rem;
-    //   // height: 15rem;
-    //   width: clamp(0rem, 28vw, 60rem);
-    //   height: clamp(0rem, 15vw, 30rem);
-    // }
-
+    & .partenaire-footer {
+      // width: 30rem;
+      // height: 15rem;
+      width: clamp(0rem, 28vw, 60rem);
+      height: clamp(0rem, 15vw, 30rem);
+      z-index: 0;
+      display: flex;
+      align-items: center;
+    }
+    & .partenaire-footer img{
+      // width: 30rem;
+      // height: 15rem;
+      height:50%;
+      // width: 50% !important;
+    }
     // & .partenaire-footer img {
     //   width: clamp(0rem, 28vw, 60rem);
     //   height: 100%;
@@ -231,8 +254,8 @@
 
 .site-info {
   text-align: center;
-  color: couleurs.$couleurSecondaireBlanc;
-  background-color: couleurs.$couleurTertiaire;
+  color: $couleurSecondaireBlanc;
+  background-color: $couleurTertiaire;
 
   // border: 2px solid red;
 }

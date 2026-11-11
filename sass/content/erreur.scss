@@ -1,11 +1,13 @@
 @use "../settings/couleurs" as *;
+@use "../settings/marges" as *;
+@use "../settings/polices" as *;
 
 /*
     STYLES GÉNÉRAUX
 */
 .page-erreur {
     margin: 0;
-    padding: 2.5rem 1.25rem 3.5rem;
+    padding: $margeM 1.25rem 3.5rem;
     background: $couleurSecondaireBeige;
 }
 
@@ -82,7 +84,7 @@
             align-items: center;
             justify-content: center;
             gap: 0.75em;
-            min-height: 3rem;
+            min-height: $margeL;
             padding: 0.875em 1.25em;
             border: 0.1875rem solid $couleurTertiaire;
             box-shadow: 0.25rem 0.25rem $couleurPrincipale;
@@ -100,7 +102,7 @@
 
             // Bouton appuyé
             &:active {
-                transform: translate(0.25rem, 0.25rem);
+                transform: translate($margeHalf, $margeHalf);
                 box-shadow: none;
             }
         }

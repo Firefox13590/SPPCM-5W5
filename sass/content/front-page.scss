@@ -118,7 +118,7 @@ main#front-page {
           & figcaption {
             background-color: $couleurSecondaireBlanc;
             padding: $margeXXS;
-            @include boxShadowNoir($x: $margeHalf, $y: $margeHalf);
+            @include boxShadowNoire($x: $margeHalf, $y: $margeHalf);
           }
         }
       }
@@ -218,17 +218,17 @@ main#front-page {
       }
 
       &.latest {
-        font-size: $PoliceATailleL;
+        font-size: $policeATailleL;
 
         @media only screen and (min-width: 768px) {
-          font-size: $PoliceATailleM;
+          font-size: $policeATailleM;
 
           & h2 {
             font-size: 2.25em;
           }
 
           &::before {
-            font-size: $PoliceATailleL;
+            font-size: $policeATailleL;
           }
         }
 
@@ -250,7 +250,7 @@ main#front-page {
       align-items: center;
 
       background-color: $couleurPrincipale;
-      @include boxShadowNoir($x: $margeHalf, $y: $margeHalf);
+      @include boxShadowNoire($x: $margeHalf, $y: $margeHalf);
 
       &>h2 {
         position: static;
