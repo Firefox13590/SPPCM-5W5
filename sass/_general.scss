@@ -2,7 +2,9 @@
     STYLES GÉNÉRAUX
 */
 @import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&family=Syne:wght@400..800&display=swap');
-
+@use "./settings/polices" as *;
+@use "./settings/marges" as *;
+@use "./settings/couleurs" as *;
 *,
 ::before,
 ::after {
@@ -12,8 +14,8 @@
 }
 
 body {
-  color: black;
-  background-color: #FFE8CE;
+  color: $couleurTertiaire;
+  background-color: $couleurSecondaireBeige;
 
   // overflow: hidden;
 }
@@ -28,11 +30,11 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Syne", sans-serif;
+  font-family: $PoliceH2;
 }
 
 p {
-  font-family: "Lexend", "Courier New", Courier, sans-serif, monospace;
+  font-family: $PoliceP;
   margin: 0;
   padding: 0;
 }

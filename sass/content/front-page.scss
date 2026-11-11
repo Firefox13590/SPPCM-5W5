@@ -1,3 +1,8 @@
+@use "../settings/marges" as *;
+@use "../settings/couleurs" as *;
+@use "../settings/boxshadow" as *;
+@use "../settings/polices" as *;
+
 main#front-page {
 
   /* 
@@ -46,7 +51,7 @@ main#front-page {
     display: flex;
     flex-flow: column nowrap;
     align-items: center;
-    gap: 2em;
+    gap: $margeS;
 
     @media only screen and (min-width: 768px) {
       flex-flow: row wrap;
@@ -67,7 +72,7 @@ main#front-page {
     }
 
     & article.actu-item {
-      flex-basis: 5em;
+      flex-basis: $margeXXL;
       width: 90vw;
 
       @media only screen and (min-width: 768px) {
@@ -95,15 +100,15 @@ main#front-page {
           margin: 0;
 
           &:not(:has(img)) {
-            box-shadow: -4px -4px 0 red;
+            @include boxShadowRouge($x: $margeHalf, $y: $margeHalf);
           }
 
           & img {
             width: 100%;
             height: 35vh;
             padding-bottom: 100px;
-            background-color: grey;
-            box-shadow: -4px -4px 0 red;
+            background-color: $couleurSectionDisabledPrimaire;
+            @include boxShadowRouge($x: $margeHalf, $y: $margeHalf);
 
             @media only screen and (min-width: 768px) {
               height: 20vh;
@@ -111,9 +116,9 @@ main#front-page {
           }
 
           & figcaption {
-            background-color: white;
-            padding: 1em;
-            box-shadow: 4px 4px 0 #1f1f1f;
+            background-color: $couleurSecondaireBlanc;
+            padding: $margeXXS;
+            @include boxShadowNoir($x: $margeHalf, $y: $margeHalf);
           }
         }
       }
@@ -124,7 +129,7 @@ main#front-page {
       justify-content: center;
       align-items: center;
       width: 90vw;
-      flex-basis: 5em;
+      flex-basis: $margeXXL;
 
       color: #FFE8CE;
       background-color: #E63C23;
@@ -133,7 +138,7 @@ main#front-page {
       @media only screen and (min-width: 768px) {
         width: auto;
         flex-grow: 1;
-        height: 5em;
+        height: $margeXXL;
       }
 
       @media only screen and (min-width: 992px) {
@@ -141,7 +146,7 @@ main#front-page {
       }
 
       &>h2 {
-        font-size: 2em;
+        font-size: $margeS;
       }
     }
   }
@@ -157,7 +162,7 @@ main#front-page {
     display: flex;
     flex-flow: column nowrap;
     align-items: center;
-    gap: 2em;
+    gap: $margeS;
 
     font-weight: bold;
 
@@ -194,44 +199,44 @@ main#front-page {
     & a.info-item {
       position: relative;
       background-color: #1F1F1F;
-      flex-basis: 5em;
-      box-shadow: 4px 4px 0 #E63C23;
+      flex-basis: $margeXXL;
+      @include boxShadowRouge($x: $margeHalf, $y: $margeHalf);
 
       @media only screen and (min-width: 768px) {
         flex: 0 0 40vw;
       }
 
       @media only screen and (min-width: 992px) {
-        flex-basis: 5em;
+        flex-basis: $margeXXL;
         width: 100%;
       }
 
       & h2 {
         position: absolute;
         bottom: 0;
-        right: .5rem;
+        right: $margeXXXS;
       }
 
       &.latest {
-        font-size: 1.5em;
+        font-size: $PoliceATailleL;
 
         @media only screen and (min-width: 768px) {
-          font-size: 1em;
+          font-size: $PoliceATailleM;
 
           & h2 {
             font-size: 2.25em;
           }
 
           &::before {
-            font-size: 1.5em;
+            font-size: $PoliceATailleL;
           }
         }
 
         &::before {
           content: 'Dernière';
           position: absolute;
-          top: .25em;
-          left: .25em;
+          top: $margeHalf;
+          left: $margeHalf;
 
           text-transform: uppercase;
           font-family: "Syne", sans-serif;
@@ -244,12 +249,12 @@ main#front-page {
       justify-content: center;
       align-items: center;
 
-      background-color: #E63C23;
-      box-shadow: 4px 4px 0 #1F1F1F;
+      background-color: $couleurPrincipale;
+      @include boxShadowNoir($x: $margeHalf, $y: $margeHalf);
 
       &>h2 {
         position: static;
-        font-size: 2em;
+        font-size: $PoliceATailleXL;
       }
     }
 
@@ -285,7 +290,7 @@ main#front-page {
     display: flex;
     flex-flow: column nowrap;
     align-items: baseline;
-    gap: 2em;
+    gap: $margeS;
 
     @media only screen and (min-width: 768px) {
       flex-flow: row wrap;
@@ -300,7 +305,7 @@ main#front-page {
 
     & div.faq-item {
       width: 90vw;
-      box-shadow: 4px 4px 0 #E63C23;
+      @include boxShadowRouge($x: $margeHalf, $y: $margeHalf);
 
       @media only screen and (min-width: 768px) {
         flex: 0 0 40vw;
@@ -327,10 +332,10 @@ main#front-page {
         justify-content: space-between;
         align-items: center;
 
-        padding: 1em 1.5em;
+        padding: $margeS $margeM;
 
-        background-color: #1f1f1f;
-        color: #FFE8CE;
+        background-color: $couleurTertiaire;
+        color: $couleurSecondaireBeige;
         font-weight: bold;
 
         cursor: pointer;
@@ -350,14 +355,14 @@ main#front-page {
 
         @media only screen and (min-width: 992px) {
           height: auto;
-          padding: .5em .75em;
+          padding: $margeXXXS .75em;
         }
       }
 
       & div.faq-item-content {
         background-color: white;
         max-height: 0;
-        padding: 0 1em;
+        padding: 0 $margeXXS;
 
         overflow: hidden;
         transition: max-height .5s;
