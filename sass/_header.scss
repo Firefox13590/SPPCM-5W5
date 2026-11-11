@@ -340,7 +340,7 @@
     }
 
     // Tablette : barre compacte en haut à gauche et menu déroulant.
-    @media (min-width: 48em) {
+    @media (min-width: 768px) {
         padding: 1.5rem 2rem;
         .barre-entete {
             width: fit-content;
@@ -423,7 +423,7 @@
     }
 
     // Ordinateur : navigation horizontale et sous-menus en superposition.
-    @media (min-width: 75em) {
+    @media (min-width: 992px) {
         padding: 1.5rem 3.5rem;
         .barre-entete {
             width: 100%;
