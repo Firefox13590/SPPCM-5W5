@@ -63,9 +63,10 @@ import { classesMapping } from './classMapping.js';
  *
  * À utiliser comme solution de repli au bloc d'import/instanciation de classe ci-dessus — pas en plus.
  */
-
+/*
 document.addEventListener('DOMContentLoaded', () => {
 
     console.log('main.js');
 
 });
+*/
