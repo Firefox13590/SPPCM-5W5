@@ -7,7 +7,7 @@ export default class Entete {
 
         this.bouton = this.entete.querySelector('.bouton-menu');
         this.groupes = this.entete.querySelectorAll('details');
-        this.formatBureau = window.matchMedia('(min-width: 75em)');
+        this.formatBureau = window.matchMedia('(min-width: 992px)');
         this.entete.classList.add('menu-initialise');
 
         this.bouton.addEventListener('click', () => {
