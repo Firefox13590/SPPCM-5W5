@@ -73,7 +73,7 @@ get_header();
             </div><!-- .icones-reseaux-credits -->
         </div><!-- .bloc-credits -->
     </div><!-- .personne-credits -->
-                       <div class="personne-credits">
+    <div class="personne-credits">
         <div class="img-personne-credits">
             <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets_credits/photos_credits/pharly_credits.png" alt="Pharly Bazile">
         </div><!-- .img-personne-credits -->
@@ -105,7 +105,7 @@ get_header();
             </div><!-- .icones-reseaux-credits -->
         </div><!-- .bloc-credits -->
     </div><!-- .personne-credits -->
-        <div class="personne-credits">
+    <div class="personne-credits">
         <div class="img-personne-credits">
             <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets_credits/photos_credits/pharly_credits.png" alt="Pharly Bazile">
         </div><!-- .img-personne-credits -->
@@ -136,7 +136,7 @@ get_header();
 
             </div><!-- .icones-reseaux-credits -->
         </div><!-- .bloc-credits -->
-    </div><!-- .personne-credits --> 
+    </div><!-- .personne-credits -->
 </main>
 
 <?php

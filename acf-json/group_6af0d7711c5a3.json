@@ -33,7 +33,7 @@
             "label": "Lien du reseau",
             "name": "lienReseau",
             "aria-label": "",
-            "type": "url",
+            "type": "link",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -42,9 +42,8 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": "",
-            "allow_in_bindings": 0,
-            "placeholder": ""
+            "return_format": "url",
+            "allow_in_bindings": 0
         }
     ],
     "location": [
@@ -68,5 +67,5 @@
     "display_title": "",
     "allow_ai_access": false,
     "ai_description": "",
-    "modified": 1794170272
+    "modified": 1794421501
 }
