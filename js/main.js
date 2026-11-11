@@ -3,16 +3,21 @@
  *
  * Approche actuelle (minimale) : import direct et instanciation manuelle d'une classe.
  * À mesure que le nombre de composants JS augmente, chaque nouveau composant nécessite
- * un import + une instanciation explicite ici. 
+ * un import + une instanciation explicite ici.
  * Voir le bloc alternatif plus bas pour un pattern qui automatise cette étape via un
  * mapping HTML → classe JS.
  */
 import { Test } from './modules/Test.js';
 import Accordeon from './modules/Accordeon.js';
+import Carrousel from './modules/Carrousel.js';
+import Entete from './modules/Entete.js?v=2';
 
 new Test();
 new Accordeon();
+new Carrousel();
+new Entete();
 
+//new Test();
 
 /**
  * [ALTERNATIVE — désactivée] Instanciation automatique des composants via data-attribute.
@@ -51,7 +56,6 @@ import { classesMapping } from './classMapping.js';
 })();
 */
 
-
 /**
  * [ALTERNATIVE — désactivée] Point d'entrée pour les équipes qui n'utilisent pas
  * l'approche orientée objet (classes ES6) plus haut dans ce fichier.
@@ -63,10 +67,8 @@ import { classesMapping } from './classMapping.js';
  *
  * À utiliser comme solution de repli au bloc d'import/instanciation de classe ci-dessus — pas en plus.
  */
-/*
-document.addEventListener('DOMContentLoaded', () => {
-
-    console.log('main.js');
-
+/* 
+document.addEventListener("DOMContentLoaded", () => {
+  console.log("main.js");
 });
 */
