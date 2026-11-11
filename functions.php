@@ -1,24 +1,23 @@
 <?php
-
+ 
 /**
  * Charge les styles du thème parent et du thème enfant.
  */
 function underscores_child_assets()
 {
-
     // Style du thème parent
     wp_enqueue_style(
         'underscores-style',
         get_template_directory_uri() . '/style.css'
     );
-
+ 
     // style.css du thème enfant
     wp_enqueue_style(
         'underscores-child-style',
         get_stylesheet_uri(),
         array('underscores-style')
     );
-
+ 
     // CSS compilé depuis Sass
     wp_enqueue_style(
         'underscores-child-main',
@@ -28,8 +27,8 @@ function underscores_child_assets()
     );
 }
 add_action('wp_enqueue_scripts', 'underscores_child_assets');
-
-
+ 
+ 
 /**
  * Enregistre et charge le script JS principal du thème enfant en tant que module ES natif.
  *
@@ -38,7 +37,6 @@ add_action('wp_enqueue_scripts', 'underscores_child_assets');
  */
 function underscores_child_scripts()
 {
-
     wp_enqueue_script_module(
         'underscores-child-main',
         get_stylesheet_directory_uri() . '/js/main.js',
@@ -61,7 +59,7 @@ add_action('wp_enqueue_scripts', 'underscores_child_scripts');
  */
 /*
 function underscores_child_scripts() {
-
+ 
     wp_enqueue_script(
         'main',
         get_stylesheet_directory_uri() . '/js/main.js',

@@ -1,79 +1,238 @@
 @use "./settings/couleurs" as *;
 @use "./settings/marges" as *;
 
+.site-footer .footer-content {
+  background-color: couleurs.$couleurTertiaire;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  // gap: clamp(0rem, 2.5rem, 2.5rem);
+  padding-bottom: 2.5rem;
 
-footer {
-    background-color: couleurs.$couleurTertiaire;
+  & .reseaux img {
+    // width: 40px !important;
+    height: 2.5rem;
+    width: auto;
+    // width: 2.5rem;
+  }
+
+  & .reseaux li {
+    flex-shrink: 0;
+  }
+
+  & #logo {
+    padding-top: 2.5rem;
+  }
+
+  & #logo img {
+    // width:50%;
+    height: 2rem;
+    // border:2px solid red;
+    // height: auto;
+  }
+
+  & .reseaux {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    // width: fit-content;
+    width: 100%;
+    height: 100%;
+  }
+
+  & .reseaux ul {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    // gap: 1rem;
+    // justify-content: space-between;
+    // width: 80vw;
+    gap: clamp(0rem, 2vw, 0.5rem);
+
+    flex-wrap: wrap;
+  }
+
+  & .groupe-infos {
     display: flex;
     flex-direction: column;
+    // justify-content: space-between;
     align-items: center;
-    gap: $margeM;
+    // width: 80vw;
+    // gap: clamp(0rem, 0.5rem, 0.5rem);
+    gap: 1rem;
+    padding-bottom: 2rem;
+    width: fit-content;
+    height: 100%;
+  }
 
-    & .reseaux img {
-        // width: 40px !important;
-        height: $margeM;
+  & ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  & div.partenaires-footer {
+    width: 100%;
+    overflow: hidden;
+
+    & ul.liste-partenaires-footer {
+      display: flex;
+      // justify-content: center;
+      justify-content: left;
+      align-items: center;
+      gap: 100%;
+
+      transition: transform 1s;
+
+      & li.partenaire-footer {
+        // flex: 0 0 100%;
+        flex: 0 0 calc(100% - 4px);
+        // width: 100%;
+        // height: 100%;
+
+        & img {
+          // max-width: none;
+          width: 100%;
+          // height: 100%;
+          box-shadow: 4px 4px 0px 0px couleurs.$couleurPrincipale;
+        }
+      }
     }
-    & #logo{
-        padding-top: $margeM;
+
+    & div.carrousel-pagination {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      $gapPagItem: 2em;
+      margin-top: $gapPagItem;
+      gap: $gapPagItem;
+
+      & div {
+        flex-basis: $gapPagItem;
+        height: $gapPagItem;
+
+        background-color: couleurs.$couleurSecondaireBlanc;
+        border: ($gapPagItem / 4) solid couleurs.$couleurSecondaireBlanc;
+
+        cursor: pointer;
+
+        &.active {
+          background-color: couleurs.$couleurPrincipale;
+        }
+      }
     }
-    & #logo img{
-        // width:50%;
-        height: $margeS;
-        // border:2px solid red;
-        // height: auto;
-    }
+  }
+}
+
+@media (min-width: 768px) {
+  .site-footer .footer-content {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem;
+    // gap: 2rem;
+    // gap: clamp(0rem, 2vw, 2rem);
 
     & .reseaux {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        width: 100vw;
+      // width: clamp(16.5rem, 50%, 50%);
     }
 
     & .reseaux ul {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        // width: 80vw;
-        gap:clamp(0, $margeXXXS , $margeXXXS);
-
+      display: flex;
+      flex-direction: row;
+      // justify-content: space-between;
+      // width: 80vw;
+      // gap: clamp(0rem, 0.5rem, 0.5rem);
     }
 
-    & ul {
-        list-style-type: none !important;
-        padding: 0 !important;
-        margin: 0 !important;
+    & .reseaux img {
+      // width: 40px !important;
+      height: 2.5rem;
     }
-    & .site-info{
-        text-align: center;
-        color: couleurs.$couleurSecondaireBlanc;
 
-
-        // border: 2px solid red;
+    & #logo {
+      padding-top: 0rem;
     }
-    // & .liste-partenaires-footer{
-    //     width : 25rem;
-    //     height : 15rem;
-    //     overflow: hidden;
-    // }
-    & .partenaire-footer{
-        width : clamp(0, 100%, 25rem);
-        height : 15rem;
-        overflow: hidden;
 
+    & #logo img {
+      // width:50%;
+      height: auto;
+      width: 12rem;
+      // border:2px solid red;
+      // height: auto;
     }
-    & .partenaire-footer img{
-        width : 25rem;
-        height : 100%;
-        object-fit: cover;
 
+    & .groupe-infos {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      // gap: clamp(0rem, 1vw, 2rem);
+      // width: 80vw;
+      // gap: clamp(0rem, 0.5rem, 0.5rem);
     }
+
+    & .groupe-infos {
+      // width: 40vw;
+      // gap: clamp(0rem, 0.5rem, 0.5rem);
+      gap: 1rem;
+    }
+
+    & div.partenaires-footer {
+      flex-basis: 30%;
+    }
+  }
 }
-@media (min-width: 834px) {
-    footer.site-footer{
-        flex-direction: row;
-        align-items: center;
 
+@media (min-width: 992px) {
+  .site-footer .footer-content {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 4rem;
+    // gap: clamp(0rem, 1vw, 2rem);
+
+    & .reseaux {
+      width: clamp(16.5rem, 50%, 50%);
     }
 
+    & .reseaux img {
+      // width: 40px !important;
+      height: 3rem;
+    }
+
+    & #logo img {
+      // width:50%;
+      height: auto;
+      width: 16rem;
+      // border:2px solid red;
+      // height: auto;
+    }
+
+    // & .partenaire-footer {
+    //   // width: 30rem;
+    //   // height: 15rem;
+    //   width: clamp(0rem, 28vw, 60rem);
+    //   height: clamp(0rem, 15vw, 30rem);
+    // }
+
+    // & .partenaire-footer img {
+    //   width: clamp(0rem, 28vw, 60rem);
+    //   height: 100%;
+    //   object-fit: cover;
+    // }
+
+    & .groupe-infos {
+      gap: 2rem;
+    }
+  }
+}
+
+.site-info {
+  text-align: center;
+  color: couleurs.$couleurSecondaireBlanc;
+  background-color: couleurs.$couleurTertiaire;
+
+  // border: 2px solid red;
 }
