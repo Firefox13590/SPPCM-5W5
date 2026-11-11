@@ -45,7 +45,11 @@ get_header();
     <?php
     if (have_posts()) :
       global $wp_query;
+<<<<<<< HEAD
       $wp_query->post_count = 10;
+=======
+      $wp_query->post_count = 5;
+>>>>>>> main
       while (have_posts()):
         the_post();
 
