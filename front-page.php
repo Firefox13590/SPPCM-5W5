@@ -19,7 +19,6 @@ $formatteurLogique = datefmt_create(
 );
 
 ?>
-FRONT PAGE ENFANT <br>
 
 
 <?php

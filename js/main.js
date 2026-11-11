@@ -9,9 +9,11 @@
  */
 import { Test } from './modules/Test.js';
 import Accordeon from './modules/Accordeon.js';
+import Entete from './modules/Entete.js?v=2';
 
 new Test();
 new Accordeon();
+new Entete();
 
 
 /**
