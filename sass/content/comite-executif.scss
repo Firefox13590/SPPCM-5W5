@@ -1,15 +1,88 @@
-@use "../settings/couleurs" as *;
-@use "../settings/polices" as *;
-@use "../settings/boutons" as *;
-@use "../settings/marges" as *;
-@use "../settings/navigation" as *;
+@use "../settings/couleurs";
+@use "../settings/polices";
 @use "../settings/boxshadow" as boxShadow;
 
-main#comite-executif{
-  article{
-    img{
-      height: 10vh;
-      @include boxShadow.boxShadowRouge($x: 4px, $y: 4px)
+main#comite-executif {
+  margin: 10vh 5vw;
+
+  & section#membres-comite-executif {
+    display: flex;
+    flex-direction: column;
+    gap: 20vh;
+    margin-bottom: 20vh;
+
+    & article {
+      & input[type='checkbox']:checked &~div.membre-desc {
+        opacity: 1;
+        visibility: visible;
+      }
+
+      div.membre-front {
+        position: relative;
+
+        & img {
+          width: 90%;
+          margin: auto;
+          @include boxShadow.boxShadowRouge();
+        }
+
+        & div.membre-front-info {
+          width: 90%;
+          position: absolute;
+          bottom: -3.25em;
+          right: 0;
+          z-index: 1;
+
+          background-color: couleurs.$couleurTertiaire;
+          color: couleurs.$couleurSecondaireBeige;
+          text-align: right;
+          @include boxShadow.boxShadowRouge();
+
+          & h3 {
+            font-size: polices.$policeH2TailleS;
+          }
+
+          & h4 {
+            font-size: polices.$policeH3TailleM;
+          }
+        }
+      }
+
+
+      & div.membre-desc {
+        opacity: 0;
+        visibility: collapse;
+        transition-property: opacity, visibility;
+        transition-duration: .5s;
+        pointer-events: visible;
+
+        background-color: couleurs.$couleurSecondaireBlanc;
+        color: couleurs.$couleurTertiaire;
+        @include boxShadow.boxShadowNoire();
+        width: 80vw;
+        max-height: 80vh;
+        padding: .5em;
+        overflow-y: scroll;
+
+        position: fixed;
+        top: 10vh;
+        left: 10vw;
+        z-index: 100;
+
+        display: flex;
+        flex-flow: column nowrap;
+        gap: 1.5vh;
+
+        & label {
+          align-self: flex-end;
+          font-size: polices.$policeH3TailleL;
+          color: couleurs.$couleurPrincipale;
+        }
+
+        & h4 {
+          font-size: polices.$policeH3TailleM;
+        }
+      }
     }
   }
 }

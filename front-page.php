@@ -1,5 +1,4 @@
 <?php
-// require(__DIR__ . '/utils/oneShotScripts/infolettres.php');
 
 $formatteurLisible = datefmt_create(
   'fr_CA',
