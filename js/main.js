@@ -10,11 +10,13 @@
 import { Test } from './modules/Test.js';
 import Accordeon from './modules/Accordeon.js';
 import Carrousel from './modules/Carrousel.js';
+import { Partenaires } from './modules/Partenaires.js';
 import Entete from './modules/Entete.js?v=2';
 
 new Test();
 new Accordeon();
 new Carrousel();
+new Partenaires();
 new Entete();
 
 //new Test();

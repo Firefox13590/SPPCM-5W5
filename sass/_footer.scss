@@ -89,16 +89,21 @@
         flex: 0 0 calc(100% - 4px);
         // width: 100%;
         // height: 100%;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-        & a{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        & a {
           //NOTE : if statement ce case c'est bon pour height wise vice versa
           width: 50%;
           height: auto;
           display: flex;
           align-items: center;
           justify-content: center;
+          
+
+          // width: if(media(width > height): 50%; else: auto);
+          // height: if(media(width > height): auto; else: 50%);
+          
         }
         & img {
           // max-width: none;
@@ -234,10 +239,10 @@
       display: flex;
       align-items: center;
     }
-    & .partenaire-footer img{
+    & .partenaire-footer img {
       // width: 30rem;
       // height: 15rem;
-      height:50%;
+      height: 50%;
       // width: 50% !important;
     }
     // & .partenaire-footer img {
