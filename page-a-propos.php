@@ -1,8 +1,3 @@
-<p>
-  PAGE COMITE EXECUTIF <br>
-  ENFANT
-</p>
-
 <?php
 $intervalleAnnee = '';
 [$moisCourant, $anneeCourante] = [(int)date('m'), (int)date('Y')];
@@ -38,6 +33,7 @@ get_header();
     </p>
     <p>
       Jetez un coup d'oeil aux représentants du comité exécutif permettant au SPPCM d'accomplir leur mission.
+      Cliquez sur les cartes pour dévoiler la descripton complète.
     </p>
   </div>
 
@@ -84,9 +80,9 @@ get_header();
     ?>
         <article class="membre">
           <input type="checkbox" name="<?= $targetCC; ?>" id="<?= $targetCC; ?>" class="none">
-          <label for="<?= $targetCC; ?>" role="button" class="button">
+          <label for="<?= $targetCC; ?>" role="button" class="button" aria-label="Cliquer pour une descripton complète">
             <div class="membre-front">
-              <img src="<?= $img; ?>">
+              <img src="<?= $img; ?>" alt="Photo de <?= $nom; ?>">
               <div class="membre-front-info">
                 <h3><?= $nom; ?></h3>
                 <h4><?= $role; ?></h4>
@@ -94,7 +90,7 @@ get_header();
             </div>
           </label>
           <div class="membre-desc">
-            <label for="<?= $targetCC; ?>" class="button" role="button">
+            <label for="<?= $targetCC; ?>" class="button" role="button" aria-label="Fermer">
               <span class="p">X</span>
             </label>
             <h4>Nom:<br><?= $nom; ?></h4>
