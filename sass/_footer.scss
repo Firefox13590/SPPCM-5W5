@@ -92,6 +92,10 @@
         display: flex;
         align-items: center;
         justify-content: center;
+          width: 50%;
+          height: auto;
+          //NOTE : IG aussi changer ca
+
         & a {
           //NOTE : if statement ce case c'est bon pour height wise vice versa
           width: 50%;
@@ -99,12 +103,14 @@
           display: flex;
           align-items: center;
           justify-content: center;
-          
 
           // width: if(media(width > height): 50%; else: auto);
           // height: if(media(width > height): auto; else: 50%);
-          
         }
+        // & .partenaires-larges {
+        //   width: 50%;
+        //   height: auto;
+        // }
         & img {
           // max-width: none;
           width: 100%;
