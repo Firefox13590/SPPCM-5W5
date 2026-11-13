@@ -5,16 +5,57 @@
 main#comite-executif {
   margin: 10vh 5vw;
 
+  div.bg-noir {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 99;
+    width: 100vw;
+    height: 100vh;
+
+    opacity: 0;
+    transition: opacity .5s;
+
+    background-color: rgba($color: #000000, $alpha: .5);
+    pointer-events: none;
+
+    &:has(~section#membres-comite-executif article input[type='checkbox']:checked) {
+      opacity: 1;
+      pointer-events: all;
+    }
+  }
+
   & section#membres-comite-executif {
     display: flex;
     flex-direction: column;
     gap: 20vh;
     margin-bottom: 20vh;
 
+    @media only screen and (min-width: 768px) {
+      flex-flow: row wrap;
+      justify-content: space-between;
+      gap: calc(10vw * .9);
+    }
+
+    @media only screen and (min-width: 992px) {
+      justify-content: start;
+      gap: calc(5vw * .9);
+    }
+
     & article {
-      & input[type='checkbox']:checked &~div.membre-desc {
-        opacity: 1;
-        visibility: visible;
+      @media only screen and (min-width: 768px) {
+        flex: 1 0 45%;
+      }
+
+      @media only screen and (min-width: 992px) {
+        flex-basis: 30%;
+      }
+
+      & input[type='checkbox']:checked {
+        &~div.membre-desc {
+          opacity: 1;
+          visibility: visible;
+        }
       }
 
       div.membre-front {
@@ -76,7 +117,11 @@ main#comite-executif {
         & label {
           align-self: flex-end;
           font-size: polices.$policeH3TailleL;
-          color: couleurs.$couleurPrincipale;
+          transition: color .5s;
+
+          &:hover {
+            color: couleurs.$couleurPrincipale;
+          }
         }
 
         & h4 {

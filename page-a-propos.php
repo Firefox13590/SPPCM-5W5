@@ -23,10 +23,29 @@ get_header();
 ?>
 
 <main id="comite-executif">
+  <div class="bg-noir"></div>
+
+  <div>
+    <p>
+      Le syndicat des professeures et professeurs du Collège de Maisonneuve (SPPCM) a pour objectifs l’étude,
+      la défense et la promotion des intérêts et des objectifs professionnels, syndicaux, économiques et sociaux de ses membres.
+      Il vise également la promotion de la recherche et de la qualité du travail en éducation.
+    </p>
+    <p>
+      Le SPPCM regroupe plus de 630 membres.
+      Fondé le 7 mars 1968, il est affilié à la fédération nationale des enseignantes et enseignants du Québec (FNEEQ),
+      elle-même membre (ou filiale) de la Confédération des syndicats nationaux (CSN).
+    </p>
+    <p>
+      Jetez un coup d'oeil aux représentants du comité exécutif permettant au SPPCM d'accomplir leur mission.
+    </p>
+  </div>
+
   <h2>
     Comité exécutif
     <span><?= $intervalleAnnee; ?></span>
   </h2>
+
   <section id="membres-comite-executif">
     <?php
     $argsComite = array(
@@ -78,6 +97,7 @@ get_header();
             <label for="<?= $targetCC; ?>" class="button" role="button">
               <span class="p">X</span>
             </label>
+            <h4>Nom:<br><?= $nom; ?></h4>
             <h4>Role éxécutif:<br><?= $role; ?></h4>
             <?php if ($poste): ?>
               <h4>Poste au collège:<br><?= $poste; ?></h4>
