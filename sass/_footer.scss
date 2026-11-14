@@ -208,7 +208,7 @@
 
     & .partenaires-footer {
       // flex-basis: 30%;
-      flex-basis: clamp(13rem, 20%, 26rem );
+      flex-basis: clamp(12rem, 20%, 20rem );
 
       // width: clamp(0rem, 28vw, 26rem);
       // height: clamp(0rem, 15vw, 13rem);
@@ -275,6 +275,13 @@
   text-align: center;
   color: $couleurSecondaireBlanc;
   background-color: $couleurTertiaire;
+
+  // border: 2px solid red;
+}
+.site-credits {
+  text-align: center;
+  color: $couleurTertiaire;
+  background-color: $couleurSecondaireBlanc;
 
   // border: 2px solid red;
 }

@@ -156,6 +156,14 @@
 	<div class="site-info">
 		Copyright © <?= date('Y'); ?> SPPCM - Le Syndicat des professeures et professeurs du Collège Maisonneuve. Tous droits réservés.
 	</div><!-- .site-info -->
+
+	<div class="site-credits">
+		<a><i>Ce site a été fait par l'équipe des Travailleurs Travailleuses Travaillant-e-s du Collège Maisonneuve.</i>
+		</br>
+		Cliquer ici pour en savoir plus sur nous!
+		</a>
+	</div><!-- .site-credits -->
+
 </footer><!-- #colophon -->
 </div><!-- #page -->
 
