@@ -106,7 +106,11 @@ main#front-page {
           margin: 0;
 
           &:not(:has(img)) {
-            @include boxShadowRouge($x: $margeHalf, $y: $margeHalf);
+            @include boxShadowRouge();
+
+            &:hover {
+              @include boxShadowNoire();
+            }
           }
 
           & img {
@@ -114,7 +118,11 @@ main#front-page {
             height: 35vh;
             padding-bottom: 100px;
             background-color: $couleurSectionDisabledPrimaire;
-            @include boxShadowRouge($x: $margeHalf, $y: $margeHalf);
+            @include boxShadowRouge();
+
+            &:hover {
+              @include boxShadowNoire();
+            }
 
             @media only screen and (min-width: 768px) {
               height: 20vh;
@@ -124,7 +132,13 @@ main#front-page {
           & figcaption {
             background-color: $couleurSecondaireBlanc;
             padding: $margeXXS;
-            @include boxShadowNoire($x: $margeHalf, $y: $margeHalf);
+            @include boxShadowNoire();
+
+            &:hover {
+              background-color: $couleurTertiaire;
+              color: $couleurSecondaireBlanc;
+              @include boxShadowRouge();
+            }
           }
         }
       }
@@ -137,9 +151,14 @@ main#front-page {
       width: 90vw;
       flex-basis: $margeXXL;
 
-      color: #FFE8CE;
-      background-color: #E63C23;
-      box-shadow: 4px 4px 0 #1F1F1F;
+      color: $couleurSecondaireBeige;
+      background-color: $couleurPrincipale;
+      @include boxShadowNoire();
+
+      &:hover {
+        background-color: $couleurTertiaire;
+        @include boxShadowRouge();
+      }
 
       @media only screen and (min-width: 768px) {
         width: auto;
@@ -206,7 +225,12 @@ main#front-page {
       position: relative;
       background-color: #1F1F1F;
       flex-basis: $margeXXL;
-      @include boxShadowRouge($x: $margeHalf, $y: $margeHalf);
+      @include boxShadowRouge();
+
+      &:hover {
+        background-color: $couleurPrincipale;
+        @include boxShadowNoire();
+      }
 
       @media only screen and (min-width: 768px) {
         flex: 0 0 40vw;
@@ -256,7 +280,12 @@ main#front-page {
       align-items: center;
 
       background-color: $couleurPrincipale;
-      @include boxShadowNoire($x: $margeHalf, $y: $margeHalf);
+      @include boxShadowNoire();
+
+      &:hover {
+        background-color: $couleurTertiaire;
+        @include boxShadowRouge();
+      }
 
       &>h2 {
         position: static;
@@ -311,7 +340,13 @@ main#front-page {
 
     & div.faq-item {
       width: 90vw;
-      @include boxShadowRouge($x: $margeHalf, $y: $margeHalf);
+      background-color: $couleurTertiaire;
+      @include boxShadowRouge();
+
+      &:hover {
+        background-color: $couleurPrincipale;
+        @include boxShadowNoire();
+      }
 
       @media only screen and (min-width: 768px) {
         flex: 0 0 40vw;
@@ -340,11 +375,15 @@ main#front-page {
 
         padding: $margeS $margeM;
 
-        background-color: $couleurTertiaire;
+        // background-color: $couleurTertiaire;
         color: $couleurSecondaireBeige;
         font-weight: bold;
 
         cursor: pointer;
+
+        // &:hover {
+        //   background-color: $couleurPrincipale;
+        // }
 
         @media only screen and (min-width: 768px) {
           height: 10vh;
