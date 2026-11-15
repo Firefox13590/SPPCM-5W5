@@ -60,11 +60,14 @@ main#comite-executif {
 
       div.membre-front {
         position: relative;
+        transition-property: background-color, box-shadow;
+        transition-duration: .25s;
 
         & img {
           width: 90%;
           margin: auto;
           @include boxShadow.boxShadowRouge();
+          transition: inherit;
         }
 
         & div.membre-front-info {
@@ -78,6 +81,7 @@ main#comite-executif {
           color: couleurs.$couleurSecondaireBeige;
           text-align: right;
           @include boxShadow.boxShadowRouge();
+          transition: inherit;
 
           & h3 {
             font-size: polices.$policeH2TailleS;
@@ -85,6 +89,18 @@ main#comite-executif {
 
           & h4 {
             font-size: polices.$policeH3TailleM;
+          }
+        }
+
+        &:hover {
+          & img {
+            @include boxShadow.boxShadowNoire();
+          }
+
+          & div.membre-front-info {
+            background-color: couleurs.$couleurPrincipale;
+            // color: couleurs.$couleurTertiaire;
+            @include boxShadow.boxShadowNoire();
           }
         }
       }
