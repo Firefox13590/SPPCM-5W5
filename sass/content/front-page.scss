@@ -9,6 +9,12 @@ main#front-page {
   FRONT-PAGE (ACCUEIL)
   styles mobile
   */
+
+  p {
+    margin: 0;
+    padding: 0;
+  }
+
   @media only screen and (min-width: 992px) {
     display: grid;
     grid-template-areas:

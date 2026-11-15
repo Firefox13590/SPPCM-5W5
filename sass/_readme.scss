@@ -1,4 +1,8 @@
+<<<<<<< HEAD
+
+=======
 @use './settings/couleurs';
+>>>>>>> 165f537e2d28718e245cf11bf8598567fa9857ce
 
 
 /* 
@@ -26,7 +30,7 @@ p {
   HEADER
 */
 header {
-  background-color: $colorPrimary;
+  background-color: red;
 
   & nav {
     display: flex;
@@ -35,7 +39,7 @@ header {
 
     & span.nav-item {
       background-color: black;
-      color: $colorPrimary;
+      color: red;
 
       &:hover {
         background-color: white;
@@ -51,5 +55,5 @@ header {
   FOOTER
 */
 footer {
-  background-color: $colorPrimary;
+  background-color: red;
 }

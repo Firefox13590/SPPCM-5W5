@@ -1,5 +1,4 @@
 <?php
-// require(__DIR__ . '/utils/oneShotScripts/infolettres.php');
 
 $formatteurLisible = datefmt_create(
   'fr_CA',
@@ -132,7 +131,7 @@ get_header();
     <h2>FAQ</h2>
     <?php for ($i = 0; $i < 5; $i++): ?>
 
-      <div role="button" class="faq-item">
+      <div role="button" class="faq-item js-accordeon">
         <input type="checkbox" name="cc-faq-<?= $i; ?>" id="cc-faq-<?= $i; ?>" class="none">
         <label class="faq-item-title" for="cc-faq-<?= $i; ?>">
           <h3>Question</h3>
