@@ -10,6 +10,8 @@ get_header();
 
 <main class="credits">
 
+    <div class="bg-noir"></div>
+
     <div class="personne-credits">
         <div class="img-personne-credits">
             <img src="<?php echo esc_url(get_theme_file_uri('/images/assets_credits/photos_credits/pharly_credits.png')); ?>" alt="Pharly Bazile">

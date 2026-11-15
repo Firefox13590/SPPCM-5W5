@@ -4,9 +4,10 @@
 @use "../settings/marges" as *;
 @use "../settings/navigation" as *;
 
+@use "../settings/boxshadow" as boxShadow;
+
 main.credits{
-    background-color: $couleurSecondaireBeige;
-    display: flex;
+    margin: 10vh 5vw;
 }
 
 .personne-credits{
