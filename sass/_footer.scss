@@ -14,8 +14,16 @@
     height: 2.5rem;
     width: auto;
     // width: 2.5rem;
+    transition: all 0.1s linear;
+
   }
 
+  & .reseaux img:hover {
+    filter: brightness(0.8);
+    scale: 1.2;
+    rotate: 5deg;
+    transition: all 0.35s ease-in-out;
+  }
   & .reseaux li {
     flex-shrink: 0;
   }
@@ -281,7 +289,19 @@
 .site-credits {
   text-align: center;
   color: $couleurTertiaire;
-  background-color: $couleurSecondaireBlanc;
+  background-color: $couleurPrincipale;
 
   // border: 2px solid red;
+}
+.site-credits a {
+  color: $couleurSecondaireBlanc;
+
+}
+
+.site-credits a:hover {
+  color: $couleurSectionHoverBlanc;
+  text-decoration: underline;
+}
+.site-credits a:focus {
+  color: $couleurSectionFocusBlanc;
 }
