@@ -78,7 +78,7 @@ get_header();
 
         $targetCC = "cc-membre-" . $queryComite->current_post;
     ?>
-        <article class="membre">
+        <article class="membre" title="Cliquez sur les cartes pour dévoiler la descripton complète.">
           <input type="checkbox" name="<?= $targetCC; ?>" id="<?= $targetCC; ?>" class="none">
           <label for="<?= $targetCC; ?>" role="button" class="button" aria-label="Cliquer pour une descripton complète">
             <div class="membre-front">

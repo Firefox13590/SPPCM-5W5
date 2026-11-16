@@ -9,6 +9,7 @@
   // gap: clamp(0rem, 2.5rem, 2.5rem);
   padding-bottom: 1.5rem;
   overflow: hidden;
+
   & .reseaux img {
     // width: 40px !important;
     height: 2.5rem;
@@ -17,9 +18,11 @@
     transition: all 0.1s linear;
 
   }
+
   & .carrousel-pagination div {
     transition: all 0.1s linear;
   }
+
   & .carrousel-pagination div:hover {
     transition: all 0.2s linear;
     scale: 1.2;
@@ -32,6 +35,7 @@
     rotate: 5deg;
     transition: all 0.35s ease-in-out;
   }
+
   & .reseaux li {
     flex-shrink: 0;
   }
@@ -45,11 +49,13 @@
     transition: all 0.1s linear;
 
   }
+
   & #logo img:hover {
     scale: 1.1;
     filter: brightness(0.6);
     transition: all 0.35s ease-in-out;
   }
+
   & .reseaux {
     display: flex;
     flex-direction: row;
@@ -126,11 +132,13 @@
           // width: if(media(width > height): 50%; else: auto);
           // height: if(media(width > height): auto; else: 50%);
         }
+
         & .partenaires-larges {
           width: auto;
           height: 50%;
           // border: 2px solid red;
         }
+
         & img {
           // max-width: none;
           width: 100%;
@@ -140,21 +148,24 @@
           transition: all 0.1s linear;
 
         }
+
         & img:hover {
           filter: brightness(0.5);
           transition: all 0.35s ease-in-out;
 
-      }
+        }
+
         //NOTE : ceci affecte les partenaires
       }
     }
 
     & div.carrousel-pagination {
+      $gapPagItem: 2em;
+
       display: flex;
       justify-content: center;
       align-items: center;
 
-      $gapPagItem: 2em;
       margin-top: $gapPagItem;
       gap: $gapPagItem;
 
@@ -230,7 +241,7 @@
 
     & .partenaires-footer {
       // flex-basis: 30%;
-      flex-basis: clamp(12rem, 20%, 20rem );
+      flex-basis: clamp(12rem, 20%, 20rem);
 
       // width: clamp(0rem, 28vw, 26rem);
       // height: clamp(0rem, 15vw, 13rem);
@@ -276,12 +287,14 @@
       display: flex;
       align-items: center;
     }
+
     & .partenaire-footer img {
       // width: 30rem;
       // height: 15rem;
       height: 50%;
       // width: 50% !important;
     }
+
     // & .partenaire-footer img {
     //   width: clamp(0rem, 28vw, 60rem);
     //   height: 100%;
@@ -300,16 +313,18 @@
   text-align: center;
   color: $couleurSecondaireBlanc;
   background-color: $couleurTertiaire;
-  padding:1rem;
+  padding: 1rem;
 
   // border: 2px solid red;
 }
+
 .site-credits {
   text-align: center;
   color: $couleurTertiaire;
   background-color: $couleurPrincipale;
   // border: 2px solid red;
 }
+
 .site-credits a {
   color: $couleurSecondaireBlanc;
 
@@ -319,27 +334,31 @@
   color: $couleurSectionHoverBlanc;
   text-decoration: underline;
 }
+
 .site-credits a:focus {
   color: $couleurSectionFocusBlanc;
 }
 
-.site-footer .footer-content>*{
-    opacity: 0;
+.site-footer .footer-content>* {
+  opacity: 0;
 
 }
+
 .site-footer .footer-content>*.apparition {
-    opacity: 1;
-    scale: 1;
+  opacity: 1;
+  scale: 1;
   animation: animation-apparition-footer 1s ease-in-out;
 
 }
-@keyframes animation-apparition-footer{
-  from{
+
+@keyframes animation-apparition-footer {
+  from {
     opacity: 0;
     transform: translateY(100%);
     scale: 0.9;
   }
-  to{
+
+  to {
     opacity: 1;
     transform: translateY(0%);
     scale: 1;
