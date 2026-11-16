@@ -12,125 +12,129 @@ get_header();
 
     <div class="bg-noir"></div>
 
-    <div class="personne-credits">
-        <div class="img-personne-credits">
-            <img src="<?php echo esc_url(get_theme_file_uri('/images/assets_credits/photos_credits/pharly_credits.png')); ?>" alt="Pharly Bazile">
-        </div><!-- .img-personne-credits -->
+    <section id="personnes-credits">
 
-        <div class="bloc-credits">
-            <div class="nom-personne-credits">
-                <h3>Pharly Bazile</h3>
-            </div><!-- .nom-personne-credits -->
+        <article class="personne-credits">
+            <div class="img-personne-credits">
+                <img src="<?php echo esc_url(get_theme_file_uri('/images/assets_credits/photos_credits/pharly_credits.png')); ?>" alt="Pharly Bazile">
+            </div><!-- .img-personne-credits -->
 
-            <div class="info-personne-credits">
-                <p>Directeur Technique</p>
-            </div><!-- .info-personne-credits -->
+            <div class="bloc-credits">
+                <div class="nom-personne-credits">
+                    <h3>Pharly Bazile</h3>
+                </div><!-- .nom-personne-credits -->
 
-            <div class="icones-reseaux-credits">
-                <a class="icone-reseau-credits" href="https://example.com">
-                    <img src="<?php echo esc_url(get_theme_file_uri('/images/assets_credits/icones_pour_credits/LinkedIn.svg')); ?>" alt="LinkedIn">
-                </a>
+                <div class="info-personne-credits">
+                    <p>Directeur Technique</p>
+                </div><!-- .info-personne-credits -->
 
-                <a class="icone-reseau-credits" href="https://example.com">
-                    <img src="<?php echo esc_url(get_theme_file_uri('/images/assets_credits/icones_pour_credits/Behance.svg')); ?>" alt="Behance">
-                </a>
+                <div class="icones-reseaux-credits">
+                    <a class="icone-reseau-credits" href="https://example.com">
+                        <img src="<?php echo esc_url(get_theme_file_uri('/images/assets_credits/icones_pour_credits/LinkedIn.svg')); ?>" alt="LinkedIn">
+                    </a>
 
-                <a class="icone-reseau-credits" href="https://example.com">
-                    <img src="<?php echo esc_url(get_theme_file_uri('/images/assets_credits/icones_pour_credits/Github.svg')); ?>" alt="GitHub">
-                </a>
-            </div><!-- .icones-reseaux-credits -->
-        </div><!-- .bloc-credits -->
-    </div><!-- .personne-credits -->
+                    <a class="icone-reseau-credits" href="https://example.com">
+                        <img src="<?php echo esc_url(get_theme_file_uri('/images/assets_credits/icones_pour_credits/Behance.svg')); ?>" alt="Behance">
+                    </a>
 
-    <div class="personne-credits">
-        <div class="img-personne-credits">
-            <img src="<?php echo esc_url(get_theme_file_uri('/images/assets_credits/photos_credits/pharly_credits.png')); ?>" alt="Pharly Bazile">
-        </div><!-- .img-personne-credits -->
+                    <a class="icone-reseau-credits" href="https://example.com">
+                        <img src="<?php echo esc_url(get_theme_file_uri('/images/assets_credits/icones_pour_credits/Github.svg')); ?>" alt="GitHub">
+                    </a>
+                </div><!-- .icones-reseaux-credits -->
+            </div><!-- .bloc-credits -->
+        </article><!-- .personne-credits -->
 
-        <div class="bloc-credits">
-            <div class="nom-personne-credits">
-                <h3>Pharly Bazile</h3>
-            </div><!-- .nom-personne-credits -->
+        <article class="personne-credits">
+            <div class="img-personne-credits">
+                <img src="<?php echo esc_url(get_theme_file_uri('/images/assets_credits/photos_credits/pharly_credits.png')); ?>" alt="Pharly Bazile">
+            </div><!-- .img-personne-credits -->
 
-            <div class="info-personne-credits">
-                <p>Directeur Technique</p>
-            </div><!-- .info-personne-credits -->
+            <div class="bloc-credits">
+                <div class="nom-personne-credits">
+                    <h3>Pharly Bazile</h3>
+                </div><!-- .nom-personne-credits -->
 
-            <div class="icones-reseaux-credits">
-                <a class="icone-reseau-credits" href="https://example.com">
-                    <img src="<?php echo esc_url(get_theme_file_uri('/images/assets_credits/icones_pour_credits/LinkedIn.svg')); ?>" alt="LinkedIn">
-                </a>
+                <div class="info-personne-credits">
+                    <p>Directeur Technique</p>
+                </div><!-- .info-personne-credits -->
 
-                <a class="icone-reseau-credits" href="https://example.com">
-                    <img src="<?php echo esc_url(get_theme_file_uri('/images/assets_credits/icones_pour_credits/Behance.svg')); ?>" alt="Behance">
-                </a>
+                <div class="icones-reseaux-credits">
+                    <a class="icone-reseau-credits" href="https://example.com">
+                        <img src="<?php echo esc_url(get_theme_file_uri('/images/assets_credits/icones_pour_credits/LinkedIn.svg')); ?>" alt="LinkedIn">
+                    </a>
 
-                <a class="icone-reseau-credits" href="https://example.com">
-                    <img src="<?php echo esc_url(get_theme_file_uri('/images/assets_credits/icones_pour_credits/Github.svg')); ?>" alt="GitHub">
-                </a>
-            </div><!-- .icones-reseaux-credits -->
-        </div><!-- .bloc-credits -->
-    </div><!-- .personne-credits -->
+                    <a class="icone-reseau-credits" href="https://example.com">
+                        <img src="<?php echo esc_url(get_theme_file_uri('/images/assets_credits/icones_pour_credits/Behance.svg')); ?>" alt="Behance">
+                    </a>
 
-    <div class="personne-credits">
-        <div class="img-personne-credits">
-            <img src="<?php echo esc_url(get_theme_file_uri('/images/assets_credits/photos_credits/pharly_credits.png')); ?>" alt="Pharly Bazile">
-        </div><!-- .img-personne-credits -->
+                    <a class="icone-reseau-credits" href="https://example.com">
+                        <img src="<?php echo esc_url(get_theme_file_uri('/images/assets_credits/icones_pour_credits/Github.svg')); ?>" alt="GitHub">
+                    </a>
+                </div><!-- .icones-reseaux-credits -->
+            </div><!-- .bloc-credits -->
+        </article><!-- .personne-credits -->
 
-        <div class="bloc-credits">
-            <div class="nom-personne-credits">
-                <h3>Pharly Bazile</h3>
-            </div><!-- .nom-personne-credits -->
+        <article class="personne-credits">
+            <div class="img-personne-credits">
+                <img src="<?php echo esc_url(get_theme_file_uri('/images/assets_credits/photos_credits/pharly_credits.png')); ?>" alt="Pharly Bazile">
+            </div><!-- .img-personne-credits -->
 
-            <div class="info-personne-credits">
-                <p>Directeur Technique</p>
-            </div><!-- .info-personne-credits -->
+            <div class="bloc-credits">
+                <div class="nom-personne-credits">
+                    <h3>Pharly Bazile</h3>
+                </div><!-- .nom-personne-credits -->
 
-            <div class="icones-reseaux-credits">
-                <a class="icone-reseau-credits" href="https://example.com">
-                    <img src="<?php echo esc_url(get_theme_file_uri('/images/assets_credits/icones_pour_credits/LinkedIn.svg')); ?>" alt="LinkedIn">
-                </a>
+                <div class="info-personne-credits">
+                    <p>Directeur Technique</p>
+                </div><!-- .info-personne-credits -->
 
-                <a class="icone-reseau-credits" href="https://example.com">
-                    <img src="<?php echo esc_url(get_theme_file_uri('/images/assets_credits/icones_pour_credits/Behance.svg')); ?>" alt="Behance">
-                </a>
+                <div class="icones-reseaux-credits">
+                    <a class="icone-reseau-credits" href="https://example.com">
+                        <img src="<?php echo esc_url(get_theme_file_uri('/images/assets_credits/icones_pour_credits/LinkedIn.svg')); ?>" alt="LinkedIn">
+                    </a>
 
-                <a class="icone-reseau-credits" href="https://example.com">
-                    <img src="<?php echo esc_url(get_theme_file_uri('/images/assets_credits/icones_pour_credits/Github.svg')); ?>" alt="GitHub">
-                </a>
-            </div><!-- .icones-reseaux-credits -->
-        </div><!-- .bloc-credits -->
-    </div><!-- .personne-credits -->
+                    <a class="icone-reseau-credits" href="https://example.com">
+                        <img src="<?php echo esc_url(get_theme_file_uri('/images/assets_credits/icones_pour_credits/Behance.svg')); ?>" alt="Behance">
+                    </a>
 
-    <div class="personne-credits">
-        <div class="img-personne-credits">
-            <img src="<?php echo esc_url(get_theme_file_uri('/images/assets_credits/photos_credits/pharly_credits.png')); ?>" alt="Pharly Bazile">
-        </div><!-- .img-personne-credits -->
+                    <a class="icone-reseau-credits" href="https://example.com">
+                        <img src="<?php echo esc_url(get_theme_file_uri('/images/assets_credits/icones_pour_credits/Github.svg')); ?>" alt="GitHub">
+                    </a>
+                </div><!-- .icones-reseaux-credits -->
+            </div><!-- .bloc-credits -->
+        </article><!-- .personne-credits -->
 
-        <div class="bloc-credits">
-            <div class="nom-personne-credits">
-                <h3>Pharly Bazile</h3>
-            </div><!-- .nom-personne-credits -->
+        <article class="personne-credits">
+            <div class="img-personne-credits">
+                <img src="<?php echo esc_url(get_theme_file_uri('/images/assets_credits/photos_credits/pharly_credits.png')); ?>" alt="Pharly Bazile">
+            </div><!-- .img-personne-credits -->
 
-            <div class="info-personne-credits">
-                <p>Directeur Technique</p>
-            </div><!-- .info-personne-credits -->
+            <div class="bloc-credits">
+                <div class="nom-personne-credits">
+                    <h3>Pharly Bazile</h3>
+                </div><!-- .nom-personne-credits -->
 
-            <div class="icones-reseaux-credits">
-                <a class="icone-reseau-credits" href="https://example.com">
-                    <img src="<?php echo esc_url(get_theme_file_uri('/images/assets_credits/icones_pour_credits/LinkedIn.svg')); ?>" alt="LinkedIn">
-                </a>
+                <div class="info-personne-credits">
+                    <p>Directeur Technique</p>
+                </div><!-- .info-personne-credits -->
 
-                <a class="icone-reseau-credits" href="https://example.com">
-                    <img src="<?php echo esc_url(get_theme_file_uri('/images/assets_credits/icones_pour_credits/Behance.svg')); ?>" alt="Behance">
-                </a>
+                <div class="icones-reseaux-credits">
+                    <a class="icone-reseau-credits" href="https://example.com">
+                        <img src="<?php echo esc_url(get_theme_file_uri('/images/assets_credits/icones_pour_credits/LinkedIn.svg')); ?>" alt="LinkedIn">
+                    </a>
 
-                <a class="icone-reseau-credits" href="https://example.com">
-                    <img src="<?php echo esc_url(get_theme_file_uri('/images/assets_credits/icones_pour_credits/Github.svg')); ?>" alt="GitHub">
-                </a>
-            </div><!-- .icones-reseaux-credits -->
-        </div><!-- .bloc-credits -->
-    </div><!-- .personne-credits -->
+                    <a class="icone-reseau-credits" href="https://example.com">
+                        <img src="<?php echo esc_url(get_theme_file_uri('/images/assets_credits/icones_pour_credits/Behance.svg')); ?>" alt="Behance">
+                    </a>
+
+                    <a class="icone-reseau-credits" href="https://example.com">
+                        <img src="<?php echo esc_url(get_theme_file_uri('/images/assets_credits/icones_pour_credits/Github.svg')); ?>" alt="GitHub">
+                    </a>
+                </div><!-- .icones-reseaux-credits -->
+            </div><!-- .bloc-credits -->
+        </article><!-- .personne-credits -->
+    </section>
+    
 
 </main>
 
