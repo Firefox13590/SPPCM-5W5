@@ -1,5 +1,4 @@
 <?php
-// require(__DIR__ . '/utils/oneShotScripts/infolettres.php');
 
 $formatteurLisible = datefmt_create(
   'fr_CA',
@@ -43,11 +42,14 @@ get_header();
     <h2>Actualités</h2>
 
     <?php
-    if (have_posts()) :
-      global $wp_query;
-      $wp_query->post_count = 5;
-      while (have_posts()):
-        the_post();
+    $queryActu = new WP_Query(array(
+      'post_type' => 'post',
+      'posts_per_page' => 7,
+      'ignore_sticky_posts' => true,
+    ));
+    if ($queryActu->have_posts()) :
+      while ($queryActu->have_posts()):
+        $queryActu->the_post();
 
         $actuImgCouverture = get_the_post_thumbnail();
         // var_dump($actuImgCouverture);
@@ -57,7 +59,7 @@ get_header();
           <a href="<?= the_permalink(); ?>">
             <figure>
               <?php if ($actuImgCouverture !== ''): ?>
-                <img src="<?= $actuImgCouverture; ?>">
+                <?= $actuImgCouverture; ?>
               <?php endif; ?>
               <figcaption>
                 <h2><?= the_title(); ?></h2>
@@ -132,7 +134,7 @@ get_header();
     <h2>FAQ</h2>
     <?php for ($i = 0; $i < 5; $i++): ?>
 
-      <div role="button" class="faq-item">
+      <div role="button" class="faq-item js-accordeon">
         <input type="checkbox" name="cc-faq-<?= $i; ?>" id="cc-faq-<?= $i; ?>" class="none">
         <label class="faq-item-title" for="cc-faq-<?= $i; ?>">
           <h3>Question</h3>

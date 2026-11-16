@@ -30,14 +30,14 @@ h2,
 h3,
 h4,
 h5,
-h6 {
+h6,
+.h {
   font-family: $policeH2;
 }
 
-p {
+p,
+.p {
   font-family: $policeP;
-  margin: 0;
-  padding: 0;
 }
 
 a {
@@ -47,4 +47,8 @@ a {
 
 .none {
   display: none;
+}
+
+.button {
+  cursor: pointer;
 }
