@@ -8,13 +8,21 @@
   align-items: center;
   // gap: clamp(0rem, 2.5rem, 2.5rem);
   padding-bottom: 1.5rem;
-
+  overflow: hidden;
   & .reseaux img {
     // width: 40px !important;
     height: 2.5rem;
     width: auto;
     // width: 2.5rem;
     transition: all 0.1s linear;
+
+  }
+  & .carrousel-pagination div {
+    transition: all 0.1s linear;
+  }
+  & .carrousel-pagination div:hover {
+    transition: all 0.2s linear;
+    scale: 1.2;
 
   }
 
@@ -129,10 +137,14 @@
           height: 100%;
           // height: 100%;
           box-shadow: 4px 4px 0px 0px $couleurPrincipale;
-          // display: flex;
-          // align-items: center;
-          // justify-content: center;
+          transition: all 0.1s linear;
+
         }
+        & img:hover {
+          filter: brightness(0.5);
+          transition: all 0.35s ease-in-out;
+
+      }
         //NOTE : ceci affecte les partenaires
       }
     }
@@ -207,16 +219,14 @@
       flex-direction: row;
       justify-content: space-between;
       align-items: center;
+      gap: 1rem;
+
       // gap: clamp(0rem, 1vw, 2rem);
       // width: 80vw;
       // gap: clamp(0rem, 0.5rem, 0.5rem);
     }
 
-    & .groupe-infos {
-      // width: 40vw;
-      // gap: clamp(0rem, 0.5rem, 0.5rem);
-      gap: 1rem;
-    }
+
 
     & .partenaires-footer {
       // flex-basis: 30%;
@@ -280,6 +290,8 @@
 
     & .groupe-infos {
       gap: 2rem;
+      width: 100%;
+      // gap: 50%;
     }
   }
 }
@@ -309,4 +321,27 @@
 }
 .site-credits a:focus {
   color: $couleurSectionFocusBlanc;
+}
+
+.site-footer .footer-content>*{
+    opacity: 0;
+
+}
+.site-footer .footer-content>*.apparition {
+    opacity: 1;
+    scale: 1;
+  animation: animation-apparition-footer 1s ease-in-out;
+
+}
+@keyframes animation-apparition-footer{
+  from{
+    opacity: 0;
+    transform: translateY(100%);
+    scale: 0.9;
+  }
+  to{
+    opacity: 1;
+    transform: translateY(0%);
+    scale: 1;
+  }
 }
