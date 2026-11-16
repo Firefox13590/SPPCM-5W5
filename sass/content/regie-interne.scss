@@ -1,0 +1,123 @@
+@use "../settings/couleurs" as *;
+@use "../settings/polices" as *;
+@use "../settings/boutons" as *;
+@use "../settings/marges" as *;
+@use "../settings/navigation" as *;
+@use "../settings/boxshadow" as *;
+
+main#regie-interne {
+    background-color: $couleurSecondaireBeige;
+    margin: $margeXXS;
+
+    h2#titre-regie {
+        color: $couleurTertiaire;
+        font-family: $policeH2;
+        font-size: $policeH2TailleXS;
+        font-weight: $policeH2Weight;
+    }
+
+
+    h3#titre-section-documents {
+        color: $couleurTertiaire;
+        font-family: $policeH3;
+        font-size: $policeH3TailleM;
+        font-weight: $policeH3Weight;
+    }
+
+
+    div.documents-regie {
+        display: grid;
+        //1 par ligne sur mobile, 2 sur tablette, 2 sur desktop
+        grid-template-columns: repeat(1, 1fr);
+        gap: $margeXXS;
+        background-color: $couleurSecondaireBlanc;
+        padding: $margeXS;
+        @include boxShadowRouge($x: $margeHalf, $y: $margeHalf);
+
+        article.document-regie {
+            background-color: $couleurTertiaire;
+            display: grid;
+            grid-template-rows: 1fr 1.5fr auto;
+            padding: $margeM;
+            @include boxShadowRouge($x: $margeHalf, $y: $margeHalf);
+
+            &:hover {
+                @include boxShadowGris($x: $margeHalf, $y: $margeHalf);
+            }
+
+            h3.titre-document {
+                color: $couleurSecondaireBlanc;
+                font-family: $policeH3;
+                font-size: $policeH3TailleM;
+                font-weight: $policeH3Weight;
+            }
+
+            div.description {
+                color: $couleurSecondaireBlanc;
+                font-family: $policeP;
+                font-size: $policePTailleM;
+                font-weight: $policePWeight;
+                padding-top: $margeXS;
+                padding-bottom: $margeXS;
+            }
+
+            a.lien-document-container {
+                text-align: center;
+                height: $margeM;
+                $font-size: $policePTailleM;
+                padding: $margeHalf $margeHalf;
+                background-color: $couleurPrincipale;
+                border: none;
+                width: 100%;
+                font-family: $policeA;
+                font-weight: $policeAWeight;
+                font-size: $policeATailleM;
+                color: $couleurSecondaireBlanc;
+                justify-self: flex-end;
+
+                &:hover {
+                    background-color: $couleurSectionHoverBlanc;
+                    color: $couleurTertiaire;
+                }
+            }
+        }
+    }
+
+    // TABLETTE
+    @media (min-width: 768px) {
+        margin: $margeS;
+        padding: $margeM;
+
+        h2#titre-regie {
+            font-size: $policeH2TailleM;
+        }
+
+        h3#titre-section-documents {
+            font-size: $policeH3TailleL;
+        }
+
+        div.documents-regie {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    // DESKTOP
+    @media (min-width: 992px) {
+        margin: $margeXXXL;
+        padding: $margeXXXL;
+
+        h2#titre-regie {
+            font-size: $policeH2TailleL;
+        }
+
+        h3#titre-section-documents {
+            font-size: $policeH3TailleL;
+        }
+
+        div.documents-regie {
+            grid-template-columns: repeat(2, 1fr);
+            gap: $margeM;
+        }
+    }
+
+}

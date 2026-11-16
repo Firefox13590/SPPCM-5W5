@@ -1,0 +1,20 @@
+Visuels pour le footer SPPCM
+
+1. csn-front-commun.png — 1200 × 643, fond transparent, texte blanc : à afficher sur fond sombre. Export du SVG du Front commun (table centrale), pas le logo institutionnel CSN.
+Source : https://www.frontcommun.org/wp-content/uploads/2022/09/Logo_112x60.svg
+Page : https://www.frontcommun.org/
+
+2. fneeq-profs-en-nego.jpg — 768 × 284. Visuel exact de la maquette, récupéré dans la sauvegarde SPPCM, sans agrandissement artificiel. Convient à une vignette de footer de 180–300 px de large.
+Fichier original : wp-content/uploads/2019/11/NEGO_bandeau_vert-mains.jpg
+
+3. coalition-main-rouge.png — 960 × 960. Logo provenant du site de la Coalition.
+Source : https://www.nonauxhausses.org/wp-content/uploads/Logo-Coalition-Main-rouge-2017-original-copie.png
+Page : https://www.nonauxhausses.org/
+
+4. planete-invite-travail-visuel.jpg — 1200 × 630. Illustration de campagne publiée par la CSQ dans son article consacré au collectif La Planète s’invite au travail. Ce visuel ne porte pas le nom du collectif : ce n’est pas un logo officiel autonome confirmé. Ajouter le nom comme texte accessible dans le carrousel.
+Source : https://www.lacsq.org/wp-content/uploads/2021/03/1200x630_planète.jpg
+Page : https://www.lacsq.org/actualite/deboutpourlaplanete-des-actions-sans-precedent-pour-contrer-la-crise-climatique/
+
+Attention : dans l’ancienne sauvegarde, le widget nommé « La Planète s’invite au travail » affichait bonbord.png, une campagne CSN sans rapport avec le nom. Ne pas reprendre cette association.
+
+Importation : WordPress > Médias > Ajouter un fichier média. Importer les quatre PNG/JPG. Le SVG est une source facultative ; il n’est pas nécessaire de l’importer.

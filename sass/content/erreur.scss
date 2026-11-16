@@ -1,11 +1,13 @@
 @use "../settings/couleurs" as *;
+@use "../settings/marges" as *;
+@use "../settings/polices" as *;
 
 /*
     STYLES GÉNÉRAUX
 */
 .page-erreur {
     margin: 0;
-    padding: 2.5rem 1.25rem 3.5rem;
+    padding: $margeM 1.25rem 3.5rem;
     background: $couleurSecondaireBeige;
 }
 
@@ -63,7 +65,7 @@
     }
 
     p {
-        font-size: 1rem;
+        font-size: $policePTailleM;
         line-height: 1.7;
     }
 
@@ -75,17 +77,17 @@
         flex-wrap: wrap;
         justify-content: center;
         gap: 1.25rem;
-        margin-top: 2rem;
+        margin-top: $margeS;
 
         a {
             display: inline-flex;
             align-items: center;
             justify-content: center;
             gap: 0.75em;
-            min-height: 3rem;
+            min-height: $margeL;
             padding: 0.875em 1.25em;
             border: 0.1875rem solid $couleurTertiaire;
-            box-shadow: 0.25rem 0.25rem $couleurPrincipale;
+            box-shadow: $margeHalf $margeHalf $couleurPrincipale;
             background: $couleurSecondaireBeige;
             color: $couleurTertiaire;
             font-family: "Lexend", sans-serif;
@@ -100,7 +102,7 @@
 
             // Bouton appuyé
             &:active {
-                transform: translate(0.25rem, 0.25rem);
+                transform: translate($margeHalf, $margeHalf);
                 box-shadow: none;
             }
         }
@@ -116,7 +118,7 @@
         .actions-erreur a:hover {
             background: $couleurPrincipale;
             color: $couleurTertiaire;
-            box-shadow: 0.25rem 0.25rem $couleurTertiaire;
+            box-shadow: $margeHalf $margeHalf $couleurTertiaire;
         }
     }
 
@@ -124,8 +126,8 @@
         IPAD
     */
     @media (min-width: 48em) {
-        padding: 3.5rem 2.5rem;
-        gap: 3rem;
+        padding: 3.5rem $margeM;
+        gap: $margeL;
     }
 
     /*
@@ -134,8 +136,8 @@
     @media (min-width: 62em) {
         display: grid;
         grid-template-columns: minmax(0, 1fr) minmax(0, 1.3fr);
-        padding: 4rem 3rem;
-        gap: 4rem;
+        padding: $margeXL $margeL;
+        gap: $margeXL;
         text-align: left;
 
         .code-erreur {

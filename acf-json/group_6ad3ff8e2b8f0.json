@@ -1,0 +1,100 @@
+{
+    "key": "group_6ad3ff8e2b8f0",
+    "title": "Infolettre",
+    "fields": [
+        {
+            "key": "field_6ad3ff8fa20ad",
+            "label": "Date",
+            "name": "info_date",
+            "aria-label": "",
+            "type": "date_picker",
+            "instructions": "Mettre ici la date de publication de l'infolettre. Il est primordial que la date soit sélectionnée dans ce champ, sinon il risque d'y avoir des comportements inattendus. La valeur par défaut est la date d'aujourd'hui.",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "display_format": "j F Y",
+            "return_format": "Y-m-d",
+            "first_day": 0,
+            "default_to_current_date": 1,
+            "allow_in_bindings": 0
+        },
+        {
+            "key": "field_6ad4005aa20ae",
+            "label": "Lien",
+            "name": "info_lien",
+            "aria-label": "",
+            "type": "url",
+            "instructions": "Mettre ici le lien url vers le contenu de l'infolettre. Il faut uniquement le lien.",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "allow_in_bindings": 0,
+            "placeholder": "Lien qui commence par \"http\", \"https\" ou \"www\"."
+        },
+        {
+            "key": "field_6ad40078a20af",
+            "label": "Résumé",
+            "name": "info_resume",
+            "aria-label": "",
+            "type": "wysiwyg",
+            "instructions": "Mettre ici le résumé de l'infolettre ou tout autres détails pertinents.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "allow_in_bindings": 0,
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 1,
+            "delay": 0
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "infolettre"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": [
+        "excerpt",
+        "discussion",
+        "comments",
+        "revisions",
+        "slug",
+        "author",
+        "format",
+        "page_attributes",
+        "featured_image",
+        "categories",
+        "tags",
+        "send-trackbacks"
+    ],
+    "active": true,
+    "description": "Les champs servant à décrire et créer une publication de type \"infolettre\".",
+    "show_in_rest": 0,
+    "display_title": "",
+    "allow_ai_access": false,
+    "ai_description": "",
+    "modified": 1793205710
+}

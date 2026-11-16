@@ -2,7 +2,7 @@
  * 
  * @class Accordeon
  * 
- * @property {NodeListOf<Element>} listeInputsCheck La liste complète des inputs de type checkbox qui ont été trouvés sur la page actuelle.
+ * @property {NodeList<Element>} listeInputsCheck La liste complète des inputs de type checkbox qui ont été trouvés sur la page actuelle.
  * @property {Number} posCheckActif L'index du checkbox présentement actif. -1 par d♪0faut pour signifier qu'aucun checkbox n'est actif.
  */
 export default class Accordeon {
@@ -15,7 +15,7 @@ export default class Accordeon {
 
   Init() {
     console.log('classe Accordeon');
-    this.listeInputsCheck = document.querySelectorAll("input[type='checkbox']");
+    this.listeInputsCheck = document.querySelectorAll(".js-accordeon input[type='checkbox']");
     // console.log(this.listeInputsCheck);
     this.listeInputsCheck.forEach(el => {
       el.addEventListener("click", () => this.SetActiveCheck(el));
