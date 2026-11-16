@@ -2,12 +2,14 @@
     Box Shadow
 ----------------------*/
 
-@mixin boxShadowNoire($couleurTertiaire: #1F1F1F, $x, $y) {
+@mixin boxShadowNoire($couleurTertiaire: #1F1F1F, $x: 4px, $y: 4px) {
     box-shadow: $couleurTertiaire $x $y;
 }
-@mixin boxShadowRouge($couleurPrincipale: #e63c23, $x, $y) {
+
+@mixin boxShadowRouge($couleurPrincipale: #e63c23, $x: 4px, $y: 4px) {
     box-shadow: $couleurPrincipale $x $y;
 }
-@mixin boxShadowGris($couleurSectionDisabledPrimaire: #949494, $x, $y) {
+
+@mixin boxShadowGris($couleurSectionDisabledPrimaire: #949494, $x: 4px, $y: 4px) {
     box-shadow: $couleurSectionDisabledPrimaire $x $y;
 }

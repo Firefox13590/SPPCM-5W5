@@ -1,0 +1,17 @@
+@use "../settings/couleurs" as *;
+@use "../settings/polices" as *;
+@use "../settings/boutons" as *;
+@use "../settings/marges" as *;
+@use "../settings/navigation" as *;
+
+main.credits{
+    background-color: $couleurSecondaireBeige;
+    display: flex;
+}
+
+.personne-credits{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
