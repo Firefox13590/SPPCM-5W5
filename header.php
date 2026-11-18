@@ -24,7 +24,7 @@
 
             <nav id="navigation-principale" class="navigation-principale" aria-label="Navigation principale">
                 <ul class="liste-menu">
-                    <li><a href="<?php echo esc_url(home_url('/category/actualite/')); ?>">Actualités</a></li>
+                    <li><a href="<?php echo esc_url(home_url('/homepage/')); ?>">Actualités</a></li>
                     <li>
                         <details class="groupe-menu">
                             <summary>Conditions de travail</summary>
