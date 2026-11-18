@@ -1,0 +1,109 @@
+@use "../settings/couleurs" as *;
+@use "../settings/polices" as *;
+@use "../settings/boutons" as *;
+@use "../settings/marges" as *;
+@use "../settings/navigation" as *;
+@use "../settings/boxshadow" as *;
+
+main#infolettres{
+    margin: $margeXXS;
+    display: flex;
+    flex-direction: column;
+
+    h2#titre-infolettre {
+        color: $couleurTertiaire;
+        font-family: $policeH2;
+        font-size: $policeH2TailleS;
+        font-weight: $policeH2Weight;
+        margin-bottom: $margeXXXS;
+    }
+
+    section#infolettre-filtre{
+        background-color: $couleurPrincipale;
+
+        select#annee-scolaire{
+            background-color: $couleurPrincipale;
+            color: $couleurSecondaireBeige;
+            font-family: $policeP;
+            font-size: $policePTailleM;
+            font-weight: $policePWeight;
+            border: none;
+            padding: $margeXS;
+        }
+    }
+
+    section#infolettre-grid{
+        display:grid;
+        //1 par ligne sur mobile, 2 sur tablette, 2 sur desktop
+        grid-template-columns: repeat(1, 1fr);
+        gap: $margeXXS;
+        padding-top: $margeS;
+        a.info-item{
+            display: flex;
+            flex-direction: column;
+            background-color: $couleurTertiaire;
+            padding: $margeS;
+            margin: $margeXXXS;
+            @include boxShadowRouge($x: $margeHalf, $y: $margeHalf);
+            align-items: flex-end;
+            transition: transform 0.3s ease-in-out;
+            color: $couleurSecondaireBeige;
+
+            
+            &:hover {
+                @include boxShadowGris($x: $margeHalf, $y: $margeHalf);
+                transform:scale(1.02);
+                transition: transform 0.3s ease-in-out;
+
+                h2{
+                    text-decoration: underline;
+                }
+            }
+
+            h2{
+                font-family: $policeH2;
+                font-size: $policeH2TailleS;
+                font-weight: $policeH2Weight;
+            }
+        }
+    }
+    
+    // TABLETTE
+    @media (min-width: 768px) {
+        margin: $margeS;
+        padding: $margeM;
+
+        h2#titre-infolettre {
+            font-size: $policeH2TailleM;
+        }
+
+        section#infolettre-grid{
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    // DESKTOP
+    @media (min-width: 992px) {
+        margin: $margeXXXL;
+        padding: $margeXXXL;
+
+        h2#titre-infolettre {
+            font-size: $policeH2TailleL;
+        }
+
+        section#infolettre-grid{
+            grid-template-columns: repeat(3, 1fr);
+            gap: $margeM;
+
+            a.info-item{
+
+                h2{
+                    font-size: $policeH2TailleM;
+                }
+            }
+        }
+
+        
+    }
+
+}
