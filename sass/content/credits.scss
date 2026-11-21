@@ -1,149 +1,102 @@
 @use "../settings/couleurs";
 @use "../settings/polices";
 @use "../settings/boxshadow" as boxShadow;
-
-
-main.credits{
-    margin: 10vh 5vw;
-}
-
-  div.bg-noir {
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 99;
-    width: 100vw;
-    height: 100vh;
-
-    opacity: 0;
-    transition: opacity .5s;
-
-    background-color: rgba($color: #000000, $alpha: .5);
-    pointer-events: none;
-    }
-
-    &:has(~section#personnes-credits article input[type='checkbox']:checked) {
-      opacity: 1;
-      pointer-events: all;
-    }
-}
-  
-
-  & section#personnes-credits {
-    display: flex;
-    flex-direction: column;
-    gap: 20vh;
+ 
+main.credits {
+  margin: 10vh 5vw;
+ 
+  section#personnes-credits {
+    display: grid;
+    grid-template-columns: 1fr;
+    row-gap: 25vh;
     margin-bottom: 20vh;
-    
-   @media only screen and (min-width: 768px) {
-      flex-flow: row wrap;
-      justify-content: space-between;
-      gap: calc(10vw * .9);
-    }
 
+    @media only screen and (min-width: 768px) {
+      grid-template-columns: repeat(2, 1fr);
+      column-gap: 9vw;
+      row-gap: max(9vw, 7em);
+    }
+ 
     @media only screen and (min-width: 992px) {
-      justify-content: start;
-      gap: calc(5vw * .9);
+      grid-template-columns: repeat(3, 1fr);
+      column-gap: 4.5vw;
+      row-gap: max(4.5vw, 7em);
     }
-
-    & article {
-      @media only screen and (min-width: 768px) {
-        flex: 1 0 45%;
-      }
-
-      @media only screen and (min-width: 992px) {
-        flex-basis: 30%;
-      }
-
-      & input[type='checkbox']:checked {
-        &~div.info-personne-credits {
-          opacity: 1;
-          visibility: visible;
-        }
-      }
-
-      div.membre-front {
+ 
+    article.personne-credits {
+      div.credits-front {
         position: relative;
-
+ 
         & img {
           width: 90%;
           margin: auto;
           @include boxShadow.boxShadowRouge();
         }
-
-        & div.img-personne-credits {
+ 
+        & div.credits-front-info {
           width: 90%;
           position: absolute;
-          bottom: -3.25em;
+          bottom: -5em; 
           right: 0;
           z-index: 1;
-
+ 
           background-color: couleurs.$couleurTertiaire;
           color: couleurs.$couleurSecondaireBeige;
           text-align: right;
           @include boxShadow.boxShadowRouge();
-
+ 
           & h3 {
             font-size: polices.$policeH2TailleS;
           }
-
+ 
           & h4 {
             font-size: polices.$policeH3TailleM;
           }
-        }
-
-        &:hover {
-          & img {
-            @include boxShadow.boxShadowNoire();
-          }
-
-          & div.img-personne-credits {
-            background-color: couleurs.$couleurPrincipale;
-            // color: couleurs.$couleurTertiaire;
-            @include boxShadow.boxShadowNoire();
-          }
-        }
-      }
-
-
-      & div.info-personne-credits {
-        opacity: 0;
-        visibility: collapse;
-        transition-property: opacity, visibility;
-        transition-duration: .5s;
-        pointer-events: visible;
-
-        background-color: couleurs.$couleurSecondaireBlanc;
-        color: couleurs.$couleurTertiaire;
-        @include boxShadow.boxShadowNoire();
-        width: 80vw;
-        max-height: 80vh;
-        padding: .5em;
-        overflow-y: scroll;
-
-        position: fixed;
-        top: 10vh;
-        left: 10vw;
-        z-index: 100;
-
-        display: flex;
-        flex-flow: column nowrap;
-        gap: 1.5vh;
-
-        & label {
-          align-self: flex-end;
-          font-size: polices.$policeH3TailleL;
-          transition: color .5s;
-
-          &:hover {
-            color: couleurs.$couleurPrincipale;
+ 
+          & div.icones-reseaux-credits {
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: flex-end;
+            gap: .75em;
+            padding: .5em;
+ 
+            & a.icone-reseau-credits {
+              display: block;
+              width: 1.75em;
+ 
+              & img {
+                width: 100%;
+                box-shadow: none; 
+                filter: contrast(1) brightness(1);
+                transition: filter .5s;
+              }
+ 
+          
+              &:hover img,
+              &:focus-visible img {
+                filter: contrast(0) brightness(2);
+              }
+ 
+              &:focus-visible {
+                outline: 2px solid couleurs.$couleurSecondaireBeige;
+                outline-offset: 3px;
+              }
+            }
           }
         }
-
-        & h4 {
-          font-size: polices.$policeH3TailleM;
-        }
+ 
+        // &:hover {
+        //   & img {
+        //     @include boxShadow.boxShadowNoire();
+        //   }
+ 
+        //   & div.credits-front-info {
+        //     background-color: couleurs.$couleurPrincipale;
+        //     @include boxShadow.boxShadowNoire();
+        //   }
+        // }
       }
     }
   }
 }
+ 
