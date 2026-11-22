@@ -55,7 +55,7 @@ get_header();
         // var_dump($actuImgCouverture);
     ?>
 
-        <article role="button" class="actu-item">
+        <article role="button" class="btn-root actu-item">
           <a href="<?= the_permalink(); ?>">
             <figure>
               <?php if ($actuImgCouverture !== ''): ?>
@@ -75,8 +75,8 @@ get_header();
     wp_reset_postdata();
     ?>
 
-    <a role="button" href="http://localhost/Refonte_SPPCM/wordpress/category/actualite/" class="voir-plus">
-      <h2>Voir plus</h2>
+    <a role="button" href="http://localhost/Refonte_SPPCM/wordpress/category/actualite/" class="btn-root voir-plus">
+      <h2 class="indice-lien-interne">Voir plus</h2>
     </a>
 
   </section>
@@ -107,16 +107,17 @@ get_header();
         // var_dump($queryInfo->current_post);
 
         $infoDate = get_field('info_date');
-        $infoDateTimestamp = datefmt_parse($formatteurLogique, $infoDate);
+        $infoDateTimestamp = datefmt_parse($formatteurLogique, str_replace('-', '', $infoDate));
         $infoDateFormattee = datefmt_format($formatteurLisible, $infoDateTimestamp);
         // var_dump($infoDate);
+        // var_dump(str_replace('-', '', $infoDate));
         // var_dump($infoDateTimestamp);
         // var_dump($infoDateFormattee);
     ?>
 
-        <a role="button" class="info-item <?php if ($queryInfo->current_post === 0) echo ('latest'); ?>"
+        <a role="button" class="btn-root info-item <?php if ($queryInfo->current_post === 0) echo ('latest'); ?>"
           href="<?= get_field('info_lien'); ?>" target="_blank">
-          <h2><?= $infoDateFormattee; ?></h2>
+          <h2 class="indice-lien-interne"><?= $infoDateFormattee; ?></h2>
         </a>
 
     <?php
@@ -125,8 +126,8 @@ get_header();
     wp_reset_postdata();
     ?>
 
-    <a role="button" href="http://localhost/Refonte_SPPCM/wordpress/infolettre-accueil/" class="info-item voir-plus">
-      <h2>Voir plus</h2>
+    <a role="button" href="http://localhost/Refonte_SPPCM/wordpress/infolettre-accueil/" class="btn-root info-item voir-plus">
+      <h2 class="indice-lien-interne">Voir plus</h2>
     </a>
   </section>
 

@@ -52,3 +52,28 @@ a {
 .button {
   cursor: pointer;
 }
+
+.btn-root {
+  @extend .button;
+
+  &:hover {
+    & .indice-lien-interne::after {
+      max-width: 1em;
+      padding-left: .5em;
+    }
+  }
+
+  & .indice-lien-interne {
+    overflow: hidden;
+
+    &::after {
+      content: '>';
+      display: inline-block;
+
+      max-width: 0;
+      padding-left: 0;
+      transition-property: max-width, padding-left;
+      transition-duration: .25s;
+    }
+  }
+}
