@@ -42,11 +42,14 @@ get_header();
     <h2>Actualités</h2>
 
     <?php
-    if (have_posts()) :
-      global $wp_query;
-      $wp_query->post_count = 10;
-      while (have_posts()):
-        the_post();
+    $queryActu = new WP_Query(array(
+      'post_type' => 'post',
+      'posts_per_page' => 7,
+      'ignore_sticky_posts' => true,
+    ));
+    if ($queryActu->have_posts()) :
+      while ($queryActu->have_posts()):
+        $queryActu->the_post();
 
         $actuImgCouverture = get_the_post_thumbnail();
         // var_dump($actuImgCouverture);
@@ -56,7 +59,7 @@ get_header();
           <a href="<?= the_permalink(); ?>">
             <figure>
               <?php if ($actuImgCouverture !== ''): ?>
-                <img src="<?= $actuImgCouverture; ?>">
+                <?= $actuImgCouverture; ?>
               <?php endif; ?>
               <figcaption>
                 <h2><?= the_title(); ?></h2>

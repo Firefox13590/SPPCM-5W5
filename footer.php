@@ -34,7 +34,9 @@
 		<div class="groupe-infos">
 
 			<div id="logo">
-				<img src="http://localhost/Refonte_SPPCM/wordpress/wp-content/uploads/2018/02/cropped-sppcm_logo_rgb.png" alt="Logo SPPCM">
+				<a href="<?php echo home_url('/'); ?>">
+					<img src="http://localhost/Refonte_SPPCM/wordpress/wp-content/uploads/2018/02/cropped-sppcm_logo_rgb.png" alt="Logo SPPCM">
+				</a>
 			</div><!-- #logo -->
 
 			<!-- Ici ce trouve 66 (réseaux sociaux)-->
@@ -42,7 +44,7 @@
 			$reseauxFooter = array();
 
 			if (function_exists('get_field')) {
-				
+
 				$publicationsReseaux = get_posts(array(
 					'post_type' => 'sppcm_reseau_social',
 					'post_status' => 'publish',
@@ -53,7 +55,7 @@
 				foreach ($publicationsReseaux as $publicationReseau) {
 					$nomReseau = get_the_title($publicationReseau->ID);
 					$imageReseau = absint(get_field('imageReseau', $publicationReseau->ID));
-					$lienReseau = esc_url(get_field('lienReseau', $publicationReseau->ID) ?: '', array('http', 'https'));
+					$lienReseau = esc_url(get_field('lienReseau', $publicationReseau->ID) ?: '', array('http', 'https', 'mailto'));
 					$balisageImageReseau = '';
 
 					if ($imageReseau) {
@@ -156,6 +158,12 @@
 	<div class="site-info">
 		Copyright © <?= date('Y'); ?> SPPCM - Le Syndicat des professeures et professeurs du Collège Maisonneuve. Tous droits réservés.
 	</div><!-- .site-info -->
+
+	<div class="site-credits">
+		Ce site a été fait avec 🖤 par <a href="<?php echo home_url('/credits/'); ?>" target="_blank" rel="noopener noreferrer"><i>l'équipe des Travailleurs, Travailleuses, Travaillant-e-s</i></a> du Collège Maisonneuve.</a>
+
+	</div><!-- .site-credits -->
+
 </footer><!-- #colophon -->
 </div><!-- #page -->
 
