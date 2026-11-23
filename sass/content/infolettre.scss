@@ -19,16 +19,48 @@ main#infolettres{
     }
 
     section#infolettre-filtre{
-        background-color: $couleurPrincipale;
+        form#infolettre-filtre-form{
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: $margeXS;
 
-        select#annee-scolaire{
-            background-color: $couleurPrincipale;
-            color: $couleurSecondaireBeige;
-            font-family: $policeP;
-            font-size: $policePTailleM;
-            font-weight: $policePWeight;
-            border: none;
-            padding: $margeXS;
+            input#recherche-infolettre{
+                background-color: $couleurPrincipale;
+                color: $couleurSecondaireBeige;
+                font-family: $policeH3;
+                font-size: $policeH3TailleM;
+                font-weight: $policeH3Weight;
+                padding: $margeXXS;
+                border:none;
+                border-radius: 0;
+                @include boxShadowNoire($x: $margeHalf, $y: $margeHalf);
+                transition: transform 0.3s ease-in-out;
+
+                &:hover {
+                    @include boxShadowGris($x: $margeHalf, $y: $margeHalf);
+                    transform:scale(1.02);
+                    transition: transform 0.3s ease-in-out;
+                }
+            }
+
+            select#annee-scolaire{
+                background-color: $couleurPrincipale;
+                color: $couleurSecondaireBeige;
+                font-family: $policeH3;
+                font-size: $policeH3TailleM;
+                font-weight: $policeH3Weight;
+                padding: $margeXXS;
+                border:none;
+                @include boxShadowNoire($x: $margeHalf, $y: $margeHalf);
+                transition: transform 0.3s ease-in-out;
+
+                &:hover {
+                    @include boxShadowGris($x: $margeHalf, $y: $margeHalf);
+                    transform:scale(1.02);
+                    transition: transform 0.3s ease-in-out;
+                }
+            }
+
         }
     }
 
