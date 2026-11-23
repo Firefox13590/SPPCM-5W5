@@ -1,7 +1,9 @@
 main#actualites {
-    &>article {
-        & h3 {
-            display: inline;
+    &>section#actus {
+        &>article {
+            & h3 {
+                display: inline;
+            }
         }
     }
 }
