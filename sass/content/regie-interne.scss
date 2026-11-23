@@ -77,19 +77,19 @@ main#regie-interne {
                 text-align: center;
                 height: $margeM;
                 $font-size: $policePTailleM;
-                padding: $margeXXXS;
-                background-color: $couleurPrincipale;
-                border: none;
+                padding-top: $margeHalf;
+                background-color: $couleurTertiaire;
+                border: $margeHalf solid $couleurSecondaireBlanc;
                 width: 100%;
                 font-family: $policeA;
                 font-weight: $policeAWeight;
                 font-size: $policeATailleM;
                 color: $couleurSecondaireBlanc;
-                vertical-align: middle;
-
+                transition: background-color 0.15s ease-in-out, border 0.15s ease-in-out;
                 &:hover {
-                    background-color: $couleurSectionHoverBlanc;
-                    color: $couleurTertiaire;
+                    background-color: $couleurPrincipale;
+                    border: $margeHalf solid $couleurPrincipale;
+                    transition: background-color 0.15s ease-in-out, border 0.15s ease-in-out;
                 }
             }
         }
@@ -103,15 +103,17 @@ main#regie-interne {
         h2#titre-regie {
             font-size: $policeH2TailleM;
         }
-
-        h3#titre-section-documents {
-            font-size: $policeH3TailleL;
-        }
-
         div.documents-regie {
             grid-template-columns: repeat(2, 1fr);
             gap: $margeS;
             width:100%;
+            article.document-regie {
+                #document-regie-header {
+                    h3.titre-document {
+                        font-size: $policeH3TailleL;
+                    }
+                }
+            }
         }
     }
 
@@ -121,17 +123,20 @@ main#regie-interne {
         padding: $margeXXXL;
 
         h2#titre-regie {
-            font-size: $policeH2TailleL;
-        }
-
-        h3#titre-section-documents {
-            font-size: $policeH3TailleL;
+            font-size: $policeH2TailleXL;
         }
 
         div.documents-regie {
             grid-template-columns: repeat(2, 1fr);
-            gap: $margeM;
+            gap: $margeS;
             width:100%;
+            article.document-regie {
+                #document-regie-header {
+                    h3.titre-document {
+                        font-size: $policeH3TailleL;
+                    }
+                }
+            }
         }
     }
 
