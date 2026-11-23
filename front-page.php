@@ -115,9 +115,9 @@ get_header();
         // var_dump($infoDateFormattee);
     ?>
 
-        <a role="button" class="btn-root info-item <?php if ($queryInfo->current_post === 0) echo ('latest'); ?>"
+        <a role="button" class="info-item <?php if ($queryInfo->current_post === 0) echo ('latest'); ?>"
           href="<?= get_field('info_lien'); ?>" target="_blank">
-          <h2 class="indice-lien-interne"><?= $infoDateFormattee; ?></h2>
+          <h2><?= $infoDateFormattee; ?></h2>
         </a>
 
     <?php
