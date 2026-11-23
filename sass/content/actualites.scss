@@ -1,4 +1,7 @@
-
-main#actualites{
-  
+main#actualites {
+    &>article {
+        & h3 {
+            display: inline;
+        }
+    }
 }

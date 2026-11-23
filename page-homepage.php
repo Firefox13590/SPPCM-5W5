@@ -3,7 +3,8 @@ get_header();
 ?>
 
 <main id="actualites">
-  <h2>Actualités</h2>
+  <h1>Actualités</h1>
+  
   <?php
   $argsInfo = array(
     'post_type' => 'post',
@@ -15,10 +16,12 @@ get_header();
     while ($queryInfo->have_posts()):
       $queryInfo->the_post();
   ?>
-      <div>
-        <h3><?= the_title(); ?></h3>
+      <article class="actualite-item">
+        <a href="<?= the_permalink(); ?>" target="_blank">
+          <h3><?= the_title(); ?></h3>
+        </a>
         <p><?= the_content(); ?></p>
-      </div>
+      </article>
   <?php
     endwhile;
   endif;
