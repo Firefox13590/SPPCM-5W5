@@ -1,5 +1,40 @@
-main#actualites {
-    &>section#actus {
+@use "../settings/couleurs";
+@use "../settings/boxshadow" as boxShadow;
+@use "../settings/polices";
+
+main#page-actualites {
+    overflow: hidden;
+
+    &>form#form-filtre-tri {
+        & fieldset.filtre {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 5vw;
+
+            & label {
+                // flex: 0 0 15%;
+                flex: 0 0 auto;
+
+                &:hover,
+                &:has(input[type="checkbox"]:checked) {
+                    &>.filtre-item {
+                        color: couleurs.$couleurSecondaireBlanc;
+                        background-color: couleurs.$couleurPrincipale;
+                        @include boxShadow.boxShadowNoire;
+                    }
+                }
+
+                &>.filtre-item {
+                    padding: 1em;
+                    color: couleurs.$couleurTertiaire;
+                    background-color: couleurs.$couleurSectionDisabledPrimaire;
+                    @include boxShadow.boxShadowGris;
+                }
+            }
+        }
+    }
+
+    &>section#actualites {
         &>article {
             & h3 {
                 display: inline;
