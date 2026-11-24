@@ -82,6 +82,7 @@ function remove_editor()
     $targetPostTypes = array(
         'infolettre',
         'membre-executif',
+        'vie-syndicale'
     );
     foreach ($targetPostTypes as $targetPostType) {
         remove_post_type_support($targetPostType, 'editor');

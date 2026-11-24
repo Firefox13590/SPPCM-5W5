@@ -59,15 +59,18 @@
         align-items: center;
         width: 6.5rem;
         padding: 0.125rem 0.25rem;
-        border: 0.125rem solid $couleurTertiaire;
-        border-radius: 0.65rem 0 0.65rem 0;
         img {
             display: block;
             width: 100%;
             height: auto;
         }
-    }
 
+        &:hover img {
+            content: url("../images/sppcm_logo_rgb.svg");
+            transition: content 180ms ease;
+        }
+    }
+    
     // Bouton du menu mobile et icône.
     .bouton-menu {
         display: none;
@@ -349,9 +352,6 @@
             gap: 0.5rem;
         }
 
-        .logo-entete {
-            border-color: transparent;
-        }
 
         .bouton-menu {
             margin-left: 0;

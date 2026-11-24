@@ -15,7 +15,7 @@
     <header class="entete-site <?php echo is_front_page() ? 'entete-accueil' : ''; ?>">
         <div class="barre-entete">
             <a class="logo-entete" href="<?php echo esc_url(home_url('/')); ?>" rel="home" aria-label="SPPCM — Accueil">
-                <img src="<?php echo esc_url(get_stylesheet_directory_uri() . '/images/logo.png'); ?>" alt="SPPCM" width="342" height="90">
+                <img src="<?php echo esc_url(get_stylesheet_directory_uri() . '/images/sppcm_logo_nb.svg'); ?>" alt="SPPCM" width="342" height="90">
             </a>
 
             <button class="bouton-menu" type="button" aria-label="Ouvrir le menu" aria-controls="navigation-principale" aria-expanded="false">

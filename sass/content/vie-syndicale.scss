@@ -1,0 +1,184 @@
+@use "../settings/couleurs" as *;
+@use "../settings/polices" as *;
+@use "../settings/boxshadow" as *;
+
+main.vie-syndicale {
+    margin: 0;
+    background-color: $couleurSecondaireBeige;
+    background-image:
+    url("../images/forme-neobrutalisme1.svg"),
+    url("../images/forme-neobrutalisme2.svg");
+    background-repeat: no-repeat;
+    background-size: 3rem auto, 4rem auto;
+    background-position:
+    left top 30%,
+    right top 65%;
+
+    @media only screen and (min-width: 768px) {
+        background-size: 5rem auto, 5rem auto;
+        background-position:
+        left top 25%,
+        right top 55%;
+    }
+        @media only screen and (min-width: 992px) {
+        background-size: 7rem auto, 7rem auto;
+    }
+
+
+  .vie-syndicale-banniere {
+    h1 {
+      max-width: 12ch;
+      font-family: $policeH2;
+      font-size: 2rem;
+      line-height: 1.1;
+      text-align: right;
+    }
+  }
+
+  .vie-syndicale-contenu {
+    max-width: 85rem;
+    margin: 0 auto;
+    padding: 2rem 2rem 4rem;
+  }
+
+  // Mobile
+  .vie-syndicale-item {
+    display: grid;
+    grid-template-areas:
+      "titre"
+      "image"
+      "responsable"
+      "description";
+    gap: 0.75rem;
+    margin-bottom: 3rem;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    h2 {
+      grid-area: titre;
+      font-family: $policeH2;
+      font-size: 1.5rem;
+      line-height: 1.15;
+    }
+
+    img {
+      grid-area: image;
+      display: block;
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+      object-position: center 25%;
+      @include boxShadowRouge();
+    }
+
+    .vie-syndicale-responsable {
+      grid-area: responsable;
+      margin: 0;
+      font-family: $policeP;
+      font-size: 1.5rem;
+      line-height: 1.4;
+    }
+
+    .vie-syndicale-description {
+      grid-area: description;
+      min-width: 0;
+      font-family: $policeP;
+      font-size: 1rem;
+      line-height: 1.6;
+      overflow-wrap: break-word;
+
+      p {
+        margin: 0 0 1rem;
+      }
+
+      p:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  // Tablette 
+  @media only screen and (min-width: 768px) {
+    .vie-syndicale-banniere {
+      min-height: 16rem;
+      padding: 3rem 3rem 5rem;
+
+      h1 {
+        font-size: 3rem;
+      }
+    }
+
+    .vie-syndicale-contenu {
+      padding: 3rem 4rem 5rem;
+      background-size: 3rem auto, 3.5rem auto;
+      background-position:
+        left top 25%,
+        right top 55%;
+    }
+
+    .vie-syndicale-item {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      grid-template-rows: auto auto 1fr;
+      grid-template-areas:
+        "titre titre"
+        "image description"
+        "responsable description";
+      align-items: start;
+      column-gap: 1.5rem;
+      margin-bottom: 4rem;
+
+      h2 {
+        font-size: 1.75rem;
+      }
+
+      // Inverser les côtés pour les comités
+      &:nth-of-type(even) {
+        grid-template-areas:
+          "titre titre"
+          "description image"
+          "description responsable";
+
+        h2,
+        .vie-syndicale-responsable {
+          text-align: right;
+        }
+      }
+    }
+  }
+
+  // Ordinateur 
+  @media only screen and (min-width: 992px) {
+    .vie-syndicale-banniere {
+      min-height: 20rem;
+      padding: 4rem 5vw 6rem;
+
+      h1 {
+        max-width: none;
+        font-size: 4rem;
+      }
+    }
+
+    .vie-syndicale-contenu {
+      padding: 4rem 6rem 6rem;
+      background-size: 4rem auto, 5rem auto;
+      background-position:
+        left top 25%,
+        right top 55%;
+    }
+
+    .vie-syndicale-item {
+      column-gap: 3rem;
+      margin-bottom: 5rem;
+
+      h2 {
+        font-size: 2.25rem;
+      }
+
+      .vie-syndicale-description {
+        font-size: 1.125rem;
+      }
+    }
+  }
+}
