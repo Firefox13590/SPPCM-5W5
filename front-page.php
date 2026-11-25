@@ -52,11 +52,24 @@ get_header();
         $queryActu->the_post();
 
         $actuImgCouverture = get_the_post_thumbnail();
+        $contenu = get_the_content();
+        $lien = '';
+        $debut = 1;
+        $fin = 1;
+        $debut = strpos($contenu, 'href=') + 6;
+        if ($debut) {
+          $fin = strpos(substr($contenu, $debut), '"');
+          $lien = substr($contenu, $debut, $fin);
+        }
+
+        // var_dump($debut);
+        // var_dump($fin);
+        // var_dump($lien);
         // var_dump($actuImgCouverture);
     ?>
 
         <article role="button" class="btn-root actu-item">
-          <a href="<?= the_permalink(); ?>">
+          <a href="<?= (!empty($lien)) ? $lien : the_permalink(); ?>" target="_blank">
             <figure>
               <?php if ($actuImgCouverture !== ''): ?>
                 <?= $actuImgCouverture; ?>
@@ -115,9 +128,9 @@ get_header();
         // var_dump($infoDateFormattee);
     ?>
 
-        <a role="button" class="info-item <?php if ($queryInfo->current_post === 0) echo ('latest'); ?>"
+        <a role="button" class="btn-root info-item <?php if ($queryInfo->current_post === 0) echo ('latest'); ?>"
           href="<?= get_field('info_lien'); ?>" target="_blank">
-          <h2><?= $infoDateFormattee; ?></h2>
+          <h2 class="indice-lien-interne"><?= $infoDateFormattee; ?></h2>
         </a>
 
     <?php
