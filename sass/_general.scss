@@ -36,8 +36,10 @@ h6,
 }
 
 p,
-.p {
+.p,
+li {
   font-family: $policeP;
+  margin: 0;
 }
 
 a {
@@ -56,5 +58,92 @@ a {
 main.site-main h1.entry-title{
   // border: 3px solid red;
   //ICI HERO BANNER ET  TITRE DE PAGE eh je crois? peut-être je sais pas
+  
+}
 
+//AVANTAGE SOCIAUX ET TEMPLATE CE TROUVE ICI
+
+main h2{
+  font-size: $policeH2TailleL;
+  padding-bottom: $margeXXXS;
+  font-weight: $policeH2Weight;
+}
+main h3{
+  font-size: $policeH3TailleL;
+  // padding-bottom: $margeXXS;
+  font-weight: $policeH3Weight;
+  padding-top:$margeS;
+}
+// main h4{
+//   font-size: $policeH4TailleL;
+//   padding-bottom: $margeXXS;
+//   font-weight: $policeH4Weight;
+// }
+main p,li{
+  padding-top:$margeXXXS;
+  font-size: $policePTailleM;
+}
+main{
+  // margin: 0 10% 0 10% ;
+  margin: auto;
+  max-width: 85rem;
+  margin-bottom: 10rem;
+}
+
+@media (min-width: 768px) {
+  main h2{
+    font-size: $policeH2TailleL;
+    padding-bottom: $margeXXXS;
+    font-weight: $policeH2Weight;
+  }
+  main h3{
+    font-size: $policeH3TailleL;
+    // padding-bottom: $margeXXS;
+    font-weight: $policeH3Weight;
+    padding-top:$margeS;
+  }
+  // main h4{
+  //   font-size: $policeH4TailleL;
+  //   padding-bottom: $margeXXS;
+  //   font-weight: $policeH4Weight;
+  // }
+  main p,li{
+    padding-top:$margeXXXS;
+    font-size: $policePTailleM;
+  }
+  main{
+    // margin: 0 10vw 0 10vw ;
+    margin: auto;
+    max-width: 85rem;
+    
+  }
+}
+
+@media (min-width: 992px) {
+  main h2{
+    font-size: $policeH2TailleXL;
+    padding-bottom: $margeXXS;
+    font-weight: $policeH2Weight;
+  }
+  main h3{
+    font-size: $policeH3TailleXL;
+    // padding-bottom: $margeXXS;
+    font-weight: $policeH3Weight;
+    padding-top:$margeS;
+  }
+  // main h4{
+  //   font-size: $policeH4TailleL;
+  //   padding-bottom: $margeXXS;
+  //   font-weight: $policeH4Weight;
+  // }
+  main p,li{
+    padding-top:$margeXXXS;
+    font-size: $policePTailleM;
+  }
+  main{
+    // margin: 0 10% 0 10% ;
+    margin: auto;
+    max-width: 85rem;
+    
+  }
 }
