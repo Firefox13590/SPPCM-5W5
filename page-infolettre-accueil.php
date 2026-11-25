@@ -114,8 +114,8 @@ get_header();
                 $infoDateFormattee = datefmt_format($formatteurLisible, $infoDateTimestamp);
         ?>
 
-                <a role="button" class="info-item <?php if ($queryInfolettre->current_post === 0) echo ('latest'); ?>"
-                    href="<?= get_field('info_lien'); ?>" target="_blank">
+                <a class="info-item <?php if ($queryInfolettre->current_post === 0) echo ('latest'); ?>"
+                    href="<?= the_permalink(); ?>">
                     <h2><?= $infoDateFormattee; ?></h2>
                 </a>
 
