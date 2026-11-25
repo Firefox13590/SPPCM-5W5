@@ -1,0 +1,73 @@
+@use "../settings/couleurs" as *;
+@use "../settings/polices" as *;
+@use "../settings/boutons" as *;
+@use "../settings/marges" as *;
+@use "../settings/navigation" as *;
+@use "../settings/boxshadow" as *;
+
+
+main#infolettre-description{
+    margin: $margeXXS;
+    display: flex;
+    flex-direction: column;
+
+    h2#info-date{
+        color: $couleurTertiaire;
+        font-family: $policeH2;
+        font-size: $policeH2TailleS;
+        font-weight: $policeH2Weight;
+        margin-bottom: $margeXXXS;
+    }
+    div.info-resume{
+        font-family: $policeP;
+        font-size: $policePTailleM;
+        font-weight: $policePWeight;
+        margin-bottom: $margeXXXS;
+    }
+
+    a#infolettre-lien{
+        background-color: $couleurPrincipale;
+        color: $couleurSecondaireBeige;
+        font-family: $policeH3;
+        font-size: $policeH3TailleM;
+        font-weight: $policeH3Weight;
+        padding: $margeXXS;
+        border:none;
+        border-radius: 0;
+        @include boxShadowNoire($x: $margeHalf, $y: $margeHalf);
+        transition: transform 0.3s ease-in-out;
+        margin:$margeXS;
+
+        &:hover {
+            @include boxShadowGris($x: $margeHalf, $y: $margeHalf);
+            transform:scale(1.02);
+            transition: transform 0.3s ease-in-out;
+        }
+    }
+
+    // TABLETTE
+    @media (min-width: 768px) {
+        margin: $margeS;
+
+        h2#info-date {
+            font-size: $policeH2TailleM;
+        }
+
+        div.info-resume {
+            font-size: $policePTailleL;
+        }
+    }
+
+    // DESKTOP
+    @media (min-width: 992px) {
+        margin: $margeS;
+
+        h2#info-date {
+            font-size: $policeH2TailleL;
+        }
+
+        div.info-resume {
+            font-size: $policePTailleL;
+        }
+    }
+}
