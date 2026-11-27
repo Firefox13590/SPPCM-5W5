@@ -11,8 +11,8 @@
   overflow: hidden;
   & .reseaux img {
     // width: 40px !important;
-    height: 2.5rem;
-    width: auto;
+    height: 2.5rem ;
+    width: auto ;
     // width: 2.5rem;
     transition: all 0.1s linear;
 
@@ -113,6 +113,7 @@
         justify-content: center;
         width: 50%;
         height: auto;
+        // max-height: 6rem;
         //NOTE : IG aussi changer ca
 
         & a {
@@ -129,6 +130,8 @@
         & .partenaires-larges {
           width: auto;
           height: 50%;
+    
+
           // border: 2px solid red;
         }
         & img {
@@ -138,7 +141,8 @@
           // height: 100%;
           box-shadow: 4px 4px 0px 0px $couleurPrincipale;
           transition: all 0.1s linear;
-
+          // max-width: 20rem;
+          // max-height: 20rem;
         }
         & img:hover {
           filter: brightness(0.5);
