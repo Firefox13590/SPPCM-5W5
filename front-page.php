@@ -37,7 +37,21 @@ $formatteurLogique = datefmt_create(
 get_header();
 ?>
 
+
 <main id="front-page">
+  <section id="mission">
+    <p>
+      Le syndicat des professeures et professeurs du Collège de Maisonneuve (SPPCM) a pour objectifs l’étude,
+      la défense et la promotion des intérêts et des objectifs professionnels, syndicaux, économiques et sociaux de ses membres.
+      Il vise également la promotion de la recherche et de la qualité du travail en éducation.
+    </p>
+    <p>
+      Le SPPCM regroupe plus de 630 membres.
+      Fondé le 7 mars 1968, il est affilié à la fédération nationale des enseignantes et enseignants du Québec (FNEEQ),
+      elle-même membre (ou filiale) de la Confédération des syndicats nationaux (CSN).
+    </p>
+  </section>
+
   <section id="acces-rapide-actu">
     <h2>Actualités</h2>
 
@@ -52,11 +66,24 @@ get_header();
         $queryActu->the_post();
 
         $actuImgCouverture = get_the_post_thumbnail();
+        $contenu = get_the_content();
+        $lien = '';
+        $debut = 1;
+        $fin = 1;
+        $debut = strpos($contenu, 'href=') + 6;
+        if ($debut) {
+          $fin = strpos(substr($contenu, $debut), '"');
+          $lien = substr($contenu, $debut, $fin);
+        }
+
+        // var_dump($debut);
+        // var_dump($fin);
+        // var_dump($lien);
         // var_dump($actuImgCouverture);
     ?>
 
-        <article role="button" class="actu-item">
-          <a href="<?= the_permalink(); ?>">
+        <article role="button" class="btn-root actu-item">
+          <a href="<?= (!empty($lien)) ? $lien : the_permalink(); ?>" target="_blank">
             <figure>
               <?php if ($actuImgCouverture !== ''): ?>
                 <?= $actuImgCouverture; ?>
@@ -75,8 +102,8 @@ get_header();
     wp_reset_postdata();
     ?>
 
-    <a role="button" href="http://localhost/Refonte_SPPCM/wordpress/category/actualite/" class="voir-plus">
-      <h2>Voir plus</h2>
+    <a role="button" href="http://localhost/Refonte_SPPCM/wordpress/category/actualite/" class="btn-root voir-plus">
+      <h2 class="indice-lien-interne">Voir plus</h2>
     </a>
 
   </section>
@@ -107,16 +134,17 @@ get_header();
         // var_dump($queryInfo->current_post);
 
         $infoDate = get_field('info_date');
-        $infoDateTimestamp = datefmt_parse($formatteurLogique, $infoDate);
+        $infoDateTimestamp = datefmt_parse($formatteurLogique, str_replace('-', '', $infoDate));
         $infoDateFormattee = datefmt_format($formatteurLisible, $infoDateTimestamp);
         // var_dump($infoDate);
+        // var_dump(str_replace('-', '', $infoDate));
         // var_dump($infoDateTimestamp);
         // var_dump($infoDateFormattee);
     ?>
 
-        <a role="button" class="info-item <?php if ($queryInfo->current_post === 0) echo ('latest'); ?>"
+        <a role="button" class="btn-root info-item <?php if ($queryInfo->current_post === 0) echo ('latest'); ?>"
           href="<?= get_field('info_lien'); ?>" target="_blank">
-          <h2><?= $infoDateFormattee; ?></h2>
+          <h2 class="indice-lien-interne"><?= $infoDateFormattee; ?></h2>
         </a>
 
     <?php
@@ -125,8 +153,8 @@ get_header();
     wp_reset_postdata();
     ?>
 
-    <a role="button" href="http://localhost/Refonte_SPPCM/wordpress/infolettre-accueil/" class="info-item voir-plus">
-      <h2>Voir plus</h2>
+    <a role="button" href="http://localhost/Refonte_SPPCM/wordpress/infolettre-accueil/" class="btn-root info-item voir-plus">
+      <h2 class="indice-lien-interne">Voir plus</h2>
     </a>
   </section>
 
