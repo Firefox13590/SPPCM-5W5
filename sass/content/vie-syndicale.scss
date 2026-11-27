@@ -11,14 +11,14 @@ main.vie-syndicale {
     background-repeat: no-repeat;
     background-size: 3rem auto, 4rem auto;
     background-position:
-    left top 30%,
-    right top 65%;
+    left -2rem top 30%,
+    right -2rem top 65%;
 
     @media only screen and (min-width: 768px) {
         background-size: 5rem auto, 5rem auto;
         background-position:
-        left top 25%,
-        right top 55%;
+        left -4rem top 25%,
+        right -4rem top 55%;
     }
         @media only screen and (min-width: 992px) {
         background-size: 7rem auto, 7rem auto;
@@ -26,8 +26,11 @@ main.vie-syndicale {
 
 
   .vie-syndicale-banniere {
+    padding: 2rem 1.5rem;
+    
     h1 {
-      max-width: 12ch;
+      max-width: none;
+      margin: 0;
       font-family: $policeH2;
       font-size: 2rem;
       line-height: 1.1;
@@ -36,7 +39,10 @@ main.vie-syndicale {
   }
 
   .vie-syndicale-contenu {
-    max-width: 85rem;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    max-width: 110rem;
     margin: 0 auto;
     padding: 2rem 2rem 4rem;
   }
@@ -44,17 +50,15 @@ main.vie-syndicale {
   // Mobile
   .vie-syndicale-item {
     display: grid;
+    min-width: 0;
+    align-content: start;
     grid-template-areas:
       "titre"
       "image"
       "responsable"
       "description";
     gap: 0.75rem;
-    margin-bottom: 3rem;
-
-    &:last-child {
-      margin-bottom: 0;
-    }
+    
 
     h2 {
       grid-area: titre;
@@ -111,44 +115,13 @@ main.vie-syndicale {
     }
 
     .vie-syndicale-contenu {
-      padding: 3rem 4rem 5rem;
-      background-size: 3rem auto, 3.5rem auto;
-      background-position:
-        left top 25%,
-        right top 55%;
-    }
-
-    .vie-syndicale-item {
       grid-template-columns: repeat(2, minmax(0, 1fr));
-      grid-template-rows: auto auto 1fr;
-      grid-template-areas:
-        "titre titre"
-        "image description"
-        "responsable description";
-      align-items: start;
-      column-gap: 1.5rem;
-      margin-bottom: 4rem;
-
-      h2 {
-        font-size: 1.75rem;
-      }
-
-      // Inverser les côtés pour les comités
-      &:nth-of-type(even) {
-        grid-template-areas:
-          "titre titre"
-          "description image"
-          "description responsable";
-
-        h2,
-        .vie-syndicale-responsable {
-          text-align: right;
-        }
-      }
+      padding: 3rem 2rem 5rem;
+      gap: 3rem 2rem;
     }
   }
 
-  // Ordinateur 
+  // Ordinateur
   @media only screen and (min-width: 992px) {
     .vie-syndicale-banniere {
       min-height: 20rem;
@@ -161,19 +134,14 @@ main.vie-syndicale {
     }
 
     .vie-syndicale-contenu {
-      padding: 4rem 6rem 6rem;
-      background-size: 4rem auto, 5rem auto;
-      background-position:
-        left top 25%,
-        right top 55%;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      padding: 4rem 3rem 6rem;
+      gap: 4rem 2rem;
     }
 
     .vie-syndicale-item {
-      column-gap: 3rem;
-      margin-bottom: 5rem;
-
       h2 {
-        font-size: 2.25rem;
+        font-size: 1.75rem;
       }
 
       .vie-syndicale-description {
