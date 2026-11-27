@@ -138,6 +138,15 @@ main#comite-executif {
 
         & h4 {
           font-size: polices.$policeH3TailleM;
+
+          & span {
+            color: couleurs.$couleurSecondaireBlanc;
+            background-color: couleurs.$couleurTertiaire;
+          }
+        }
+
+        & p {
+          margin-top: 3vh;
         }
       }
     }

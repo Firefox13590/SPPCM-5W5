@@ -81,10 +81,10 @@ get_header();
             <label for="<?= $targetCC; ?>" class="button" role="button" aria-label="Fermer">
               <span class="p">X</span>
             </label>
-            <h4>Nom:<br><?= $nom; ?></h4>
-            <h4>Role éxécutif:<br><?= $role; ?></h4>
+            <h4><span>Nom:</span><br><?= $nom; ?></h4>
+            <h4><span>Role éxécutif:</span><br><?= $role; ?></h4>
             <?php if ($poste): ?>
-              <h4>Poste au collège:<br><?= $poste; ?></h4>
+              <h4><span>Poste au collège:</span><br><?= $poste; ?></h4>
             <?php endif; ?>
             <p><?= $desc; ?></p>
           </div>
