@@ -97,8 +97,12 @@
   }
 
   & div.partenaires-footer {
-    width: 100%;
+    width: 75%;
     overflow: hidden;
+
+    @media screen and (min-width: 768px) {
+      width: 100%;
+    }
 
     & ul.liste-partenaires-footer {
       display: flex;
@@ -170,7 +174,8 @@
       gap: $gapPagItem;
 
       & div {
-        flex-basis: $gapPagItem;
+        // flex-basis: $gapPagItem;
+        flex: 0 1 $gapPagItem;
         height: $gapPagItem;
 
         background-color: $couleurSecondaireBlanc;
