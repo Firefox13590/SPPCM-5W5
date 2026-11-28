@@ -85,7 +85,7 @@ get_header();
         <article role="button" class="btn-root actu-item">
           <a href="<?= (!empty($lien)) ? $lien : the_permalink(); ?>" target="_blank">
             <figure>
-              <?php if ($actuImgCouverture !== ''): ?>
+              <?php if ($actuImgCouverture != ''): ?>
                 <?= $actuImgCouverture; ?>
               <?php endif; ?>
               <figcaption>

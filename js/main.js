@@ -12,7 +12,7 @@ import Accordeon from './modules/Accordeon.js';
 import Carrousel from './modules/Carrousel.js';
 import { Partenaires } from './modules/Partenaires.js';
 import { ApparitionFooter } from './modules/ApparitionFooter.js';
-import Entete from './modules/Entete.js?v=2';
+import Entete from './modules/Entete.js';
 
 new Test();
 new Accordeon();
