@@ -18,6 +18,8 @@ export class Partenaires {
         for(let i = 0; i < partenairesContainers.length; i++) {
             const img = partenairesImages[i];
             if (img.width > img.height) {
+                // img.classList.add('partenaires-larges');
+                
                 img.parentElement.classList.add('partenaires-larges');
                 img.parentElement.parentElement.classList.add('partenaires-larges');
             }

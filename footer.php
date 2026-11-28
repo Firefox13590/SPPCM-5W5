@@ -35,7 +35,7 @@
 
 			<div id="logo">
 				<a href="<?php echo home_url('/'); ?>">
-					<img src="http://localhost/Refonte_SPPCM/wordpress/wp-content/uploads/2018/02/cropped-sppcm_logo_rgb.png" alt="Logo SPPCM">
+					<img src="<?php echo home_url("/wp-content/uploads/2018/02/cropped-sppcm_logo_rgb.png");?>" alt="Logo SPPCM">
 				</a>
 			</div><!-- #logo -->
 
