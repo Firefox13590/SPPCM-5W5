@@ -47,15 +47,32 @@ get_header();
         'posts_per_page' => -1,
         'meta_key' => 'info_date',
         'orderby' => 'meta_value',
-        'order' => 'DESC'
+        'order' => 'DESC',
+        'tax_query' => array(
+            array(
+                'taxonomy' => 'annee-scolaire',
+                'field' => 'term_id',
+                'terms' => 218,
+                'include_children' => false,
+                'operator' => 'NOT IN',
+            ),
+        ),
     );
 
     if (!empty($annee_scolaire)) {
         $args['tax_query'] = array(
+            'relation' => 'AND',
             array(
                 'taxonomy' => 'annee-scolaire',
                 'field' => 'slug',
                 'terms' => $annee_scolaire,
+            ),
+            array(
+                'taxonomy' => 'annee-scolaire',
+                'field' => 'term_id',
+                'terms' => 218,
+                'include_children' => false,
+                'operator' => 'NOT IN',
             ),
         );
     }
@@ -110,7 +127,7 @@ get_header();
 
 
                 $infoDate = get_field('info_date');
-                $infoDateTimestamp = datefmt_parse($formatteurLogique, $infoDate);
+                $infoDateTimestamp = datefmt_parse($formatteurLogique, str_replace('-', '', $infoDate));
                 $infoDateFormattee = datefmt_format($formatteurLisible, $infoDateTimestamp);
         ?>
 
