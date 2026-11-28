@@ -10,7 +10,6 @@ get_header();
 
 <main id="regie-interne">
     <h2 id="titre-regie">Régie interne</h2>
-    <h3 id="titre-section-documents">Documents</h3>
     <?php
     $argRegie = array(
         'post_type' => 'regie_interne',
@@ -28,12 +27,19 @@ get_header();
             $queryRegie->the_post();
 
             $description = get_field('description');
+            $icone = get_field('icone');
             $lien = get_field('lien');
     ?>
             <article class="document-regie">
-
+                <!-- icone document -->
+                 <div id="document-regie-header">
+                <?php if ($icone) : ?>
+                    <div class="icone-document">
+                        <img src="<?php echo esc_url($icone['url']); ?>" alt="<?php echo esc_attr($icone['alt']); ?>">
+                    </div>
+                <?php endif; ?>
                 <h3 class="titre-document"><?php the_title(); ?></h3>
-
+                    </div>
                 <?php if ($description) : ?>
                     <div class="description">
                         <?php echo wp_kses_post($description); ?>

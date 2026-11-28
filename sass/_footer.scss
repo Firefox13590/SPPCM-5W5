@@ -9,17 +9,20 @@
   // gap: clamp(0rem, 2.5rem, 2.5rem);
   padding-bottom: 1.5rem;
   overflow: hidden;
+
   & .reseaux img {
     // width: 40px !important;
-    height: 2.5rem ;
-    width: auto ;
+    height: 2.5rem;
+    width: auto;
     // width: 2.5rem;
     transition: all 0.1s linear;
 
   }
+
   & .carrousel-pagination div {
     transition: all 0.1s linear;
   }
+
   & .carrousel-pagination div:hover {
     transition: all 0.2s linear;
     scale: 1.2;
@@ -32,6 +35,14 @@
     rotate: 5deg;
     transition: all 0.35s ease-in-out;
   }
+
+  & .reseaux img:hover {
+    filter: brightness(0.8);
+    scale: 1.2;
+    rotate: 5deg;
+    transition: all 0.35s ease-in-out;
+  }
+
   & .reseaux li {
     flex-shrink: 0;
   }
@@ -45,139 +56,176 @@
     transition: all 0.1s linear;
 
   }
+
   & #logo img:hover {
     scale: 1.1;
     filter: brightness(0.6);
     transition: all 0.35s ease-in-out;
   }
-  & .reseaux {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    // width: fit-content;
+
+}
+
+& #logo img:hover {
+  scale: 1.1;
+  filter: brightness(0.6);
+  transition: all 0.35s ease-in-out;
+}
+
+& .reseaux {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  // width: fit-content;
+  width: 100%;
+  height: 100%;
+}
+
+& .reseaux ul {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  // gap: 1rem;
+  // justify-content: space-between;
+  // width: 80vw;
+  gap: clamp(0rem, 2vw, 0.5rem);
+
+  flex-wrap: wrap;
+}
+
+& .groupe-infos {
+  display: flex;
+  flex-direction: column;
+  // justify-content: space-between;
+  align-items: center;
+  // width: 80vw;
+  // gap: clamp(0rem, 0.5rem, 0.5rem);
+  gap: 1rem;
+  padding-bottom: 2rem;
+  width: fit-content;
+  height: 100%;
+}
+
+& ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+& div.partenaires-footer {
+  width: 75%;
+  overflow: hidden;
+
+  @media screen and (min-width: 768px) {
     width: 100%;
-    height: 100%;
   }
 
-  & .reseaux ul {
+  & ul.liste-partenaires-footer {
     display: flex;
-    flex-direction: row;
-    width: 100%;
-    // gap: 1rem;
-    // justify-content: space-between;
-    // width: 80vw;
-    gap: clamp(0rem, 2vw, 0.5rem);
-
-    flex-wrap: wrap;
-  }
-
-  & .groupe-infos {
-    display: flex;
-    flex-direction: column;
-    // justify-content: space-between;
+    // justify-content: center;
+    justify-content: left;
     align-items: center;
-    // width: 80vw;
-    // gap: clamp(0rem, 0.5rem, 0.5rem);
-    gap: 1rem;
-    padding-bottom: 2rem;
-    width: fit-content;
-    height: 100%;
-  }
+    gap: 100%;
 
-  & ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-  }
+    transition: transform 1s;
 
-  & div.partenaires-footer {
-    width: 100%;
-    overflow: hidden;
-
-    & ul.liste-partenaires-footer {
+    & li.partenaire-footer {
+      // flex: 0 0 100%;
+      flex: 0 0 calc(100% - 4px);
+      // width: 100%;
+      // height: 100%;
       display: flex;
-      // justify-content: center;
-      justify-content: left;
       align-items: center;
-      gap: 100%;
+      justify-content: center;
+      width: 50%;
+      height: auto;
+      //NOTE : IG aussi changer ca
 
-      transition: transform 1s;
-
-      & li.partenaire-footer {
-        // flex: 0 0 100%;
-        flex: 0 0 calc(100% - 4px);
-        // width: 100%;
-        // height: 100%;
+      & a {
+        //NOTE : if statement ce case c'est bon pour height wise vice versa
+        width: 50%;
+        height: auto;
         display: flex;
         align-items: center;
         justify-content: center;
+
+        // width: if(media(width > height): 50%; else: auto);
+        // height: if(media(width > height): auto; else: 50%);
+      }
+
+      & .partenaires-larges {
+        width: auto;
+        height: 50%;
+        // border: 2px solid red;
+      }
+
+      & a {
+        //NOTE : if statement ce case c'est bon pour height wise vice versa
         width: 50%;
         height: auto;
-        // max-height: 6rem;
-        //NOTE : IG aussi changer ca
+        display: flex;
+        align-items: center;
+        justify-content: center;
 
-        & a {
-          //NOTE : if statement ce case c'est bon pour height wise vice versa
-          width: 50%;
-          height: auto;
-          display: flex;
-          align-items: center;
-          justify-content: center;
+        // width: if(media(width > height): 50%; else: auto);
+        // height: if(media(width > height): auto; else: 50%);
+      }
 
-          // width: if(media(width > height): 50%; else: auto);
-          // height: if(media(width > height): auto; else: 50%);
-        }
-        & .partenaires-larges {
-          width: auto;
-          height: 50%;
-    
+      & .partenaires-larges {
+        width: auto;
+        height: 50%;
 
-          // border: 2px solid red;
-        }
-        & img {
-          // max-width: none;
-          width: 100%;
-          height: 100%;
-          // height: 100%;
-          box-shadow: 4px 4px 0px 0px $couleurPrincipale;
-          transition: all 0.1s linear;
-          // max-width: 20rem;
-          // max-height: 20rem;
-        }
-        & img:hover {
-          filter: brightness(0.5);
-          transition: all 0.35s ease-in-out;
+
+        // border: 2px solid red;
+      }
+
+      & img {
+        // max-width: none;
+        width: 100%;
+        height: 100%;
+        // height: 100%;
+        box-shadow: 4px 4px 0px 0px $couleurPrincipale;
+        transition: all 0.1s linear;
+        // max-width: 20rem;
+        // max-height: 20rem;
+      }
+
+      & img:hover {
+        filter: brightness(0.5);
+        transition: all 0.35s ease-in-out;
 
       }
-        //NOTE : ceci affecte les partenaires
-      }
+
+      //NOTE : ceci affecte les partenaires
     }
+  }
 
-    & div.carrousel-pagination {
-      display: flex;
-      justify-content: center;
-      align-items: center;
+  & div.carrousel-pagination {
+    $gapPagItem: 2em;
 
-      $gapPagItem: 2em;
-      margin-top: $gapPagItem;
-      gap: $gapPagItem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
-      & div {
-        flex-basis: $gapPagItem;
-        height: $gapPagItem;
+    margin-top: $gapPagItem;
+    gap: $gapPagItem;
 
-        background-color: $couleurSecondaireBlanc;
-        border: calc($gapPagItem / 4) solid $couleurSecondaireBlanc;
+    & div {
+      // flex-basis: $gapPagItem;
+      flex: 0 1 $gapPagItem;
+      height: $gapPagItem;
 
-        cursor: pointer;
+      background-color: $couleurSecondaireBlanc;
+      border: calc($gapPagItem / 4) solid $couleurSecondaireBlanc;
 
-        &.active {
-          background-color: $couleurPrincipale;
-        }
+      cursor: pointer;
+
+      &.active {
+        background-color: $couleurPrincipale;
       }
     }
   }
 }
+
 
 @media (min-width: 768px) {
   .site-footer .footer-content {
@@ -234,7 +282,7 @@
 
     & .partenaires-footer {
       // flex-basis: 30%;
-      flex-basis: clamp(12rem, 20%, 20rem );
+      flex-basis: clamp(12rem, 20%, 20rem);
 
       // width: clamp(0rem, 28vw, 26rem);
       // height: clamp(0rem, 15vw, 13rem);
@@ -280,12 +328,14 @@
       display: flex;
       align-items: center;
     }
+
     & .partenaire-footer img {
       // width: 30rem;
       // height: 15rem;
       height: 50%;
       // width: 50% !important;
     }
+
     // & .partenaire-footer img {
     //   width: clamp(0rem, 28vw, 60rem);
     //   height: 100%;
@@ -304,16 +354,18 @@
   text-align: center;
   color: $couleurSecondaireBlanc;
   background-color: $couleurTertiaire;
-  padding:1rem;
+  padding: 1rem;
 
   // border: 2px solid red;
 }
+
 .site-credits {
   text-align: center;
   color: $couleurTertiaire;
   background-color: $couleurPrincipale;
   // border: 2px solid red;
 }
+
 .site-credits a {
   color: $couleurSecondaireBlanc;
 
@@ -323,27 +375,31 @@
   color: $couleurSectionHoverBlanc;
   text-decoration: underline;
 }
+
 .site-credits a:focus {
   color: $couleurSectionFocusBlanc;
 }
 
-.site-footer .footer-content>*{
-    opacity: 0;
+.site-footer .footer-content>* {
+  opacity: 0;
 
 }
+
 .site-footer .footer-content>*.apparition {
-    opacity: 1;
-    scale: 1;
+  opacity: 1;
+  scale: 1;
   animation: animation-apparition-footer 1s ease-in-out;
 
 }
-@keyframes animation-apparition-footer{
-  from{
+
+@keyframes animation-apparition-footer {
+  from {
     opacity: 0;
     transform: translateY(100%);
     scale: 0.9;
   }
-  to{
+
+  to {
     opacity: 1;
     transform: translateY(0%);
     scale: 1;

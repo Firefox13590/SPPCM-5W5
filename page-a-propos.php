@@ -20,22 +20,10 @@ get_header();
 <main id="comite-executif">
   <div class="bg-noir"></div>
 
-  <div>
-    <p>
-      Le syndicat des professeures et professeurs du Collège de Maisonneuve (SPPCM) a pour objectifs l’étude,
-      la défense et la promotion des intérêts et des objectifs professionnels, syndicaux, économiques et sociaux de ses membres.
-      Il vise également la promotion de la recherche et de la qualité du travail en éducation.
-    </p>
-    <p>
-      Le SPPCM regroupe plus de 630 membres.
-      Fondé le 7 mars 1968, il est affilié à la fédération nationale des enseignantes et enseignants du Québec (FNEEQ),
-      elle-même membre (ou filiale) de la Confédération des syndicats nationaux (CSN).
-    </p>
-    <p>
-      Jetez un coup d'oeil aux représentants du comité exécutif permettant au SPPCM d'accomplir leur mission.
-      Cliquez sur les cartes pour dévoiler la descripton complète.
-    </p>
-  </div>
+  <p>
+    Jetez un coup d'oeil aux représentants du comité exécutif permettant au SPPCM d'accomplir leur mission.
+    Cliquez sur les cartes pour dévoiler la descripton complète.
+  </p>
 
   <h2>
     Comité exécutif
@@ -78,7 +66,7 @@ get_header();
 
         $targetCC = "cc-membre-" . $queryComite->current_post;
     ?>
-        <article class="membre">
+        <article class="membre" title="Cliquez sur les cartes pour dévoiler la descripton complète.">
           <input type="checkbox" name="<?= $targetCC; ?>" id="<?= $targetCC; ?>" class="none">
           <label for="<?= $targetCC; ?>" role="button" class="button" aria-label="Cliquer pour une descripton complète">
             <div class="membre-front">
@@ -93,10 +81,10 @@ get_header();
             <label for="<?= $targetCC; ?>" class="button" role="button" aria-label="Fermer">
               <span class="p">X</span>
             </label>
-            <h4>Nom:<br><?= $nom; ?></h4>
-            <h4>Role éxécutif:<br><?= $role; ?></h4>
+            <h4><span>Nom:</span><br><?= $nom; ?></h4>
+            <h4><span>Role éxécutif:</span><br><?= $role; ?></h4>
             <?php if ($poste): ?>
-              <h4>Poste au collège:<br><?= $poste; ?></h4>
+              <h4><span>Poste au collège:</span><br><?= $poste; ?></h4>
             <?php endif; ?>
             <p><?= $desc; ?></p>
           </div>
